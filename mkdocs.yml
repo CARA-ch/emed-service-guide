@@ -20,6 +20,8 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
 theme:
   name: material
   logo: assets/cara.svg

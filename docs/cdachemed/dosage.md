@@ -61,3 +61,21 @@ The narrative dosage instructions can only appear in the normal dose regime.
 ```
 
 ## Examples
+
+=== "Normal with structured instructions"
+
+    ```xml
+    
+    ```
+
+=== "Normal with narrative instructions"
+
+    ```xml
+    
+    ```
+
+=== "Split dose"
+
+    ```xml
+    
+    ```
