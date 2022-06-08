@@ -1,28 +1,42 @@
-site_name: CARA's eMedication service Implementation Guide
+site_name: CARA's eMedication IG
 site_url: https://qligier.github.io/cara-emed-ig/
+repo_url: https://github.com/qligier/cara-emed-ig
+site_author: Quentin Ligier
 nav:
   - Home: index.md
-  - Transactions: transactions.md
-  - CDA-CH-EMED: cdachemed.md
-  - CH-APPC: chappc.md
+  - Transactions: transactions/index.md
+  - CDA-CH-EMED:
+    - cdachemed/index.md
+    - 'Dosage Instructions': cdachemed/dosage.md
+    - Packaging: cdachemed/packaging.md
+  - CH-APPC: chappc/index.md
+  - CH-EMED: chemed/index.md
 markdown_extensions:
+  - smarty
   - admonition
   - pymdownx.details
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.highlight:
-    anchor_linenums: true
+      anchor_linenums: true
 theme:
+  name: material
+  logo: assets/cara.svg
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - toc.integrate
   palette:
-    primary: blue
     - scheme: slate 
+      primary: blue
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to light mode
     - scheme: default
+      primary: blue
       toggle:
         icon: material/toggle-switch 
         name: Switch to dark mode
-plugins:
-  - privacy 
+#plugins:
+#  - privacy 
