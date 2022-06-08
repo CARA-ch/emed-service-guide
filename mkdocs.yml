@@ -5,3 +5,24 @@ nav:
   - Transactions: transactions.md
   - CDA-CH-EMED: cdachemed.md
   - CH-APPC: chappc.md
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.highlight:
+    anchor_linenums: true
+theme:
+  palette:
+    primary: blue
+    - scheme: slate 
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch 
+        name: Switch to dark mode
+plugins:
+  - privacy 
