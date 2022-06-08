@@ -1,0 +1,7 @@
+site_name: CARA's eMedication service Implementation Guide
+site_url: https://qligier.github.io/cara-emed-ig/
+nav:
+  - Home: index.md
+  - Transactions: transactions.md
+  - CDA-CH-EMED: cdachemed.md
+  - CH-APPC: chappc.md
