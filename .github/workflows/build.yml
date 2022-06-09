@@ -1,4 +1,4 @@
-name: Publish docs via GitHub Pages
+name: Publish docs on GitHub Pages
 on:
   push:
     branches:
@@ -10,12 +10,16 @@ jobs:
     steps:
       - name: Checkout master
         uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - name: Setup Python 3
+        uses: actions/setup-python@v2
         with:
           python-version: 3.x
-      - uses: actions/cache@v2
+      - name: Cache some files
+        uses: actions/cache@v2
         with:
           key: ${{ github.ref }}
           path: .cache
-      - run: pip install mkdocs-material
-      - run: mkdocs gh-deploy --force
+      - name: Install mkdocs
+        run: pip install mkdocs-material
+      - name: Build and deploy
+        run: mkdocs gh-deploy --force

@@ -2,9 +2,10 @@
 
 [ArtDecor template](https://art-decor.org/art-decor/decor-templates--cdachemed-?id=2.16.756.5.30.1.1.10.4.35).
 
+
 ## Dose regime
 
-The dose regime is described by a templateId.
+The dose regime is described by an additional templateId in the `#!xml <hl7:substanceAdministration>` or the `#!xml <hl7:supply>`.
 
 !!! bug inline end "Not fully supported"
 
@@ -34,9 +35,13 @@ The repeat number is mandatory and can be used to limit the number of allowed re
 <hl7:repeatNumber nullFlavor="NI" /><!-- The refills are unlimited -->
 ```
 
-The refill quantity is defined as:
+The refill quantity is the same as the one provided in the item entry.
 
 ## Route of administration
+
+!!! warning "CARA: additional requirement"
+
+    The eMedication service restricts the unit to the ["RouteOfAdministration (Ambu)" value set](https://art-decor.org/art-decor/decor-valuesets--cdachemed-?id=2.16.756.5.30.1.1.11.3).
 
 ## Approach site code
 
@@ -46,18 +51,52 @@ The refill quantity is defined as:
 
 ## Dose quantity
 
+The quantity of medication to take at each . 
+
+The value can be a positive, non-zero, non-infinite decimal value or a double.
+
+1.  A decimal value can be "1.23", "21", "1.0". See the [XML Schema decimal specification](https://www.w3.org/TR/xmlschema-2/#decimal).
+2.  A double value can be "1", "3E2". See the [XML Schema double specification](https://www.w3.org/TR/xmlschema-2/#double).
+
+!!! warning "CARA: additional requirement"
+
+    The eMedication service restricts the unit to the ["RegularUnitCode (Ambu)" value set](https://art-decor.org/art-decor/decor-valuesets--cdachemed-?id=2.16.756.5.30.1.127.77.12.11.3).
+
+!!! error "Please avoid"
+
+    Please avoid using values that can confuse the reader, are weird or do not make sense, as "0.333", "0.42", "1.618", "INF", "-1E4", "0", "12678967.543233".
+
+```xml title="Examples"
+<hl7:doseQuantity value="1" unit="732936001" /><!-- One tablet -->
+<hl7:doseQuantity value="10" unit="732994000" /><!-- Ten drops -->
+<hl7:doseQuantity value="0.5" unit="[tsp_m]" /><!-- Half a teaspoon -->
+```
+
 ## Rate quantity
 
 !!! bug "Not implemented"
 
-    This is not yet described in CDA-CH-EMED. As it mainly concerns perfusions and are uncommon in the XXX, it's not a priority to support it.
+    This is not yet described in CDA-CH-EMED. As it mainly concerns perfusions and are uncommon for outpatients, it's not a priority to support it.
 
 ## Narrative dosage instructions
 
 The narrative dosage instructions can only appear in the normal dose regime.
 
 ```xml title="Usage of the narrative dosage instructions"
-
+<hl7:entryRelationship typeCode="COMP">
+    <hl7:substanceAdministration moodCode="INT" classCode="SBADM">
+        <hl7:templateId root="2.16.756.5.30.1.1.10.4.52" />
+        <hl7:text>
+            Take one pill in the morning and two pills in the evening with some water.
+            <hl7:reference value="#dosageinstructions" />
+        </hl7:text>
+        <hl7:consumable>
+            <hl7:manufacturedProduct>
+                <hl7:manufacturedMaterial nullFlavor="NA" />
+            </hl7:manufacturedProduct>
+        </hl7:consumable>
+    </hl7:substanceAdministration>
+</hl7:entryRelationship>
 ```
 
 ## Examples

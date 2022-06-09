@@ -1,0 +1,6 @@
+{
+    "yaml.schemas": {
+        "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml",
+        "https://json.schemastore.org/github-workflow.json": "file:///Users/qlig/git/cara-emed-ig/.github/workflows/build.yml"
+    }
+}
