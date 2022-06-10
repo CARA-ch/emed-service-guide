@@ -53,7 +53,7 @@ The refill quantity is the same as the one provided in the item entry.
 
 The quantity of medication to take at each intake. 
 
-The value can be a positive, non-zero, non-infinite decimal value or a double.
+The value SHALL be a positive, non-zero, non-infinite decimal value or a double.
 
 1.  A decimal value can be "1.23", "21", "1.0". See the [XML Schema decimal specification](https://www.w3.org/TR/xmlschema-2/#decimal).
 2.  A double value can be "1", "3E2". See the [XML Schema double specification](https://www.w3.org/TR/xmlschema-2/#double).
@@ -61,7 +61,7 @@ The value can be a positive, non-zero, non-infinite decimal value or a double.
 !!! warning "CARA: additional requirements"
 
     The eMedication service restricts the unit to the ["RegularUnitCode (Ambu)" value set](https://art-decor.org/art-decor/decor-valuesets--cdachemed-?id=2.16.756.5.30.1.127.77.12.11.3).<br>
-    Furthemore, the dose shall be a simple quantity, not an interval.
+    Furthemore, the dose SHALL be a simple quantity, not an interval.
 
 !!! error "Please avoid"
 
@@ -77,7 +77,7 @@ The value can be a positive, non-zero, non-infinite decimal value or a double.
 
 !!! bug "Not implemented"
 
-    This is not yet described in CDA-CH-EMED. As it mainly concerns perfusions and are uncommon for outpatients, it's not a priority to support it.
+    This is not yet described in CDA-CH-EMED. As it mainly concerns perfusions and are uncommon for outpatients, it's not a priority to support it. You SHOULD NOT include it.
 
 ## Narrative dosage instructions
 
