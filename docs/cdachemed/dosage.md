@@ -1,7 +1,7 @@
 # Dosage instructions
 
+The dosage instructions tell the patient when and how to take the medication.
 [ArtDecor template](https://art-decor.org/art-decor/decor-templates--cdachemed-?id=2.16.756.5.30.1.1.10.4.35).
-
 
 ## Dose regime
 
@@ -13,9 +13,9 @@ The dose regime is described by an additional templateId in the `#!xml <hl7:subs
 
 | Regime | templateId | Description |
 | ----------------- | ------------------------------- | ----------- |
-| Normal            | 1.3.6.1.4.1.19376.1.5.3.1.4.7.1 |  |
+| Normal            | 1.3.6.1.4.1.19376.1.5.3.1.4.7.1 | Daily intake(s) with a single quantity or a single point-in-time intake |
 | Tapered doses     | 1.3.6.1.4.1.19376.1.5.3.1.4.8   |  |
-| Split doses       | 1.3.6.1.4.1.19376.1.5.3.1.4.9   |  |
+| Split doses       | 1.3.6.1.4.1.19376.1.5.3.1.4.9   | Daily intakes with differents quantities or multiple point-in-time intakes |
 | Conditional doses | 1.3.6.1.4.1.19376.1.5.3.1.4.10  |  |
 | Combination medication components | 1.3.6.1.4.1.19376.1.5.3.1.4.11 |  |
 
@@ -51,16 +51,17 @@ The refill quantity is the same as the one provided in the item entry.
 
 ## Dose quantity
 
-The quantity of medication to take at each . 
+The quantity of medication to take at each intake. 
 
 The value can be a positive, non-zero, non-infinite decimal value or a double.
 
 1.  A decimal value can be "1.23", "21", "1.0". See the [XML Schema decimal specification](https://www.w3.org/TR/xmlschema-2/#decimal).
 2.  A double value can be "1", "3E2". See the [XML Schema double specification](https://www.w3.org/TR/xmlschema-2/#double).
 
-!!! warning "CARA: additional requirement"
+!!! warning "CARA: additional requirements"
 
-    The eMedication service restricts the unit to the ["RegularUnitCode (Ambu)" value set](https://art-decor.org/art-decor/decor-valuesets--cdachemed-?id=2.16.756.5.30.1.127.77.12.11.3).
+    The eMedication service restricts the unit to the ["RegularUnitCode (Ambu)" value set](https://art-decor.org/art-decor/decor-valuesets--cdachemed-?id=2.16.756.5.30.1.127.77.12.11.3).<br>
+    Furthemore, the dose shall be a simple quantity, not an interval.
 
 !!! error "Please avoid"
 

@@ -8,7 +8,12 @@ nav:
   - CDA-CH-EMED:
     - cdachemed/index.md
     - Documents:
-      - cdachemed/documents.md
+      - MTP: cdachemed/mtp.md
+      - PRE: cdachemed/pre.md
+      - DIS: cdachemed/dis.md
+      - PADV: cdachemed/padv.md
+      - PML: cdachemed/pml.md
+      - PMLC: cdachemed/pmlc.md
       - 'Dosage Instructions': cdachemed/dosage.md
       - Packaging: cdachemed/packaging.md
     - Workflow:
@@ -31,13 +36,16 @@ markdown_extensions:
 theme:
   name: material
   logo: assets/cara.svg
+  font:
+    text: Nunito Sans
+    code: JetBrains Mono
   features:
     - navigation.tabs
     - navigation.indexes
     - toc.integrate
     - content.code.annotate
   palette:
-    - scheme: slate 
+    - scheme: slate
       primary: blue
       toggle:
         icon: material/toggle-switch-off-outline
@@ -45,9 +53,9 @@ theme:
     - scheme: default
       primary: blue
       toggle:
-        icon: material/toggle-switch 
+        icon: material/toggle-switch
         name: Switch to dark mode
 #plugins:
 #  - minify:
 #      minify_html: true
-#  - privacy 
+#  - privacy
