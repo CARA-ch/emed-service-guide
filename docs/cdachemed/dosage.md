@@ -28,7 +28,7 @@ The intake start and stop date (with or without time) is given by the first `#!x
 
 ## Single event time interval
 
-This is only used with the structured normal regime to define a single daily intake.
+This is only used with the structured normal regime to define a single daily intake of the dose given by `#!xml <hl7:doseQuantity>`. This is the  `#!xml <hl7:effectiveTime>` with type `EIVL<TS>`.
 
 !!! warning "CARA: additional requirement"
 
@@ -41,10 +41,38 @@ This is only used with the structured normal regime to define a single daily int
     | EVE   | Evening     |
     | NIGHT | Night       |
 
+```xml title="Example usage"
+<hl7:effectiveTime type="EIVL_TS" operator="A">
+    <hl7:event code="EVE" /> <!--(1)-->
+</hl7:effectiveTime>
+```
+
+1.  The patient must take the dose given by the `#!xml <hl7:doseQuantity>` element once by day in the evening.
 
 ## Multiple event time interval
 
-This is only used with the structured normal regime to define multiple daily intakes of the same dose.
+This is only used with the structured normal regime to define multiple daily intakes of the same dose (given by `#!xml <hl7:doseQuantity>`).
+
+!!! warning "CARA: additional requirement"
+
+    The eMedication services restricts the event to the [TimingEvent (Ambu) value set](https://art-decor.org/art-decor/decor-valuesets--cdachemed-?id=2.16.756.5.30.1.127.77.12.11.2). See hereinbefore for the value set description.
+
+```xml title="Example usage"
+<hl7:effectiveTime type="SXPR_TS" operator="A">
+    <hl7:comp type="EIVL_TS">
+        <hl7:event code="MORN" />
+    </hl7:comp>
+    <hl7:comp type="EIVL_TS">
+        <hl7:event code="NON" />
+    </hl7:comp>
+    </hl7:comp>
+    <hl7:comp type="EIVL_TS">
+        <hl7:event code="NIGHT" /> <!--(1)-->
+    </hl7:comp>
+</hl7:effectiveTime>
+```
+
+1.  The patient must take the dose given by the `#!xml <hl7:doseQuantity>` element each day in the morning, at noon and at night.
 
 ## Repeat number
 

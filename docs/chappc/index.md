@@ -31,7 +31,7 @@ Only a subset of the specification is supported in the eMedication service.
 
 1.  Since we use the DenyOverrides algorithm, the order of sub-PolicySets is not important; all will be evaluated and any `Deny` will override any `Allow`.
 2.  A mandatory but not-quite-useful description.
-3.  The EPR-SPID.
+3.  The patient EPR-SPID.
 
 ## Example
 

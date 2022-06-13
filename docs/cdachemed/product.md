@@ -1,4 +1,4 @@
-# Packaging
+# Product and packaging
 
 ## Code
 

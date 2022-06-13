@@ -15,7 +15,7 @@ nav:
       - PML: cdachemed/pml.md
       - PMLC: cdachemed/pmlc.md
       - 'Dosage Instructions': cdachemed/dosage.md
-      - Packaging: cdachemed/packaging.md
+      - Product: cdachemed/product.md
     - Workflow:
       - cdachemed/workflow.md
   - CH-APPC: chappc/index.md
