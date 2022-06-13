@@ -10,7 +10,7 @@ Only a subset of the specification is supported in the eMedication service.
 <?xml version="1.0" encoding="UTF-8"?>
 <PolicySet xmlns="urn:oasis:names:tc:xacml:2.0:policy:schema:os"
            xmlns:hl7="urn:hl7-org:v3"
-           PolicySetId="urn:uuid:e3585197-9e3d-4ca3-9583-4540a3a5b64b" 
+           PolicySetId="urn:uuid:e3585197-9e3d-4ca3-9583-4540a3a5b64b"
            PolicyCombiningAlgId="urn:oasis:names:tc:xacml:1.0:policy-combining-algorithm:deny-overrides"> <!-- (1) -->
     <Description>Test policy set</Description> <!-- (2) -->
     <Target>

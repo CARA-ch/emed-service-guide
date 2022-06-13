@@ -24,7 +24,7 @@ In normal dose regime, the dosage instructions can be given in structured form (
 
 ## Start and stop
 
-The intake start and stop date (with or without time) is given by the first ```#!xml <hl7:effectiveTime>`, with type `IVL<TS.CH.TZ>`. Boundaries are inclusive. The dates SHOULD be precise to the day (`YYYYMMDD`); there SHOULD be a good reason to be more precise than that.
+The intake start and stop date (with or without time) is given by the first `#!xml <hl7:effectiveTime>`, with type `IVL<TS.CH.TZ>`. Boundaries are inclusive. The dates SHOULD be precise to the day (`YYYYMMDD`); there SHOULD be a good reason to be more precise than that.
 
 ## Single event time interval
 
@@ -32,7 +32,8 @@ This is only used with the structured normal regime to define a single daily int
 
 !!! warning "CARA: additional requirement"
 
-    The eMedication services restricts the event to the [TimingEvent (Ambu) value set](https://art-decor.org/art-decor/decor-valuesets--cdachemed-?id=2.16.756.5.30.1.127.77.12.11.2). 
+    The eMedication services restricts the event to the [TimingEvent (Ambu) value set](https://art-decor.org/art-decor/decor-valuesets--cdachemed-?id=2.16.756.5.30.1.127.77.12.11.2).
+    
     | Event | Description |
     | ----- | ----------- |
     | MORN  | Morning     |
