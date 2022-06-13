@@ -13,17 +13,37 @@ The dose regime is described by an additional templateId in the `#!xml <hl7:subs
 
 | Regime | templateId | Description |
 | ----------------- | ------------------------------- | ----------- |
-| Normal            | 1.3.6.1.4.1.19376.1.5.3.1.4.7.1 | Daily intake(s) with a single quantity or a single point-in-time intake |
-| Tapered doses     | 1.3.6.1.4.1.19376.1.5.3.1.4.8   |  |
-| Split doses       | 1.3.6.1.4.1.19376.1.5.3.1.4.9   | Daily intakes with differents quantities or multiple point-in-time intakes |
-| Conditional doses | 1.3.6.1.4.1.19376.1.5.3.1.4.10  |  |
-| Combination medication components | 1.3.6.1.4.1.19376.1.5.3.1.4.11 |  |
+| Structured normal | 1.3.6.1.4.1.19376.1.5.3.1.4.7.1 | Daily intake(s) with a single quantity |
+| Narrative normal  | 1.3.6.1.4.1.19376.1.5.3.1.4.7.1 | Narrative instructions |
+| Tapered doses     | 1.3.6.1.4.1.19376.1.5.3.1.4.8   | N/A |
+| Split doses       | 1.3.6.1.4.1.19376.1.5.3.1.4.9   | Daily intakes with differents quantities |
+| Conditional doses | 1.3.6.1.4.1.19376.1.5.3.1.4.10  | N/A |
+| Combination medication components | 1.3.6.1.4.1.19376.1.5.3.1.4.11 | N/A |
 
 In normal dose regime, the dosage instructions can be given in structured form (with `#!xml <hl7:effectiveTime>`, `#!xml <hl7:routeCode>`, `#!xml <hl7:approachSiteCode>`, `#!xml <hl7:doseQuantity>` and `#!xml <hl7:rateQuantity>`) or in narrative form (with the appropriate `#!xml <hl7:entryRelationship>`), but not both at the same time.
 
 ## Start and stop
 
+The intake start and stop date (with or without time) is given by the first ```#!xml <hl7:effectiveTime>`, with type `IVL<TS.CH.TZ>`. Boundaries are inclusive. The dates SHOULD be precise to the day (`YYYYMMDD`); there SHOULD be a good reason to be more precise than that.
 
+## Single event time interval
+
+This is only used with the structured normal regime to define a single daily intake.
+
+!!! warning "CARA: additional requirement"
+
+    The eMedication services restricts the event to the [TimingEvent (Ambu) value set](https://art-decor.org/art-decor/decor-valuesets--cdachemed-?id=2.16.756.5.30.1.127.77.12.11.2). 
+    | Event | Description |
+    | ----- | ----------- |
+    | MORN  | Morning     |
+    | NOON  | Noon        |
+    | EVE   | Evening     |
+    | NIGHT | Night       |
+
+
+## Multiple event time interval
+
+This is only used with the structured normal regime to define multiple daily intakes of the same dose.
 
 ## Repeat number
 
