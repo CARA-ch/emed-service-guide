@@ -10,7 +10,7 @@ It's an `#!xml <hl7:substanceAdministration>`.
 
 ### Dosage instructions
 
-See the [dedicated page](cdachemed/dosage.md).
+See the [dedicated page](dosage.md).
 
 ### Reference to the Treatment Reason Entry Content Module
 
