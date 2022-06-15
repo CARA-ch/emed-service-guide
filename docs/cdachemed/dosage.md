@@ -149,6 +149,10 @@ The narrative dosage instructions can only appear in the normal dose regime.
 </hl7:entryRelationship>
 ```
 
+## Related components
+
+They are used in the split dose regime and are forbidden otherwise.
+
 ## Examples
 
 === "Normal with structured instructions"
