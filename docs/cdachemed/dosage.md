@@ -25,54 +25,54 @@ In normal dose regime, the dosage instructions can be given in structured form (
 ## Start and stop
 
 The intake start and stop date (with or without time) is given by the first `#!xml <hl7:effectiveTime>`, with type `IVL<TS.CH.TZ>`. Boundaries are inclusive. The dates SHOULD be precise to the day (`YYYYMMDD`); there SHOULD be a good reason to be more precise than that.
+<!-- TODO optional in split, but cannot be redefined in the related components -->
 
-## Single event time interval
+## Medication frequency
 
-This is only used with the structured normal regime to define a single daily intake of the dose given by `#!xml <hl7:doseQuantity>`. This is the  `#!xml <hl7:effectiveTime>` with type `EIVL<TS>`.
+The moment(s) of the day at which the patient is to take the medication.
 
 !!! warning "CARA: additional requirement"
 
     The eMedication services restricts the event to the [TimingEvent (Ambu) value set](https://art-decor.org/art-decor/decor-valuesets--cdachemed-?id=2.16.756.5.30.1.127.77.12.11.2).
     
-    | Event | Description |
-    | ----- | ----------- |
-    | MORN  | Morning     |
-    | NOON  | Noon        |
-    | EVE   | Evening     |
-    | NIGHT | Night       |
+    | Event   | Description |
+    | ------- | ----------- |
+    | `MORN`  | Morning     |
+    | `NOON`  | Noon        |
+    | `EVE`   | Evening     |
+    | `NIGHT` | Night       |
 
-```xml title="Example usage"
-<hl7:effectiveTime type="EIVL_TS" operator="A">
-    <hl7:event code="EVE" /> <!--(1)-->
-</hl7:effectiveTime>
-```
+=== "Single event time interval"
+    
+    This is only used with the structured normal regime or split regime to define a single daily intake of the dose given by `#!xml <hl7:doseQuantity>`; it's forbidden in narrative dose regime. This is the `#!xml <hl7:effectiveTime>` with type `EIVL<TS>`.
 
-1.  The patient must take the dose given by the `#!xml <hl7:doseQuantity>` element once by day in the evening.
+    ```xml title="Example usage of single event"
+    <hl7:effectiveTime type="EIVL_TS" operator="A">
+        <hl7:event code="EVE" /> <!--(1)-->
+    </hl7:effectiveTime>
+    ```
 
-## Multiple event time interval
+    1.  The patient must take the dose given by the `#!xml <hl7:doseQuantity>` element once by day in the evening.
+    
+=== "Multiple events time interval"
 
-This is only used with the structured normal regime to define multiple daily intakes of the same dose (given by `#!xml <hl7:doseQuantity>`).
+    This is only used with the structured normal regime to define multiple daily intakes of the same dose (given by `#!xml <hl7:doseQuantity>`); it's forbidden in narrative and split dose regimes. This is the `#!xml <hl7:effectiveTime>` with type `SXPR<TS>`.
 
-!!! warning "CARA: additional requirement"
+    ```xml title="Example usage of multiple events"
+    <hl7:effectiveTime type="SXPR_TS" operator="A">
+        <hl7:comp type="EIVL_TS">
+            <hl7:event code="MORN" />
+        </hl7:comp>
+        <hl7:comp type="EIVL_TS">
+            <hl7:event code="NON" />
+        </hl7:comp>
+        <hl7:comp type="EIVL_TS">
+            <hl7:event code="NIGHT" /> <!--(1)-->
+        </hl7:comp>
+    </hl7:effectiveTime>
+    ```
 
-    The eMedication services restricts the event to the [TimingEvent (Ambu) value set](https://art-decor.org/art-decor/decor-valuesets--cdachemed-?id=2.16.756.5.30.1.127.77.12.11.2). See hereinbefore for the value set description.
-
-```xml title="Example usage"
-<hl7:effectiveTime type="SXPR_TS" operator="A">
-    <hl7:comp type="EIVL_TS">
-        <hl7:event code="MORN" />
-    </hl7:comp>
-    <hl7:comp type="EIVL_TS">
-        <hl7:event code="NON" />
-    </hl7:comp>
-    </hl7:comp>
-    <hl7:comp type="EIVL_TS">
-        <hl7:event code="NIGHT" /> <!--(1)-->
-    </hl7:comp>
-</hl7:effectiveTime>
-```
-
-1.  The patient must take the dose given by the `#!xml <hl7:doseQuantity>` element each day in the morning, at noon and at night.
+    1.  The patient must take the dose given by the `#!xml <hl7:doseQuantity>` element each day in the morning, at noon and at night.
 
 ## Repeat number
 
