@@ -19,7 +19,7 @@ See the [dedicated page](product.md).
 ### Authors
 
 They're forbidden in a MTP document and optional (but recommended) in PML and PMLC documents. The first author contains the first document author of the original MTP document that contained this MTP entry. The second author contains the section author of the original MTP section that contained this MTP entry, but only if the later is different than the former.
-
+<!-- Really optional?? -->
 Their use is described in [PML](pml.md) and [PMLC](pmlc.md) pages.
 
 ### Substitution permission
@@ -61,5 +61,3 @@ Not used.
 ### Precondition Criterion
 
 Not used.
-
-

@@ -1,5 +1,7 @@
 <hr>
 <div class="md-source-file">
+  <div class="admonition info">
+    <p class="admonition-title">
     {% if page.meta.git_revision_date_localized %}
       {{ lang.t("source.file.date.updated") }}:
       {{ page.meta.git_revision_date_localized }}
@@ -12,4 +14,6 @@
       {{ lang.t("source.file.date.updated") }}:
       {{ page.meta.revision_date }}
     {% endif %}
+    </p>
+  </div>
 </div>

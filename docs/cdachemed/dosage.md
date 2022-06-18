@@ -42,6 +42,8 @@ The moment(s) of the day at which the patient is to take the medication.
     | `EVE`   | Evening     |
     | `NIGHT` | Night       |
 
+<!-- TODO Definition -->
+
 === "Single event time interval"
     
     This is only used with the structured normal regime or split regime to define a single daily intake of the dose given by `#!xml <hl7:doseQuantity>`; it's forbidden in narrative dose regime. This is the `#!xml <hl7:effectiveTime>` with type `EIVL<TS>`.

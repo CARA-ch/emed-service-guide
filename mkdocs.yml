@@ -9,6 +9,7 @@ nav:
   - CDA-CH-EMED:
     - cdachemed/index.md
     - Documents:
+      - Common parts: cdachemed/common.md
       - MTP: cdachemed/mtp.md
       - PRE: cdachemed/pre.md
       - DIS: cdachemed/dis.md

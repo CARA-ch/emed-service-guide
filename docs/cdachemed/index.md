@@ -1,5 +1,6 @@
 # CDA-CH-EMED
 
+- [The common parts](common.md)
 - [MTP](mtp.md)
 - [PRE](pre.md)
 - [DIS](dis.md)
