@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout master
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # To access the last modified date of all files
       - name: Setup Python 3
         uses: actions/setup-python@v2
         with:
