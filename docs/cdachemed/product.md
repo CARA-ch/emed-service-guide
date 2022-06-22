@@ -14,9 +14,12 @@ The GTIN or ATC code that caracterizes the medication package (GTIN) or the medi
 
 ## Name
 
-## Form code
+<span class="must-support">Must support</span>.
 
-This code represents the pharmaceutical dose form (e.g. tablet, capsule, liquid).
+## Form code (galenic form)
+
+<span class="must-support">Must support</span>.
+This code represents the galenic form (e.g. tablet, capsule, liquid).
 
 ??? info "Recommended usage"
 
@@ -52,7 +55,7 @@ This SHALL be a GTIN; ATC is not authorized because it does not describe a speci
 
 ## As content: name
 
-
+<span class="must-support">Must support</span>.
 
 ## As content: form code
 
@@ -70,4 +73,4 @@ The capacity of the packaging.
 
 !!! info "Not supported"
 
-    Currently, ingredients are ignored by the eMedication service.
+    Currently, ingredients are ignored by the eMedication service. They're 'must support' in IPAG.

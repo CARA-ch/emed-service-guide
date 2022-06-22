@@ -24,6 +24,7 @@ Their use is described in [PML](pml.md) and [PMLC](pmlc.md) pages.
 
 ### Substitution permission
 
+<span class="should-support">Should support</span>.
 Whether the dispenser can substitute the prescribed medicine/package by another that is deemed equivalent, for medical or logistical reasons.
 By default, substitution is permitted.
 
@@ -38,6 +39,7 @@ By default, substitution is permitted.
 
 ### In reserve
 
+<span class="should-support">Should support</span>.
 Whether the patient has to unconditionaly take the medication (regular) or if the decision is up to the patient (e.g. only in case of pain; in reserve).
 The conditions under which the patient can take the medicine can be described in the _Patient Medication Instructions_ free text element.
 By default, the medication is a regular one.

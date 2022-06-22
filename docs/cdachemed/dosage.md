@@ -5,6 +5,7 @@ The dosage instructions tell the patient when and how to take the medication.
 
 ## Dose regime
 
+<span class="must-support">Must support</span>.
 The dose regime is described by an additional templateId in the `#!xml <hl7:substanceAdministration>` or the `#!xml <hl7:supply>`.
 
 !!! bug inline end "Not fully supported"
@@ -24,6 +25,7 @@ In normal dose regime, the dosage instructions can be given in structured form (
 
 ## Start and stop
 
+<span class="must-support">Must support</span>.
 The intake start and stop date (with or without time) is given by the first `#!xml <hl7:effectiveTime>`, with type `IVL<TS.CH.TZ>`. Boundaries are inclusive. The dates SHOULD be precise to the day (`YYYYMMDD`); there SHOULD be a good reason to be more precise than that.
 <!-- TODO optional in split, but cannot be redefined in the related components -->
 
@@ -90,6 +92,7 @@ The refill quantity is the same as the one provided in the item entry.
 
 ## Route of administration
 
+<span class="should-support">Should support</span>.
 !!! warning "CARA: additional requirement"
 
     The eMedication service restricts the unit to the ["RouteOfAdministration (Ambu)" value set](https://art-decor.org/art-decor/decor-valuesets--cdachemed-?id=2.16.756.5.30.1.1.11.3).
@@ -102,6 +105,7 @@ The refill quantity is the same as the one provided in the item entry.
 
 ## Dose quantity
 
+<span class="must-support">Must support</span>.
 The quantity of medication to take at each intake. 
 
 The value SHALL be a positive, non-zero, non-infinite decimal value or a double.
@@ -112,7 +116,7 @@ The value SHALL be a positive, non-zero, non-infinite decimal value or a double.
 !!! warning "CARA: additional requirements"
 
     The eMedication service restricts the unit to the ["RegularUnitCode (Ambu)" value set](https://art-decor.org/art-decor/decor-valuesets--cdachemed-?id=2.16.756.5.30.1.127.77.12.11.3).<br>
-    Furthemore, the dose SHALL be a simple quantity, not an interval.
+    Furthemore, the dose SHALL be a simple quantity, not a range.
 
 !!! error "Please avoid"
 
@@ -132,6 +136,7 @@ The value SHALL be a positive, non-zero, non-infinite decimal value or a double.
 
 ## Narrative dosage instructions
 
+<span class="must-support">Must support</span>.
 The narrative dosage instructions can only appear in the normal dose regime.
 
 ```xml title="Usage of the narrative dosage instructions"
@@ -153,6 +158,7 @@ The narrative dosage instructions can only appear in the normal dose regime.
 
 ## Related components
 
+<span class="must-support">Must support</span>.
 They are used in the split dose regime and are forbidden otherwise.
 
 ## Examples

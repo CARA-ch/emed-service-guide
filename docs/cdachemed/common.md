@@ -1,5 +1,9 @@
 # The common parts
 
+## Effective time
+
+<span class="must-support">Must support</span>.
+
 ## Authors
 
 Authors are/can be present in the document header, in the section and in the item entries.
