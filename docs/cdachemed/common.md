@@ -6,6 +6,7 @@
 
 ## Authors
 
+<span class="must-support">Must support</span>.
 Authors are/can be present in the document header, in the section and in the item entries.
 
 The author in the __document header__ is the author of the whole document, while the author in the __section__ is the one that authored the item entry. If both are the same, the section author shall not be provided. They may be different if, for example, a secretary creates a document based on the prescription of a doctor. In that case, the document author is the secretary while the entry author is the doctor.

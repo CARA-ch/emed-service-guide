@@ -15,11 +15,20 @@ The GTIN or ATC code that caracterizes the medication package (GTIN) or the medi
 ## Name
 
 <span class="must-support">Must support</span>.
+The element SHALL contain the name of the medication (e.g., "Adol 500mg Caplet").
+The medication may be either:
+
+- a brand/product or 
+- described as a generic/scientific name <!-- or -->
+<!-- - a descriptor of a magistral preparation/compound medicine -->
+
+<!-- If the medicine has no brand name (e.g., magistral preparations, compound medicine, …) `#!xml nullFlavor="NA"` SHALL be used. -->
 
 ## Form code (galenic form)
 
 <span class="must-support">Must support</span>.
 This code represents the galenic form (e.g. tablet, capsule, liquid).
+<!-- If the medicine is uncoded (e.g., magistral preparations, compound medicine, …) `#!xml nullFlavor="NA"` SHALL be used. -->
 
 ??? info "Recommended usage"
 
@@ -49,6 +58,13 @@ The medication expiration time.
 
     Dispensers SHOULD provide it, as it'll enable patient applications to alert them about incomming expiration of active treatment to allow timely re-dispensiation and avoid treatment interuption or expired medication usage.
 
+## As content
+
+This structure describes the packaging of the medication and MAY be present.
+It represents the primary description of the packaging of the medicine (e.g., the medicine is packaged in ampoules of 50ml volume each) and may include additional packaging information of how many of the primary packaged items are within an outer package (e.g., 5 ampoules are packaged in a box).
+The primary description of the package SHOULD be consistent with the given pharmaceutical dose form (`#!xml <pharm:formCode>` of the medication, see "Form Code").
+Example: a consistent pharmaceutical dose form to the package form "Ampoules" would be e.g., "Solution for injection".
+
 ## As content: code
 
 This SHALL be a GTIN; ATC is not authorized because it does not describe a specific packaging.
@@ -56,6 +72,7 @@ This SHALL be a GTIN; ATC is not authorized because it does not describe a speci
 ## As content: name
 
 <span class="must-support">Must support</span>.
+In case the package describes a product, and the package has a brand name, it SHOULD be described in this `#!xml <pharm:name>` element (e.g., Xylocaine 1% with Adrenaline Inj, 5 injections package).
 
 ## As content: form code
 
