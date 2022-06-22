@@ -2,6 +2,7 @@
 
 ## Code
 
+<strong style="color:var(--md-primary-bg-color)">Must support</strong>.
 The GTIN or ATC code that caracterizes the medication package (GTIN) or the medication substance (ATC).
 
 ```xml title="Example usage"
