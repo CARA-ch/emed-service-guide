@@ -159,7 +159,36 @@ The narrative dosage instructions can only appear in the normal dose regime.
 ## Related components
 
 <span class="must-support">Must support</span>.
-They are used in the split dose regime and are forbidden otherwise.
+They are used in the split dose regime and are forbidden otherwise. It consists of `#!xml <hl7:entryRelationship>`s that contain a `#!xml <hl7:sequenceNumber>` and a `#!xml <hl7:substanceAdministration>`. The value of the sequence number SHALL be an ordinal number, starting at 1 for the first component, and increasing by 1 for each subsequent component. Components SHALL be sent in the sequence number order.
+
+```xml title="Structure of related components"
+<entryRelationship typeCode="COMP">
+    <sequenceNumber value="1" />
+    <substanceAdministration moodCode="INT" classCode="SBADM">
+        <!-- effectiveTime[type="EIVL_TS"] and/or doseQuantity -->
+        <consumable>
+            <manufacturedProduct>
+                <manufacturedMaterial nullFlavor="NA" />
+            </manufacturedProduct>
+        </consumable>
+    </substanceAdministration>
+</entryRelationship>
+<entryRelationship typeCode="COMP">
+    <sequenceNumber value="2" />
+    <substanceAdministration moodCode="INT" classCode="SBADM">
+        <!-- effectiveTime[type="EIVL_TS"] and/or doseQuantity -->
+        <consumable>
+            <manufacturedProduct>
+                <manufacturedMaterial nullFlavor="NA" />
+            </manufacturedProduct>
+        </consumable>
+    </substanceAdministration>
+</entryRelationship>
+```
+
+The `#!xml <hl7:substanceAdministration>`s contain a null-flavored `#!xml <hl7:substanceAdministration>` and may contain an `#!xml <hl7:effectiveTime>` and/or `#!xml <hl7:doseQuantity>` (as described in "Single event time interval" and "Dose quantity").
+If absent, the value of the equivalent element in the parent `#!xml <hl7:substanceAdministration>` applies.
+Document creator SHOULD omit the parent elements and always provide both elements in the components.
 
 ## Examples
 
@@ -176,7 +205,68 @@ They are used in the split dose regime and are forbidden otherwise.
     ```
 
 === "Split dose"
-
-    ```xml
     
+    ```xml
+    <substanceAdministration classCode="SBADM" moodCode="INT">
+        <templateId root="2.16.756.5.30.1.1.10.4.34" />
+        <templateId root="1.3.6.1.4.1.19376.1.9.1.3.7" />
+        <templateId root="2.16.840.1.113883.10.20.1.24" />
+        <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7" />
+        <templateId root="1.3.6.1.4.1.19376.1.9.1.3.6" />
+        <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.9" /> <!--(1)-->
+        <id root="00000000-0000-0000-0000-000000000002" />
+        <text><reference value="#pdf_ref" /></text>
+        <statusCode code="completed" />
+        <effectiveTime xsi:type="IVL_TS">
+            <low value="202201101043+0100" />
+            <high nullFlavor="UNK" />
+        </effectiveTime>
+        <repeatNumber nullFlavor="NI"/>
+        <routeCode code="20049000" codeSystem="0.4.0.127.0.16.1.1.2.1" displayName="Nasal use" />
+        <consumable>
+            <manufacturedProduct>
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2" />
+                <templateId root="2.16.840.1.113883.10.20.1.53" />
+                <manufacturedMaterial classCode="MMAT" determinerCode="KIND">
+                    <templateId root="2.16.756.5.30.1.1.10.4.33" />
+                    <templateId root="1.3.6.1.4.1.19376.1.9.1.3.1" />
+                    <code code="7680541890365" codeSystem="2.51.1.1" codeSystemName="GTIN" displayName="NASONEX spray nasal doseur 50 mcg" />
+                    <name>NASONEX spray nasal doseur 50 mcg</name>
+                    <pharm:formCode code="10808000" codeSystem="0.4.0.127.0.16.1.1.2.1" displayName="Nasal spray, solution" />
+                </manufacturedMaterial>
+            </manufacturedProduct>
+        </consumable>
+        <entryRelationship typeCode="COMP">
+            <sequenceNumber value="1" /><!--(2)-->
+            <substanceAdministration moodCode="INT" classCode="SBADM">
+                <effectiveTime xsi:type="EIVL_TS">
+                    <event code="MORN" />
+                </effectiveTime>
+                <doseQuantity unit="{Dose}" value="2"/>
+                <consumable>
+                    <manufacturedProduct>
+                        <manufacturedMaterial nullFlavor="NA" />
+                    </manufacturedProduct>
+                </consumable>
+            </substanceAdministration>
+        </entryRelationship>
+        <entryRelationship typeCode="COMP">
+            <sequenceNumber value="2" /> <!--(3)-->
+            <substanceAdministration moodCode="INT" classCode="SBADM">
+                <effectiveTime xsi:type="EIVL_TS">
+                    <event code="EVE" />
+                </effectiveTime>
+                <doseQuantity unit="{Dose}" value="1"/>
+                <consumable>
+                    <manufacturedProduct>
+                        <manufacturedMaterial nullFlavor="NA" />
+                    </manufacturedProduct>
+                </consumable>
+            </substanceAdministration>
+        </entryRelationship>
+    </substanceAdministration>
     ```
+    
+    1.  The template ID for split dose regime.
+    2.  Two doses in the morning.
+    3.  One dose in the evening.
