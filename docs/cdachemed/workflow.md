@@ -7,3 +7,5 @@ A PRE item is purely a logistic document. It instructs the pharmacist to dispens
 A DIS item is to indicate the medication has been dispensed. It's useful to pharmacists to determine if a prescription may still be dispensed.
 
 A PADV item is used to modify the content or the status, or to comment the previous items.
+
+<!-- TODO restrictions about DocumentEntry -->

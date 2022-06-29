@@ -5,6 +5,8 @@
 <span class="must-support">Must support</span>.
 The GTIN or ATC code that caracterizes the medication package (GTIN) or the medication substance (ATC).
 
+<!-- TODO only medication or other products that have a GTIN? -->
+
 ```xml title="Example usage"
 <code code="7680538751228" codeSystem="2.51.1.1" codeSystemName="GTIN" displayName="TRIATEC Tabl 2.5 mg 100 Stk" />
 <code code="M04AC01" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC" displayName="Colchicine" /> <!-- (1) -->

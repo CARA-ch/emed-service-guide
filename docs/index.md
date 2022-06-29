@@ -1,6 +1,6 @@
-# CARA's eMedication service Implementation Guide
+# CARA's eMedication service Integration Guide
 
-Welcome to the Implementation Guide for the eMedication service of CARA's community.
+Welcome to the Integration Guide for the eMedication service of CARA's community.
 
 - [Transactions](transactions/index.md)
 - [CDA-CH-EMED](cdachemed/index.md)
