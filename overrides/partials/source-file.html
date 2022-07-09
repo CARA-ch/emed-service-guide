@@ -1,7 +1,7 @@
 <hr>
 <div class="md-source-file last-edited">
   {% if page.meta.git_revision_date_localized %}
-    {{ lang.t("source.file.date.updated") }}:
+    This page was updated
     {{ page.meta.git_revision_date_localized }}
     {% if page.meta.git_creation_date_localized %}
       <br>
@@ -9,7 +9,7 @@
       {{ page.meta.git_creation_date_localized }}
     {% endif %}
   {% elif page.meta.revision_date %}
-    {{ lang.t("source.file.date.updated") }}:
+    This page was updated on
     {{ page.meta.revision_date }}
   {% endif %}
 </div>
