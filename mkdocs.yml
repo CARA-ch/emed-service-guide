@@ -20,7 +20,10 @@ nav:
       - Product: cdachemed/product.md
     - Workflow:
       - cdachemed/workflow.md
-  - CH-APPC: chappc/index.md
+  - CH-APPC:
+    - chappc/index.md
+    - Format: chappc/format.md
+    - Usage: chappc/usage.md
   - CH-EMED: chemed/index.md
 markdown_extensions:
 #  - smarty
