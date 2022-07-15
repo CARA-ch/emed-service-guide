@@ -55,7 +55,8 @@ Forbidden in a MTP or PML document, mandatory in a PMLC document.
 
 ### Patient medication instructions
 
-The patient medication instructions are comments from the author to the patient. It SHALL not contain human readable dosage instructions (see the [dosage page](dosage.md) for that use), it may contain general comments (e.g. "take with food").
+The patient medication instructions are comments from the author to the patient.
+It SHALL not contain human readable dosage instructions (see the [dosage page](dosage.md) for that use), it may contain additional information on intake (e.g. "take with food"), on storage (e.g. "store at ambient temperature").
 
 ```xml title="Example usage of the patient medication instructions"
 <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -76,7 +77,8 @@ The patient medication instructions are comments from the author to the patient.
 
 ### Fulfillment instructions
 
-The instructions are comments from the author to the prescriber and/or dispenser. It SHALL not be provided by a patient or representative.
+The instructions are comments from the author to the prescriber and/or dispenser.
+It SHALL not be provided by a patient or representative.
 
 ```xml title="Example usage of the fulfillment instructions"
 <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -103,7 +105,7 @@ Not supported currently.
 
 <span class="should-support">Should support</span>.
 Whether the dispenser can substitute the prescribed medicine/package by another that is deemed equivalent, for medical or logistical reasons.
-By default, substitution is permitted.
+By default, substitution is authorized.
 It SHALL not appear more than once.
 
 !!! warning "CARA: additional requirement"
@@ -142,7 +144,7 @@ Use case not clear yet.
 ### In reserve
 
 <span class="should-support">Should support</span>. Swiss extension, only described in ArtDecor.
-Whether the patient has to unconditionaly take the medication (regular) or if the decision is up to the patient (e.g. only in case of pain; in reserve).
+This is an entry to specify if the medication is "in reserve" (Reservemedikation; médicament en réserve; to be taken by the patient only if the need arises - e.g. pains) or if it's regular (Grundmedikation; traitement de base/de fond?; to be always taken).
 The conditions under which the patient can take the medicine can be described in the _Patient Medication Instructions_ free text element.
 By default, the medication is a regular one.
 
