@@ -147,6 +147,7 @@ Use case not clear yet.
 This is an entry to specify if the medication is "in reserve" (Reservemedikation; médicament en réserve; to be taken by the patient only if the need arises - e.g. pains) or if it's regular (Grundmedikation; traitement de base/de fond?; to be always taken).
 The conditions under which the patient can take the medicine can be described in the _Patient Medication Instructions_ free text element.
 By default, the medication is a regular one.
+If the medication is in reserve, the structured dosage instructions represent the maximum dosage the patient can take.
 
 ```xml title="Example usage of the in reserve extension"
 <entryRelationship typeCode="COMP">
