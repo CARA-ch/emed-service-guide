@@ -28,13 +28,9 @@ The medication may be either:
 
 ## Form code (galenic form)
 
-<span class="must-support">Must support</span>.
-This code represents the galenic form (e.g. tablet, capsule, liquid).
+This code represents the galenic form (e.g. tablet, capsule, liquid). It's optional and can be omitted when the information can be found with the GTIN or ATC code.
 <!-- If the medicine is uncoded (e.g., magistral preparations, compound medicine, …) `#!xml nullFlavor="NA"` SHALL be used. -->
-
-??? info "Recommended usage"
-
-    table
+<!-- Recommended usage -->
 
 ## Lot number text
 
