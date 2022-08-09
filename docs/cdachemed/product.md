@@ -3,7 +3,11 @@
 ## Code
 
 <span class="must-support">Must support</span>.
-The GTIN or ATC code that caracterizes the medication package (GTIN) or the medication substance (ATC).
+The GTIN or ATC code that caracterizes the medication package (GTIN) or the medication substance (ATC) SHALL be provided.
+
+!!! warning "CARA: additional requirement"
+
+    Products without ATC or GTIN codes are currently not supported. Magistral preparations may have an ATC code, they're partially supported.
 
 <!-- TODO only medication or other products that have a GTIN? -->
 
