@@ -32,6 +32,7 @@ The intake start and stop date (with or without time) is given by the first `#!x
 ## Medication frequency
 
 The moment(s) of the day at which the patient is to take the medication.
+If the medication is in reserve, this represents the maximum quantity the patient may take.
 
 !!! warning "CARA: additional requirement"
 
@@ -106,7 +107,7 @@ The refill quantity is the same as the one provided in the item entry.
 ## Dose quantity
 
 <span class="must-support">Must support</span>.
-The quantity of medication to take at each intake. 
+The quantity of medication to take at each intake.
 
 The value SHALL be a positive, non-zero, non-infinite decimal value or a double.
 
