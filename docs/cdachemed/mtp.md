@@ -151,7 +151,7 @@ If the medication is in reserve, the structured dosage instructions represent th
 
 ```xml title="Example usage of the in reserve extension"
 <entryRelationship typeCode="COMP">
-    <act classCode="DEF" moodCode="ACT">
+    <act classCode="ACT" moodCode="DEF">
         <templateId root="2.16.756.5.30.1.1.10.10" />
         <code code="225761000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED Clinical Terms" displayName="As required (qualifier value)" /> <!--(1)-->
         <statusCode code="completed"/>
