@@ -108,17 +108,13 @@ ol {
 .md-main__inner {
     margin-top: 0;
 }
-.md-sidebar {
-    height: 100%;
-    top: 0;
+body[data-md-color-scheme="default"] .md-content {
+    border: 1px solid #e6e6e6;
+    box-shadow: 0px 0px 100px 50px rgb(0 0 0 / 4%);
 }
-body[data-md-color-scheme="default"] .md-sidebar {
-    border-right: 1px solid #e6e6e6;
-    background: linear-gradient(90deg, #fff 0%, rgba(244,244,244,1) 100%);
-}
-body[data-md-color-scheme="slate"] .md-sidebar {
-    border-right: 1px solid #20212a;
-    background: linear-gradient(90deg, var(--md-default-bg-color) 0%, #0000001a 100%);
+body[data-md-color-scheme="slate"] .md-content {
+    border: 1px solid #20212a;
+    box-shadow: 0px 0px 100px 50px #0000001a;
 }
 .md-nav {
     font-size: 15px;
