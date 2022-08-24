@@ -11,6 +11,10 @@ It's an `#!xml <hl7:observation>`.
 ### Type
 
 
+### Text
+
+In PADV COMMENT: it contains the actual comment.
+In PADV OK, SUSPEND, CANCEL, REFUSE, CHANGE: it contains the narrative representation of the item entry.
 
 ### Status code
 
@@ -36,3 +40,8 @@ The date at which the entry becomes effective (optional); if absent, the item be
 ```xml title="Usage example"
 <hl7:effectiveTime value="20220123123000+0100" />
 ```
+
+### Annotation comment
+
+In PADV OK, SUSPEND, CANCEL, REFUSE, CHANGE: it is used to express the reason why the action was done.
+There's no use-case for PADV COMMENTs.
