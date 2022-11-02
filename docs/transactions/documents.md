@@ -1,5 +1,9 @@
 # Documents
 
+## Content
+
+The eMedication service only support [CH-APPC](../chappc/index.md) and [CH-EMED](../chemed/index.md) documents.
+
 ## Metadata
 
 When two cardinalities are given, the first one is for Content Sender actors and the second one for the Document Repository actor.

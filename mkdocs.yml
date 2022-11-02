@@ -5,7 +5,14 @@ site_author: Quentin Ligier
 copyright: Copyright &copy; 2022 Quentin Ligier
 nav:
   - Home: index.md
-  - Transactions: transactions/index.md
+  - Transactions:
+    - transactions/index.md
+    - Documents: transactions/documents.md
+    - ITI-18: transactions/iti18.md
+    - ITI-41: transactions/iti41.md
+    - ITI-43: transactions/iti43.md
+    - ITI-57: transactions/iti57.md
+    - CH:PHARM-1: transactions/chpharm1.md
   - CDA-CH-EMED:
     - cdachemed/index.md
     - Documents:

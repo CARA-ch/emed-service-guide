@@ -10,6 +10,8 @@ Implemented transactions are ITI-18, ITI-41, ITI-43, ITI-57 and CH:PHARM-1.
 * [ITI-57](iti57.md)
 * [CH:PHARM-1](chpharm1.md)
 
+For details about documents (content and metadata), see the [Documents page](documents.md).
+
 !!! tip
 
     MHD-equivalent transactions will be implemented in the future.
