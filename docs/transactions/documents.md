@@ -36,7 +36,7 @@ When two cardinalities are given, the first one is for Content Sender actors and
 | mimeType                       |      1      | `text/xml`   | `application/fhir+xml` or `application/fhir+json`            | Single value                                      |
 | objectType                     |      1      |              |                                                              | Only "stable" for Content Senders                 | <!-- Reviewed -->
 | originalProviderRole           |    TODO     |              |                                                              |                                                   |
-| patientId                      |      1      |              |                                                              | MPI-PID or EPR-SPID?                              |
+| patientId                      |      1      |              |                                                              | The XAD-PID                                       | <!-- Reviewed -->
 | practiceSettingCode            |      1      |              |                                                              |                                                   |
 | referenceIdList                |  0..* / 0   |              |                                                              | Ignored by the eMedication service                | <!-- Reviewed -->
 | repositoryUniqueId             |  0..1 / 1   |              |                                                              |                                                   |

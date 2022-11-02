@@ -1,9 +1,12 @@
 # CH:PHARM-1: Query Pharmacy Documents
 
 CH:PHARM-1 (Query Pharmacy Documents) is an extension of PHARM-1, a transaction defined by IHE Pharmacy in [the CMPD profile](https://www.ihe.net/uploadedFiles/Documents/Pharmacy/IHE_Pharmacy_Suppl_CMPD.pdf), §3.1.
-It only adds a new stored query, _FindMedicationCard_.
 
 The eMedication service doesn't support CMA documents and these won't be present in any response.
+
+## Stored queries
+
+CH:PHARM-1 defines a new stored query, _FindMedicationCard_.
 
 ### FindMedicationTreatmentPlans
 
@@ -13,9 +16,17 @@ Implemented, as per IHE specs.
 
 Implemented, as per IHE specs.
 
+**Query parameters**
+
+1. *$XDSDocumentEntryPatientId*: The patient XAD-PID.
+
 ### FindDispenses
 
 Implemented, as per IHE specs.
+
+**Query parameters**
+
+1. *$XDSDocumentEntryPatientId*: The patient XAD-PID.
 
 ### FindMedicationAdministrations
 
@@ -25,13 +36,25 @@ Implemented, as per IHE specs.
 
 ❓ Return only prescriptions that are temporary?
 
+**Query parameters**
+
+1. *$XDSDocumentEntryPatientId*: The patient XAD-PID.
+
 ### FindPrescriptionsForDispense
 
 Return only prescriptions that are actually "open|valid" (i.e. dispensable).
 
+**Query parameters**
+
+1. *$XDSDocumentEntryPatientId*: The patient XAD-PID.
+
 ### FindMedicationList
 
 Only documents that are linked to an MTP are considered in this query.
+
+**Query parameters**
+
+1. *$XDSDocumentEntryPatientId*: The patient XAD-PID.
 
 ### FindMedicationCard (🇨🇭)
 
@@ -53,7 +76,7 @@ This transaction is a Swiss extension and is copied from the _FindMedicationList
 | $XDSDocumentEntryServiceEndTo     | N/A                           | O   | --   |
 | $XDSDocumentEntryType             | N/A                           | O   | M    |
 
-1. *$XDSDocumentEntryPatientId*: TODO
+1. *$XDSDocumentEntryPatientId*: The patient XAD-PID.
 2. *$XDSDocumentEntryStatus*: TODO
 3. *$XDSDocumentEntryFormatCode*: TODO
 4. *$XDSDocumentEntryLanguageCode*: the language that will be used to generate the medication card. If not specified, the eMedication service uses the default language (french).
