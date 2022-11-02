@@ -6,16 +6,6 @@
 
 ## Item entry
 
-It's an `#!xml <hl7:substanceAdministration>`.
-
-### Dosage instructions
-
-See the [dedicated page](dosage.md).
-
-### Product and package
-
-See the [dedicated page](product.md).
-
 ### Authors
 
 They're forbidden in a MTP document and SHALL be provided in PML and PMLC documents.
@@ -23,35 +13,6 @@ The first author contains the first document author of the original MTP document
 The second author contains the section author of the original MTP section that contained this MTP entry, but only if the later is different than the former.
 Their use is described in [PML](pml.md) and [PMLC](pmlc.md) pages.
 
-### Reference to the Treatment Reason Entry Content Module
-
-Not used, see below for the treatment reason as free text.
-
-### Treatment reason
-
-Swiss extension.
-The treatment reason as a free text.
-Authors SHOULD keep it as simple and short as possible (e.g. "blood clog", "hypertension").
-
-```xml title="Example usage of the treatment reason"
-<entryRelationship typeCode="RSON">
-    <observation classCode="OBS" moodCode="EVN">
-        <templateId root="2.16.756.5.30.1.1.10.4.41"/>
-        <code code="75326-9" codeSystem="2.16.840.1.113883.6.1" displayName="Problem" codeSystemName="LOINC"/>
-        <text>
-            Pain <!--(1)-->
-            <reference value="#ref"/>
-        </text>
-        <statusCode code="completed"/>
-    </observation>
-</entryRelationship>
-```
-
-  1.  Change this text as needed.
-
-### Reference to the original Medication Treatment Plan Item
-
-Forbidden in a MTP or PML document, mandatory in a PMLC document.
 
 ### Patient medication instructions
 
@@ -80,62 +41,9 @@ It SHALL not contain human readable dosage instructions (see the [dosage page](d
 The instructions are comments from the author to the prescriber and/or dispenser.
 It SHALL not be provided by a patient or representative.
 
-```xml title="Example usage of the fulfillment instructions"
-<entryRelationship typeCode="SUBJ" inversionInd="true">
-    <act classCode="ACT" moodCode="INT">
-        <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.3.1" />
-        <templateId root="2.16.840.1.113883.10.20.1.43" />
-        <code code="FINSTRUCT" codeSystem="1.3.6.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode" />
-        <text>
-            Please cut some tablets in half for the patient. Patient weights 67 kg. <!--(1)-->
-            <reference value="#ref" />
-        </text>
-        <statusCode code="completed"/>
-    </act>
-</entryRelationship>
-```
-
-  1.  Change this text as needed.
-
-### Amount of units of the consumable to dispense
-
-Not supported currently.
-
-### Substitution permission
-
-<span class="should-support">Should support</span>.
-Whether the dispenser can substitute the prescribed medicine/package by another that is deemed equivalent, for medical or logistical reasons.
-By default, substitution is authorized.
-It SHALL not appear more than once.
-
-!!! warning "CARA: additional requirement"
-
-    The eMedication services restricts the substitution permissions to the following two values:
-    
-    | Permission | Description |
-    | ---------- | ----------- |
-    | `E`        | Equivalent, subsitution is authorized |
-    | `NONE`     | None, substitution is disallowed      |
-
-```xml title="Example usage of the substitution permission"
-<entryRelationship typeCode="COMP">
-    <act classCode="ACT" moodCode="DEF">
-        <templateId root="1.3.6.1.4.1.19376.1.9.1.3.9.1" />
-        <code code="E" codeSystem="2.16.840.1.113883.5.1070" codeSystemName="Substance Admin Substitution" displayName="equivalent" /> <!--(1)-->
-        <statusCode code="completed" />
-    </act>
-</entryRelationship>
-```
-
-  1.  Change this code as needed.
-
 ### ID of parent container
 
 Forbidden in a MTP or PMLC document, mandatory in a PML document. It contains the ID of the document that originally introduced this MTP entry.
-
-### Precondition Criterion
-
-Not used.
 
 ### Annotation comment
 

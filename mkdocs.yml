@@ -26,7 +26,7 @@ nav:
     - Usage: chappc/usage.md
   - CH-EMED: chemed/index.md
 markdown_extensions:
-#  - smarty
+  - smarty
   - admonition
   - attr_list
   - md_in_html
