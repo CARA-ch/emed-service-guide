@@ -8,6 +8,11 @@ The eMedication service doesn't support CMA documents and these won't be present
 
 CH:PHARM-1 defines a new stored query, _FindMedicationCard_.
 
+**Common query parameters**
+
+* *$MetadataLevel*: If present, the attribute shall equal to "1", as per *Nationale Anpassungen der Integrationsprofile nach Artikel 5 Absatz 1 Buchstabe b EPDV-EDI*.
+* *$XDSDocumentEntryPatientId*: The patient XAD-PID.
+
 ### FindMedicationTreatmentPlans
 
 Implemented, as per IHE specs.
@@ -18,15 +23,11 @@ Implemented, as per IHE specs.
 
 **Query parameters**
 
-1. *$XDSDocumentEntryPatientId*: The patient XAD-PID.
+* *$XDSDocumentEntryPatientId*: The patient XAD-PID.
 
 ### FindDispenses
 
 Implemented, as per IHE specs.
-
-**Query parameters**
-
-1. *$XDSDocumentEntryPatientId*: The patient XAD-PID.
 
 ### FindMedicationAdministrations
 
@@ -36,25 +37,13 @@ Implemented, as per IHE specs.
 
 ❓ Return only prescriptions that are temporary?
 
-**Query parameters**
-
-1. *$XDSDocumentEntryPatientId*: The patient XAD-PID.
-
 ### FindPrescriptionsForDispense
 
 Return only prescriptions that are actually "open|valid" (i.e. dispensable).
 
-**Query parameters**
-
-1. *$XDSDocumentEntryPatientId*: The patient XAD-PID.
-
 ### FindMedicationList
 
 Only documents that are linked to an MTP are considered in this query.
-
-**Query parameters**
-
-1. *$XDSDocumentEntryPatientId*: The patient XAD-PID.
 
 ### FindMedicationCard (🇨🇭)
 
@@ -76,10 +65,10 @@ This transaction is a Swiss extension and is copied from the _FindMedicationList
 | $XDSDocumentEntryServiceEndTo     | N/A                           | O   | --   |
 | $XDSDocumentEntryType             | N/A                           | O   | M    |
 
-1. *$XDSDocumentEntryPatientId*: The patient XAD-PID.
-2. *$XDSDocumentEntryStatus*: TODO
-3. *$XDSDocumentEntryFormatCode*: TODO
-4. *$XDSDocumentEntryLanguageCode*: the language that will be used to generate the medication card. If not specified, the eMedication service uses the default language (french).
+
+* *$XDSDocumentEntryStatus*: TODO
+* *$XDSDocumentEntryFormatCode*: TODO
+* *$XDSDocumentEntryLanguageCode*: the language that will be used to generate the medication card. If not specified, the eMedication service uses the default language (french).
 
   | Supported language | code    |
   | ------------------ | ------- |
@@ -88,6 +77,6 @@ This transaction is a Swiss extension and is copied from the _FindMedicationList
   | Italiano           | `it-CH` |
   | English            | `en`    |
 
-5. *$XDSDocumentEntryServiceStartFrom*, *$XDSDocumentEntryServiceStartTo*: TODO
-6. *$XDSDocumentEntryServiceEndFrom*, *$XDSDocumentEntryServiceEndTo*: TODO
-7. *$XDSDocumentEntryType*: stable and/or on-demand. Stable documents are PML documents that have been generated and saved, on-demand are documents that can be generated. There's no stable PML in the eMedication service (the response is empty for requests that only specify stable types). If absent, all types are returned. A single on-demand document is returned.
+* *$XDSDocumentEntryServiceStartFrom*, *$XDSDocumentEntryServiceStartTo*: TODO
+* *$XDSDocumentEntryServiceEndFrom*, *$XDSDocumentEntryServiceEndTo*: TODO
+* *$XDSDocumentEntryType*: stable and/or on-demand. Stable documents are PML documents that have been generated and saved, on-demand are documents that can be generated. There's no stable PML in the eMedication service (the response is empty for requests that only specify stable types). If absent, all types are returned. A single on-demand document is returned.

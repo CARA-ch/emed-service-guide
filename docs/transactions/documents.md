@@ -10,7 +10,7 @@ When two cardinalities are given, the first one is for Content Sender actors and
 
 | DocumentEntry                  | Cardinality | APPC         | CH-EMED                                                      | Comment                                           |
 | ------------------------------ | :---------: | ------------ | ------------------------------------------------------------ | ------------------------------------------------- |
-| author                         |      M      |              |                                                              |                                                   |
+| author                         |    0..*     |              | `Composition.author`                                         |                                                   |
 | author.authorInstitution       |      M      |              | Mapping                                                      |                                                   |
 | author.authorPerson            |      1      |              | Mapping                                                      |                                                   |
 | author.authorRole              |      1      |              |                                                              |                                                   |
@@ -35,7 +35,7 @@ When two cardinalities are given, the first one is for Content Sender actors and
 | logicalID                      |  0..1 / 1   |              | `Bundle.identifier.value` and `Composition.identifier.value` | Same value as the `entryUUID`                     |
 | mimeType                       |      1      | `text/xml`   | `application/fhir+xml` or `application/fhir+json`            | Single value                                      |
 | objectType                     |      1      |              |                                                              | Only "stable" for Content Senders                 | <!-- Reviewed -->
-| originalProviderRole           |    TODO     |              |                                                              |                                                   |
+| originalProviderRole           |      1      |              |                                                              |                                                   | <!-- Reviewed -->
 | patientId                      |      1      |              |                                                              | The XAD-PID                                       | <!-- Reviewed -->
 | practiceSettingCode            |      1      |              |                                                              |                                                   |
 | referenceIdList                |  0..* / 0   |              |                                                              | Ignored by the eMedication service                | <!-- Reviewed -->
@@ -53,11 +53,11 @@ When two cardinalities are given, the first one is for Content Sender actors and
 
 **Value sets**:
 
+1. [author.authorRole](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.authorRole.html)
+1. [author.authorSpecialty](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.authorSpeciality.html)
+1. deletionStatus <!-- TODO https://github.com/hl7ch/ch-epr-term/issues/11 -->
+1. [eventCodeList](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.eventCodeList.html)
 1. [healthcareFacilityTypeCode](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.healthcareFacilityTypeCode.html)
-2. [languageCode](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.languageCode.html)
-4. deletionStatus <!-- TODO https://github.com/hl7ch/ch-epr-term/issues/11 -->
-5. [eventCodeList](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.eventCodeList.html)
-6. [practiceSettingCode](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.practiceSettingCode.html)
-7. [originalProviderRole](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.originalProviderRole.html)
-8. [author.authorRole](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.authorRole.html)
-9. [author.authorSpecialty](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.authorSpeciality.html)
+1. [languageCode](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.languageCode.html)
+1. [originalProviderRole](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.originalProviderRole.html)
+1. [practiceSettingCode](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.practiceSettingCode.html)
