@@ -67,7 +67,14 @@ This transaction is a Swiss extension and is copied from the _FindMedicationList
 
 
 * *$XDSDocumentEntryStatus*: TODO
-* *$XDSDocumentEntryFormatCode*: TODO
+* *$XDSDocumentEntryFormatCode*: this parameter is used to determine what will be the type of the generated medication card:
+
+  | Supported format code                      | Processing                                     |
+  | ------------------------------------------ | ---------------------------------------------- |
+  | `urn:che:epr:ch-emed:medication-card:2022` | The medication card is a CH-EMED-EPR document. |
+  | `urn:che:epr:EPR_Unstructured_Document`    | The medication card is a PDF document.         |
+
+
 * *$XDSDocumentEntryLanguageCode*: the language that will be used to generate the medication card. If not specified, the eMedication service uses the default language (french).
 
   | Supported language | code    |
