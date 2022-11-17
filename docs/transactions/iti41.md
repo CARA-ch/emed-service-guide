@@ -1,5 +1,7 @@
 # ITI-41
 
+DocumentEntry metadata are described in [documents](documents.md). Additional constraints are described here.
+
 ## Publishing a CH-EMED-EPR document
 
 When publishing a CH-EMED-EPR documents, all references (from the key elements) shall be known to the eMedication service.

@@ -7,12 +7,13 @@ nav:
   - Home: index.md
   - Transactions:
     - transactions/index.md
-    - Documents: transactions/documents.md
     - 'XDS: publish documents (ITI-41)': transactions/iti41.md
     - 'XDS: retrieve documents (ITI-43)': transactions/iti43.md
     - 'XDS: search documents (ITI-18)': transactions/iti18.md
     - 'XDS: delete documents (ITI-57)': transactions/iti57.md
     - 'XDS: search pharmacy documents (CH:PHARM-1)': transactions/chpharm1.md
+    - Documents: transactions/documents.md
+    - 'Date processing': transactions/date_processing.md
   - CDA-CH-EMED:
     - cdachemed/index.md
     - Documents:
