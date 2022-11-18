@@ -45,11 +45,15 @@ Return only prescriptions that are actually "open|valid" (i.e. dispensable).
 
 Only documents that are linked to an MTP are considered in this query.
 
+The on-demand document is deleted from the registry 24 hours after it was last retrieved in a (pharmacy) search query. Entry selection (via the search query execution) is done at document retrieval time, not search time.
+
 ### FindMedicationCard (🇨🇭)
 
 This transaction is a Swiss extension and is copied from the _FindMedicationList_ stored query.
 
 **Stored query ID**: `urn:uuid:a8fc04c1-5fb0-45a9-bc59-7a59958beb38`
+
+The on-demand document is deleted from the registry 24 hours after it was last retrieved in (pharmacy) search query. Treatment selection (via the search query execution) is done at document retrieval time, not search time.
 
 **Query parameters**
 

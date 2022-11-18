@@ -2,6 +2,12 @@
 
 Nothing special about the transaction, implemented as per the spec. All documents are retrievable with an ITI-43 transaction (with the proper access rights).
 
+## Stable documents
+
+## On-demand documents
+
+Generations rules for CH-EMED-EPR [PML (Medication List)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html) and [PMLC (Medication Card)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) documents are described in the CH-EMED-EPR IG.
+
 ## Error codes
 
 All of these can be errors or warnings.
