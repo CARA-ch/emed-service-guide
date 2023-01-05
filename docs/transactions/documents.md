@@ -10,13 +10,13 @@ When two cardinalities are given, the first one is for Content Sender actors and
 
 | DocumentEntry                  | Cardinality | Comment                                           |
 | ------------------------------ | :---------: | ------------------------------------------------- |
-| author                         |    0..*     |                                                   |
+| author                         |    0..*     | It's 1..* for eMed documents                      |
 | author.authorInstitution       |      M      |                                                   |
 | author.authorPerson            |      1      |                                                   |
 | author.authorRole              |      1      |                                                   |
 | author.authorSpecialty         |    0..?     |                                                   |
 | author.authorTelecommunication |      M      |                                                   |
-| availabilityStatus             |  0..1 / 1   | Only "Approved" for Content Senders               |   <!-- Reviewed -->
+| availabilityStatus             |  0..1 / 1   | Only "Approved" for Content Senders               | <!-- Reviewed -->
 | classCode                      |      1      |                                                   |
 | comments                       |    0..1     |                                                   |
 | confidentialityCode            |      1      | Only "Normal"                                     | <!-- Reviewed -->
