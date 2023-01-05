@@ -57,7 +57,7 @@ Mapping per document type are given in [the ITI-41 page](iti41.md).
 
 1. [author.authorRole](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.authorRole.html)
 1. [author.authorSpecialty](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.authorSpeciality.html)
-1. deletionStatus <!-- TODO https://github.com/hl7ch/ch-epr-term/issues/11 -->
+1. [deletionStatus](https://fhir.ch/ig/ch-epr-mhealth/ValueSet-ch-ehealth-valueset-deletionstatus.html) <!-- TODO https://github.com/hl7ch/ch-epr-term/issues/11 -->
 1. [eventCodeList](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.eventCodeList.html)
 1. [healthcareFacilityTypeCode](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.healthcareFacilityTypeCode.html)
 1. [languageCode](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.languageCode.html)
