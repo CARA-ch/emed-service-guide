@@ -48,7 +48,7 @@ When two cardinalities are given, the first one is for Content Sender actors and
 | title                          |      1      |                                                   |
 | typeCode                       |      1      |                                                   |
 | uniqueId                       |      1      |                                                   |
-| URI                            |    0 / 1    |                                                   | <!-- TODO MHD download link? -->
+| URI                            |    0 / 1    | It contains the MHD download link                 |
 | version                        |  0..1 / 1   | Only "1"                                          | <!-- Reviewed -->
 
 Mapping per document type are given in [the ITI-41 page](iti41.md).
