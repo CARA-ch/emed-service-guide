@@ -61,7 +61,7 @@ The on-demand document is deleted from the registry 24 hours after it was last r
   | --------------------------------- | ----------------------------- | --- | ---- |
   | $XDSDocumentEntryPatientId        | XDSDocumentEntry.patientId    | R   | --   |
   | $XDSDocumentEntryStatus           | XDSDocumentEntry.objectType   | R   | M    |
-  | $XDSDocumentEntryFormatCode       | XDSDocumentEntry.formatCode   | O   | M    |
+  | $XDSDocumentEntryFormatCode       | XDSDocumentEntry.formatCode   | O   | --   |
   | $XDSDocumentEntryLanguageCode     | XDSDocumentEntry.languageCode | O   | --   |
   | $XDSDocumentEntryServiceStartFrom | N/A                           | O   | --   |
   | $XDSDocumentEntryServiceStartTo   | N/A                           | O   | --   |
@@ -73,10 +73,10 @@ The on-demand document is deleted from the registry 24 hours after it was last r
   * *$XDSDocumentEntryStatus*: TODO
   * *$XDSDocumentEntryFormatCode*: this parameter is used to determine what will be the type of the generated medication card:
 
-    | Supported format code                      | Processing                                     |
-    | ------------------------------------------ | ---------------------------------------------- |
-    | `urn:che:epr:ch-emed:medication-card:2022` | The medication card is a CH-EMED-EPR document. |
-    | `urn:che:epr:EPR_Unstructured_Document`    | The medication card is a PDF document.         |
+    | Supported format code                      | Processing                                                 |
+    | ------------------------------------------ | ---------------------------------------------------------- |
+    | `urn:che:epr:ch-emed:medication-card:2022` | By default. The medication card is a CH-EMED-EPR document. |
+    | `urn:che:epr:EPR_Unstructured_Document`    | The medication card is a PDF document.                     |
 
 
   * *$XDSDocumentEntryLanguageCode*: the language that will be used to generate the medication card. If not specified, the eMedication service uses the default language (french).
