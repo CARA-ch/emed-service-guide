@@ -7,6 +7,7 @@ nav:
   - Home: index.md
   - Transactions:
     - transactions/index.md
+    - 'Auth': transactions/auth.md
     - 'XDS: publish documents (ITI-41)': transactions/iti41.md
     - 'XDS: retrieve documents (ITI-43)': transactions/iti43.md
     - 'XDS: search documents (ITI-18)': transactions/iti18.md
@@ -31,7 +32,6 @@ nav:
   - CH-APPC:
     - chappc/index.md
     - Format: chappc/format.md
-    - Usage: chappc/usage.md
   - CH-EMED: chemed/index.md
 markdown_extensions:
   - smarty

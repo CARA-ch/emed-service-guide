@@ -4,4 +4,3 @@ Currently drafting the [swiss specification in ArtDecor](https://art-decor.org/a
 Only a subset of the specification is supported in the eMedication service.
 
 - [Description of the file format](format.md).
-- [Usage in the eMedication aggregator](usage.md).
