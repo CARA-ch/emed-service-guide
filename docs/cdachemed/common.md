@@ -1,5 +1,9 @@
 # The common parts
 
+!!! error "The support for the CDA-CH-EMED format has been dropped"
+
+    Since January, 2023, the eMedication aggregator only supports the FHIR-based CH-EMED format. This page will removed in the future.
+
 ## Effective time
 
 <span class="must-support">Must support</span>.

@@ -4,4 +4,4 @@ CH-EMED is a FHIR equivalent to CDA-CH-EMED. Its specification is given in [http
 
 !!! tip
 
-    This format is not yet supported by the eMedication service but will be in the future.
+    This format is the only one supported by the eMedication service since January, 2023.

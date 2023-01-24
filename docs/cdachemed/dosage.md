@@ -1,5 +1,9 @@
 # Dosage instructions
 
+!!! error "The support for the CDA-CH-EMED format has been dropped"
+
+    Since January, 2023, the eMedication aggregator only supports the FHIR-based CH-EMED format. This page will removed in the future.
+
 The dosage instructions tell the patient when and how to take the medication.
 [ArtDecor template](https://art-decor.org/art-decor/decor-templates--cdachemed-?id=2.16.756.5.30.1.1.10.4.35).
 

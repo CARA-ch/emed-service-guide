@@ -13,7 +13,7 @@ This behavior cannot be modified.
 
 !!! bug "Not implemented"
 
-    This is not supported yet because CARA's plateform does not expose its representative directory.
+    This is not supported yet because CARA's platform does not expose its representative directory.
 
 ### Healthcare professional
 

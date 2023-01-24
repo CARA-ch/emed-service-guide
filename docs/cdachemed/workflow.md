@@ -1,5 +1,9 @@
 # Workflow
 
+!!! error "The support for the CDA-CH-EMED format has been dropped"
+
+    Since January, 2023, the eMedication aggregator only supports the FHIR-based CH-EMED format. This page will removed in the future.
+
 An MTP item is to insert a medication into the patient's treatment plan and instruct the patient to take it, even if it wasn't prescribed or dispensed: the patient may already have it.
 
 A PRE item is purely a logistic document. It instructs the pharmacist to dispense that medication and allow reimbursment by insurances. Paper prescriptions combine these two usages.
