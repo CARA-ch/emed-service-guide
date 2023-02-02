@@ -45,7 +45,7 @@ Return only prescriptions that are actually "open|valid" (i.e. dispensable).
 
 Only documents that are linked to an MTP are considered in this query.
 
-The on-demand document is deleted from the registry 24 hours after it was last retrieved in a (pharmacy) search query. Entry selection (via the search query execution) is done at document retrieval time, not search time.
+Entry selection (via the search query execution) is done at document retrieval time, not search time.
 
 ### FindMedicationCard (🇨🇭)
 
@@ -53,7 +53,7 @@ This transaction is a Swiss extension and is copied from the _FindMedicationList
 
 **Stored query ID**: `urn:uuid:a8fc04c1-5fb0-45a9-bc59-7a59958beb38`
 
-The on-demand document is deleted from the registry 24 hours after it was last retrieved in (pharmacy) search query. Treatment selection (via the search query execution) is done at document retrieval time, not search time.
+Treatment selection (via the search query execution) is done at document retrieval time, not search time.
 
 **Query parameters**
 
@@ -70,7 +70,7 @@ The on-demand document is deleted from the registry 24 hours after it was last r
   | $XDSDocumentEntryType             | N/A                           | O   | M    |
 
 
-  * *$XDSDocumentEntryStatus*: TODO
+  * *$XDSDocumentEntryStatus*: This parameter is not used.
   * *$XDSDocumentEntryFormatCode*: this parameter is used to determine what will be the type of the generated medication card:
 
     | Supported format code                      | Processing                                                 |
@@ -92,11 +92,11 @@ The on-demand document is deleted from the registry 24 hours after it was last r
 
         The service currently only supports french.
 
-  * *$XDSDocumentEntryServiceStartFrom*, *$XDSDocumentEntryServiceStartTo*: TODO
-  * *$XDSDocumentEntryServiceEndFrom*, *$XDSDocumentEntryServiceEndTo*: TODO
+  * *$XDSDocumentEntryServiceStartFrom*, *$XDSDocumentEntryServiceStartTo*: This parameter is not used.
+  * *$XDSDocumentEntryServiceEndFrom*, *$XDSDocumentEntryServiceEndTo*: This parameter is not used.
   * *$XDSDocumentEntryType*: stable and/or on-demand. Stable documents are PML documents that have been generated and saved, on-demand are documents that can be generated. There's no stable PML in the eMedication service (the response is empty for requests that only specify stable types). If absent, all types are returned. A single on-demand document is returned.
 
-### FindConsolidatedPrescriptionsForValidation (🇨🇭)
+### Draft: FindConsolidatedPrescriptionsForValidation (🇨🇭)
 
   This transaction is a Swiss extension and is copied from the _FindPrescriptionsForValidation_ stored query.
 
@@ -122,7 +122,7 @@ The on-demand document is deleted from the registry 24 hours after it was last r
   | $XDSDocumentEntryAuthorPerson               | Keep?                                 | O   | M    |
   | $XDSDocumentEntryStatus                     | No reason to keep it                  | O   | M    |
 
-### FindConsolidatedPrescriptionsForDispense (🇨🇭)
+### Draft: FindConsolidatedPrescriptionsForDispense (🇨🇭)
 
   This transaction is a Swiss extension and is copied from the _FindPrescriptionsForDispense_ stored query.
 
