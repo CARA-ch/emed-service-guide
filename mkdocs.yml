@@ -15,6 +15,9 @@ nav:
     - 'XDS: search pharmacy documents (CH:PHARM-1)': transactions/chpharm1.md
     - Documents: transactions/documents.md
     - 'Date processing': transactions/date_processing.md
+  - CH-EMED: chemed/index.md
+  - PMP-APPC:
+    - chappc/index.md
   - CDA-CH-EMED:
     - cdachemed/index.md
     - Documents:
@@ -29,10 +32,6 @@ nav:
       - Product: cdachemed/product.md
     - Workflow:
       - cdachemed/workflow.md
-  - CH-APPC:
-    - chappc/index.md
-    - Format: chappc/format.md
-  - CH-EMED: chemed/index.md
 markdown_extensions:
   - smarty
   - admonition

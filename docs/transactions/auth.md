@@ -9,12 +9,6 @@ This is how the CH-APPC format is used in the eMedication aggregator.
 A patient has a full read-write access to its record.
 This behavior cannot be modified.
 
-### Representative
-
-!!! bug "Not implemented"
-
-    This is not supported yet because CARA's platform does not expose its representative directory.
-
 ### Healthcare professional
 
 Healthcare professionals can be granted or denied a read-write access to all eMedication documents, through their GLN or their organizations.
@@ -50,3 +44,9 @@ This behavior cannot be modified.
 
 Emergency access ("break-the-glass") is only possible for healthcare professionals and assistants.
 It is globally allowed or forbidden by the APPC document.
+
+### Representative
+
+!!! bug "Not implemented"
+
+    This is not supported yet because CARA's platform does not expose its representative directory.
