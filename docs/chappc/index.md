@@ -373,6 +373,6 @@ The access rules processing is described in [Authentication and authorization](.
 
 1.  A mandatory but not-quite-useful description.
 2.  The EPR-SPID of the patient to whose record the rules will be applied.
-3.  Autorizing emergency access of healthcare professionals to eMedication documents.
+3.  Authorizing emergency access of healthcare professionals to eMedication documents.
 4.  Denying access to a single healthcare professional.
-5.  Autorizing access to a group of healthcare professionals.
+5.  Authorizing access to a group of healthcare professionals.
