@@ -2,7 +2,7 @@
 
 ## Content
 
-The eMedication service only support [CH-APPC](../chappc/index.md) and [CH-EMED](../chemed/index.md) documents.
+The eMedication service only support [PMP-APPC](../appc/index.md) and [CH-EMED-EPR](../emed/index.md) documents.
 
 ## Metadata
 

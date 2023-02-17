@@ -1,6 +1,6 @@
 # PMP-APPC
 
-The [specifications are available in ArtDecor](https://art-decor.org/art-decor/decor-project--ch-appc-).
+The [technical specifications are available in ArtDecor](https://art-decor.org/art-decor/decor-project--ch-appc-).
 
 ## Document boilerplate
 
