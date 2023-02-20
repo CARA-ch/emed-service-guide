@@ -1,6 +1,6 @@
 # Authentication and authorization
 
-This is how the CH-APPC format is used in the eMedication aggregator.
+This is how the PMP-APPC format is used in the eMedication aggregator.
 
 ## Rules
 

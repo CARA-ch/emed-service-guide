@@ -5,19 +5,19 @@ Technical Framework Supplement XDS Metadata Update*.
 
 ## Update DocumentEntry Metadata
 
-This transaction is implemented, but only for the *deletionStatus* attribute. See rules that are enforced for eMed and APPC documents.
+This transaction is implemented, but only for the *deletionStatus* attribute. See rules that are enforced for eMed and policy documents.
 
 ## Update DocumentEntry availabilityStatus
 
-This transaction is unsupported for CDA and APPC documents.
+This transaction is unsupported for eMed and policy documents.
 
 ## Update Folder Metadata
 
-This is unsupported, as the PMP doesn't support folders.
+This is unsupported, as the service doesn't support folders.
 
 ## Update Folder availabilityStatus
 
-This is unsupported, as the PMP doesn't support folders.
+This is unsupported, as the service doesn't support folders.
 
 ## Update Association availabilityStatus
 

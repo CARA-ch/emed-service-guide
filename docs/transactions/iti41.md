@@ -26,7 +26,7 @@ Some values from the DocumentEntry are checked against the document:
 | PML           | `422735006` (Summary clinical document) | `urn:che:epr:ch-emed:pml:2022`             | `721912009` (Medication summary document)                     |
 | PMLC          | `422735006` (Summary clinical document) | `urn:che:epr:ch-emed:medication-card:2022` | `721912009` (Medication summary document)                     |
 
-## Publishing a CH-APPC document
+## Publishing a PMP-APPC document
 
 | DocumentEntry    | APPC                                           |
 | ---------------- | ---------------------------------------------- |
