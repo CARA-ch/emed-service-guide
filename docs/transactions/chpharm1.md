@@ -10,8 +10,13 @@ CH:PHARM-1 defines three new stored queries, _FindMedicationCard_, _FindConsolid
 
 **Common query parameters**
 
-* *$MetadataLevel*: If present, the attribute shall equal to "1", as per *Nationale Anpassungen der Integrationsprofile nach Artikel 5 Absatz 1 Buchstabe b EPDV-EDI*.
-* *$XDSDocumentEntryPatientId*: The patient XAD-PID.
+* *$MetadataLevel*: if present, the attribute shall equal to "1", as per *Nationale Anpassungen der Integrationsprofile nach Artikel 5 Absatz 1 Buchstabe b EPDV-EDI*.
+* *$XDSDocumentEntryPatientId*: the patient XAD-PID (MPI-PID), meaning CARA's assigned identifier.
+* *$XDSDocumentEntryPracticeSettingCode*: only codes from the Swiss value set.
+* *$XDSDocumentEntryService(Start|Stop)Time(From|To)*: see the definition of XDSDocumentEntry.service(Start|Stop)Time
+* *$XDSDocumentEntryHealthcareFacilityTypeCode*: only codes from the Swiss value set.
+* *$XDSDocumentEntryEventCodeList*: only codes from the Swiss value set.
+* *$XDSDocumentEntryConfidentialityCode*: only 'Normal' supported by the service.
 
 ### FindMedicationTreatmentPlans
 
@@ -20,10 +25,6 @@ Implemented, as per IHE specs.
 ### FindPrescriptions
 
 Implemented, as per IHE specs.
-
-**Query parameters**
-
-* *$XDSDocumentEntryPatientId*: The patient XAD-PID.
 
 ### FindDispenses
 

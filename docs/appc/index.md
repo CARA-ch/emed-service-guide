@@ -1,6 +1,9 @@
 # PMP-APPC
 
 The [technical specifications are available in ArtDecor](https://art-decor.org/art-decor/decor-project--ch-appc-).
+It describes elements, attributes and cardinalities and is the source from which the Schematron validator is generated.
+
+The following page only resumes the specifications with some comments.
 
 ## Document boilerplate
 

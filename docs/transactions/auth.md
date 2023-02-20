@@ -21,7 +21,11 @@ This behavior cannot be modified.
 
 ### Technical user
 
-Technical users can publish documents, search and retrieve medication card documents if and only if the following two conditions are true:
+!!! warning "Under discussions"
+
+    The technical users access rules are still under discussion and may evolve.
+
+Technical users can publish documents, and may search and retrieve medication card documents if and only if the following two conditions are true:
 
 1. the TCU belongs to an organization that is whitelisted by the eMedication service.
 2. the patient has granted access to an organization that is part of the whitelisted organization.
@@ -50,3 +54,9 @@ It is globally allowed or forbidden by the APPC document.
 !!! bug "Not implemented"
 
     This is not supported yet because CARA's platform does not expose its representative directory.
+
+## ATNA
+
+The service generates ATNA messages as required by IHE and Annex 5.1.
+They will be sent to CARA's EPR Audit Record Repository if it is possible.
+Clients are expected to also generate logs and send them to the same ARR.
