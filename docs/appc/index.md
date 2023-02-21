@@ -1,9 +1,9 @@
 # PMP-APPC
 
-The [technical specifications are available in ArtDecor](https://art-decor.org/art-decor/decor-project--ch-appc-).
+The [technical specifications are available in ArtDecor](https://art-decor.org/art-decor/decor-templates--ch-appc-?section=templates&id=2.16.756.5.30.1.127.77.13.10.1&effectiveDate=2022-01-28T17:32:08&language=en-US).
 It describes elements, attributes and cardinalities and is the source from which the Schematron validator is generated.
 
-The following page only resumes the specifications with some comments.
+The current page only resumes the specifications with some comments.
 
 ## Document boilerplate
 
@@ -36,7 +36,7 @@ The following page only resumes the specifications with some comments.
 
 ## Emergency access
 
-Healthcare professionals that are not specifically granted access still can obtain a temporary access to the patient record (i.e. break the glass).
+Healthcare professionals that are not specifically granted access still can obtain temporary access to the patient record (i.e. break the glass).
 Emergency access can be granted or denied, its scope is all registered healthcare professionals.
 In absence of a rule in the APPC document, the emergency access is allowed.
 It cannot be limited in time.
