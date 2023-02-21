@@ -6,7 +6,7 @@ The eMedication service only support [PMP-APPC](../appc/index.md) and [CH-EMED-E
 
 ## Metadata
 
-When two cardinalities are given, the first one is for Content Sender actors and the second one for the Document Repository actor.
+When two cardinalities are given, the first one is for Content Sender actor and the second one for the Document Repository actor.
 
 | DocumentEntry                  | Cardinality | Comment                                           |
 | ------------------------------ | :---------: | ------------------------------------------------- |

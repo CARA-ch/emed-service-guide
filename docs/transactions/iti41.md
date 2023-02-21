@@ -33,6 +33,6 @@ Some values from the DocumentEntry are checked against the document:
 | classCode        | `371537001` (Consent report (record artifact)) |
 | formatCode       | `urn:ihe:iti:appc:2016:consent`                |
 | mimeType         | `text/xml`                                     |
-| serviceStartTime | None                                           |
+| serviceStartTime | None                                           | <!-- TODO: now? -->
 | serviceStopTime  | None                                           |
 | typeCode         | `419891008` (Record artifact)                  |

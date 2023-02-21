@@ -33,14 +33,17 @@ Implemented, as per IHE specs.
 ### FindMedicationAdministrations
 
 🚫 Not implemented, CMA documents are not supported.
+<!-- TODO: implement, return empty -->
 
 ### FindPrescriptionsForValidation
 
-❓ Return only prescriptions that are temporary?
+It returns prescriptions that are temporary or ...
+See the prescription statuses in the CH-EMED-EPR profile.
+<!-- TODO: do PREs require a PADV OK or not? -->
 
 ### FindPrescriptionsForDispense
 
-Return only prescriptions that are actually "open|valid" (i.e. dispensable).
+Return only prescriptions that are actually provisional or active (i.e. dispensable).
 
 ### FindMedicationList
 
@@ -69,6 +72,7 @@ Treatment selection (via the search query execution) is done at document retriev
   | $XDSDocumentEntryServiceEndFrom   | N/A                           | O   | --   |
   | $XDSDocumentEntryServiceEndTo     | N/A                           | O   | --   |
   | $XDSDocumentEntryType             | N/A                           | O   | M    |
+ <!-- TODO: ServiceStart/Stop map to treatment dates. Not only active treatments. If Stop absent, only active+suspended -->
 
 
   * *$XDSDocumentEntryStatus*: This parameter is not used.

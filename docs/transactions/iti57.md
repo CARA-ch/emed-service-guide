@@ -41,4 +41,4 @@ The resulting status shall be Success or Failure. PartialSuccess shall not be us
 Common errors and proposed error codes:
 
 * The operation is unsupported: (not seen in the spec) XDSMetadataUpdateOperationError
-* Trying to set the deletionStatus to deletionProhibited: Error or OperationError?
+* Trying to set the deletionStatus to deletionProhibited: Error or OperationError? <!-- TODO: -> error -->
