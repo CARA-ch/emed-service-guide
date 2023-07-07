@@ -2,7 +2,6 @@ site_name: CARA's eMedication IG
 site_url: https://qligier.github.io/cara-emed-ig/
 repo_url: https://github.com/qligier/cara-emed-ig
 site_author: Quentin Ligier
-copyright: Copyright &copy; 2022 Quentin Ligier
 nav:
   - Home: index.md
   - Transactions:
