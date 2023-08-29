@@ -18,6 +18,7 @@ For details about documents (content and metadata), see the [Documents page](doc
 
 ## XDS vs. MHD
 IHE provides different [profiles](https://profiles.ihe.net/ITI/TF/Volume1/index.html), among which XDS and MHD make it possible to exchange documents:
+
 * [XDS (Cross Enterprise Document Sharing)](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html)
 * [MHD (Mobile access to Health Documents)](https://profiles.ihe.net/ITI/MHD/index.html)
 

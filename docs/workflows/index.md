@@ -6,6 +6,7 @@ For each situation, and corresponding types of eMedication service clients, it d
 A detailed documentation on the documents is available on the [ch-emed-epr FHIR implementation guide (IG)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/index.html).
 
 The supported documents are:
+
 * MTP (Medication Treatment Plan) [IHE Definition](https://www.ihe.net/uploadedFiles/Documents/Pharmacy/IHE_Pharmacy_Suppl_MTP.pdf) - [ch-emed-epr IG](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_mtp.html): introducing a treatment in the plan.
 * PRE (Prescription) [IHE Definition](https://www.ihe.net/uploadedFiles/Documents/Pharmacy/IHE_Pharmacy_Suppl_PRE.pdf) - [ch-emed-epr IG](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pre.html): prescribing a medication.
 * DIS (Dispense) [IHE Definition](https://www.ihe.net/uploadedFiles/Documents/Pharmacy/IHE_Pharmacy_Suppl_DIS.pdf) - [ch-emed-epr IG](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_dis.html): dispensing a medication.
@@ -16,6 +17,7 @@ The supported documents are:
 ## Workflows
 ### Exchanging documents
 Interacting with the eMedication service essentially comes down to:
+
 * Publishing documents ([MTP (Medication Treatment Plan)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_mtp.html), [PRE (Prescription)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pre.html), [DIS (Dispense)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_dis.html), [PADV (Pharmaceutical advice)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_padv.html)), with the [ITI-41 (publish document)](transactions/iti41.md) transaction.
 * Retrieving the medication list ([PML (Medication list)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html)), or card ([PMLc (Medication card)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html)), with a combination of [CH:PHARM-1 (search pharmacy documents)](transactions/chpharm1.md) and [ITI-43 (retrieve document)](transactions/iti43.md) transactions:
     * [CH:PHARM-1 (search pharmacy documents )](transactions/chpharm1.md) is used to get a reference to the medication list (or card) document, through the ```FindMedicationList``` (or ```FindMedicationCard```) query.
@@ -24,6 +26,7 @@ Interacting with the eMedication service essentially comes down to:
 ### Situational examples
 #### Prescriber workflow
 During a medical consultation, the typical workflow for a prescriber (medical practitioner), and the corresponding transactions would be:
+
 * To check the current medication of a patient during the anamnesis.
   * Import [PML (Medication list)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html) to retrieve the current medication plan ([CH:PHARM-1 (```FindMedicationList```)](transactions/chpharm1.md) then [ITI-43 (retrieve document)](transactions/iti43.md)).
 * To prescribe new medication.
@@ -36,6 +39,7 @@ During a medical consultation, the typical workflow for a prescriber (medical pr
 While visiting a pharmacy after a medical consultation, a patient and a pharmacist (dispenser) may have a conversation related to the current medication of the patient, the new treatments prescribed, possible drug substitutions (use of generic drug, change of the dosage form) and possible addition of new medications to the prescription.
 
 The typical workflow for a pharmacist (dispenser), and the corresponding transactions would be:
+
 * To check the current medication of a patient.
   * Import [PML (Medication list)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html) to retrieve the current medication plan ([CH:PHARM-1 (```FindMedicationList```)](transactions/chpharm1.md) then [ITI-43 (retrieve document)](transactions/iti43.md)).
 * To update the medication plan in case it is not up-to-date (for instance a new prescription has been issued by a prescriber not connected to the eMedication service).
@@ -58,7 +62,8 @@ The typical workflow for a pharmacist (dispenser), and the corresponding transac
 The medication manager helps patients having difficulties with their own medications. Their role is mainly to monitor and assist patients with their medications. The workflow and transactions for medication managers is essentially the same as for patients (see below).
 
 #### Patient workflow
-In addition to checking it, a patient can update its own medication plan, to add comments on the medication, introduce self-medication or indicate that he or she has stopped taking a medication. There is no specific workflow, but the transactions could be :
+In addition to checking it, a patient can update its own medication plan, to add comments on the medication, introduce self-medication or indicate that he or she has stopped taking a medication. There is no specific workflow, but the transactions could be:
+
 * To generate a medication card.
   * Import [PLMc (Medication card)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) to create a document describing the new actual medication ([CH:PHARM-1 (```FindMedicationCard```)](transactions/chpharm1.md) then [ITI-43 (retrieve document)](transactions/iti43.md)).
 * To add self-medication treatments.
@@ -72,6 +77,7 @@ In addition to checking it, a patient can update its own medication plan, to add
 During a visit at a hospital, the medication is handled by the hospital's information system. Interactions with the e-medication service typically happen at admission and release.
 ##### Admission
 The typical workflow at admission, and the corresponding transactions would be:
+
 * To check the current medication of a patient.
   * Import [PML (Medication list)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html) to retrieve the current medication plan ([CH:PHARM-1 (```FindMedicationList```)](transactions/chpharm1.md) then [ITI-43 (retrieve document)](transactions/iti43.md)).
 * To update the medication plan in case it is not up-to-date (for instance a new prescription has been issued by a prescriber not connected to the eMedication service) ([ITI-41 (publish document)](transactions/iti41.md)).
@@ -82,6 +88,7 @@ The typical workflow at admission, and the corresponding transactions would be:
 
 ##### Release
 At release, the medication plan might be entierely revised: former medication stopped or altered, new medication introduced. The typical workflow and corresponding transactions would therefore be a combination of:
+
 * Prescribing new medication.
   * Export [MTP (Medication Treatment Plan)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_mtp.html) for each new medication introduced into the plan ([ITI-41 (publish document)](transactions/iti41.md)).
   * [PRE (Prescription)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pre.html) to issue a new prescription ([ITI-41 (publish document)](transactions/iti41.md)).
