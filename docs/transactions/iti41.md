@@ -27,70 +27,70 @@ This section describes the rules applicable for any document's type metadata.
 See also the [SubmissionSet Metadata Attributes diagram](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.1.2).
 |Metadata|Mandatory|Rules|
 |--------|---------|-----|
-|```uniqueId```|yes|Must be a UUID. Can be used only once and must be globally unique.|
-|```author.authorRole```|yes|Possible values are defined [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorRole.html). For APPC, only ```PAT``` (patient) and ```REP``` (Representative) are allowed.|
-|```author.authorSpecialty```|no|Possible values are defined [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorSpeciality.html).|
-|```availabilityStatus```|no|The value set in the metadata is always ignored, and replaced by ```approved```.|
-|```comments```|no|-|
-|```contentTypeCode```|yes|Possible values are defined [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.mimeType.html). Use ```application/fhir+json``` or ```application/fhir+xml``` for CH-EMED-EPR documents, and ```text/xml``` for APPC.|
-|```entryUUID```|yes|Must be globally unique.|
-|```homeCommunityId```|no|Not used. Can be left blank or omitted.|
-|```intendedRecipient```|no|Not used. Can be left blank or omitted.|
-|```limitedMetadata```|no|Must be left bank or omitted.|
-|```patientId```|yes|Must be a XAD-PID.|
-|```sourceId```|yes|Globally unique and immutable OID identifier of the source.|
-|```submissionTime```|yes|[HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) value in UTC.|
-|```title```|no|-|
+|`uniqueId`|yes|Must be a UUID. Can be used only once and must be globally unique.|
+|`author.authorRole`|yes|Possible values are defined [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorRole.html). For APPC, only `PAT` (patient) and `REP` (Representative) are allowed.|
+|`author.authorSpecialty`|no|Possible values are defined [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorSpeciality.html).|
+|`availabilityStatus`|no|The value set in the metadata is always ignored, and replaced by `approved`.|
+|`comments`|no|-|
+|`contentTypeCode`|yes|Possible values are defined [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.mimeType.html). Use `application/fhir+json` or `application/fhir+xml` for CH-EMED-EPR documents, and `text/xml` for APPC.|
+|`entryUUID`|yes|Must be globally unique.|
+|`homeCommunityId`|no|Not used. Can be left blank or omitted.|
+|`intendedRecipient`|no|Not used. Can be left blank or omitted.|
+|`limitedMetadata`|no|Must be left bank or omitted.|
+|`patientId`|yes|Must be a XAD-PID.|
+|`sourceId`|yes|Globally unique and immutable OID identifier of the source.|
+|`submissionTime`|yes|[HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) value in UTC.|
+|`title`|no|-|
 
 #### DocumentEntry metadata
 See also the [DocumentEntry Metadata Attributes diagram](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.1.1).
 
 |Metadata|Mandatory|Rules|
 |--------|---------|-----|
-|```author.authorRole```|yes|Possible values are defined [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorRole.html). For APPC, only ```PAT``` (patient) and ```REP``` (Representative) are allowed.|
-|```author.authorSpecialty```|no|Possible values are defined [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorSpeciality.html).|
-|```availabilityStatus```|no|The value set in the metadata is always ignored, and replaced by ```approved```.|
-|```classCode```|yes|See [CH-EMED-EPR](#ClassCode-metadata-to-use-for-each-document-type) and [APPC](#Publishing-a-PMP-APPC-document) sections below.|
-|```comments```|no|-|
-|```confidentialityCode```|yes|[Confidentiality level](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2.5) in the DocumentEntry metadata is forced to [```Normal```](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.confidentialityCode.html).|
-|```creationTime```|yes|[HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) value in UTC.|
-|```deletionStatus```|no|If present, deletionStatus must be ```urn:e-health-suisse:2019:deletionStatus:deletionNotRequested```.|
-|```documentAvailability```|no|If present should be ```Online```.|
-|```entryUUID```|yes|Must be globally unique.|
-|```eventCodeList```|no|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.eventCodeList.html).|
-|```formatCode```|yes|See [CH-EMED-EPR](#ClassCode-metadata-to-use-for-each-document-type) and [APPC](#Publishing-a-PMP-APPC-document) sections below.|
-|```hash```|no|Hash of the document content.|
-|```healthcareFacilityTypeCode```|yes|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.healthcareFacilityTypeCode.html).|
-|```homeCommunityId```|no|-|
-|```languageCode```|yes|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.languageCode.html).|
-|```legalAuthenticator```|no|-|
-|```limitedMetadata```|no|Must be left bank or omitted.|
-|```logicalId```|no|Shall be present when replacing a document.|
-|```mimeType```|no|Possible values are defined [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.mimeType.html). Use ```application/fhir+json``` or ```application/fhir+xml``` for CH-EMED-EPR documents, and ```text/xml``` for APPC.|
-|```objectType```|yes|Value is ignored and set to ```Stable```.|
-|```patientId```|yes|-|
-|```practiceSettingCode```|yes|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.practiceSettingCode.html).|
-|```referenceIdList```|no|Must be omitted or empty as referencing external documents is not permitted (see [Referencing external documents](#Referencing-external-documents) section).|
-|```repositoryUniqueId```|no|If the attribute ```repositoryUniqueId``` is present and does not correspond to the ```repositoryUniqueId``` containing the documents the request is refused.|
-|```serviceStartTime```|no|Given as an [HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) in UTC. Shall be empty for APPC|
-|```serviceStopTime```|no|Given as an [HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) in UTC. Shall be empty for APPC|
-|```size```|no|-|
-|```sourcePatientId```|yes|Any id known or unknown to the local MPI, EPR-SPID and SSN are forbidden.|
-|```sourcePatientInfo```|no|Ignored by the service.|
-|```title```|yes|-|
-|```typeCode```|yes|See [section](#ClassCode-metadata-to-use-for-each-document-type) below.|
-|```uniqueId```|yes|Must be globally unique and be a UUID. Must match the document id in the case of CH-EMED-EPR documents.|
-|```URI```|no|-|
-|```version```|no|If present shall be empty, the value is ignored and set by the document registry.|
-|```DocumentEntry.patientId```|yes|Must match ```SubmissionSet.patientId``` and be a XAD-PID ([see above](#SubmissionSet-metadata)).|
-|```DocumentEntry.creationTime```|yes|Must match document content creation time ([see below](#Metadata-values-check)).|
-|```DocumentEntry.author```|yes|Must be aligned with document content author ([see below](#Metadata-values-check)).|
+|`author.authorRole`|yes|Possible values are defined [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorRole.html). For APPC, only `PAT` (patient) and `REP` (Representative) are allowed.|
+|`author.authorSpecialty`|no|Possible values are defined [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorSpeciality.html).|
+|`availabilityStatus`|no|The value set in the metadata is always ignored, and replaced by `approved`.|
+|`classCode`|yes|See [CH-EMED-EPR](#ClassCode-metadata-to-use-for-each-document-type) and [APPC](#Publishing-a-PMP-APPC-document) sections below.|
+|`comments`|no|-|
+|`confidentialityCode`|yes|[Confidentiality level](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2.5) in the DocumentEntry metadata is forced to [`Normal`](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.confidentialityCode.html).|
+|`creationTime`|yes|[HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) value in UTC.|
+|`deletionStatus`|no|If present, deletionStatus must be `urn:e-health-suisse:2019:deletionStatus:deletionNotRequested`.|
+|`documentAvailability`|no|If present should be `Online`.|
+|`entryUUID`|yes|Must be globally unique.|
+|`eventCodeList`|no|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.eventCodeList.html).|
+|`formatCode`|yes|See [CH-EMED-EPR](#ClassCode-metadata-to-use-for-each-document-type) and [APPC](#Publishing-a-PMP-APPC-document) sections below.|
+|`hash`|no|Hash of the document content.|
+|`healthcareFacilityTypeCode`|yes|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.healthcareFacilityTypeCode.html).|
+|`homeCommunityId`|no|-|
+|`languageCode`|yes|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.languageCode.html).|
+|`legalAuthenticator`|no|-|
+|`limitedMetadata`|no|Must be left bank or omitted.|
+|`logicalId`|no|Shall be present when replacing a document.|
+|`mimeType`|no|Possible values are defined [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.mimeType.html). Use `application/fhir+json` or `application/fhir+xml` for CH-EMED-EPR documents, and `text/xml` for APPC.|
+|`objectType`|yes|Value is ignored and set to `Stable`.|
+|`patientId`|yes|-|
+|`practiceSettingCode`|yes|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.practiceSettingCode.html).|
+|`referenceIdList`|no|Must be omitted or empty as referencing external documents is not permitted (see [Referencing external documents](#Referencing-external-documents) section).|
+|`repositoryUniqueId`|no|If the attribute `repositoryUniqueId` is present and does not correspond to the `repositoryUniqueId` containing the documents the request is refused.|
+|`serviceStartTime`|no|Given as an [HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) in UTC. Shall be empty for APPC|
+|`serviceStopTime`|no|Given as an [HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) in UTC. Shall be empty for APPC|
+|`size`|no|-|
+|`sourcePatientId`|yes|Any id known or unknown to the local MPI, EPR-SPID and SSN are forbidden.|
+|`sourcePatientInfo`|no|Ignored by the service.|
+|`title`|yes|-|
+|`typeCode`|yes|See [section](#ClassCode-metadata-to-use-for-each-document-type) below.|
+|`uniqueId`|yes|Must be globally unique and be a UUID. Must match the document id in the case of CH-EMED-EPR documents.|
+|`URI`|no|-|
+|`version`|no|If present shall be empty, the value is ignored and set by the document registry.|
+|`DocumentEntry.patientId`|yes|Must match `SubmissionSet.patientId` and be a XAD-PID ([see above](#SubmissionSet-metadata)).|
+|`DocumentEntry.creationTime`|yes|Must match document content creation time ([see below](#Metadata-values-check)).|
+|`DocumentEntry.author`|yes|Must be aligned with document content author ([see below](#Metadata-values-check)).|
 
 
 ## Publishing a CH-EMED-EPR document
 This section details the specific rules to follow when publishing [CH-EMED-EPR documents](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/).
 
- Only [MTP](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_mtp.html), [PRE](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pre.html), [DIS](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_dis.html) and [PADV](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_padv.html) docs can be published. [PML](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html) and [PMLC](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) can only be retrieved from the service. As a result, ```Iti41QueryConverter.process->EmedFhirSpec.getDocumentType``` returns ```null``` for ```PML``` and ```PMLC``` docs.
+ Only [MTP](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_mtp.html), [PRE](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pre.html), [DIS](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_dis.html) and [PADV](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_padv.html) docs can be published. [PML](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html) and [PMLC](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) can only be retrieved from the service. As a result, `Iti41QueryConverter.process->EmedFhirSpec.getDocumentType` returns `null` for `PML` and `PMLC` docs.
 
 ### Referencing external documents
 When publishing CH-EMED-EPR documents, all references (from the key elements) shall be known to the eMedication service. All non-key elements are ignored by the eMedication service. 
