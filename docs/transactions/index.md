@@ -6,11 +6,24 @@ Implemented transactions are [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10
 
 * publish documents: [XDS ITI-41](iti41.md), _MHD ITI-65_
 * retrieve documents [XDS ITI-43](iti43.md), _MHD ITI-68_
-* delete documents [XDS ITI-57](iti57.md)
+* update (delete only) documents [XDS ITI-57](iti57.md)
 * search documents [XDS ITI-18](iti18.md), _MHD ITI-66 and ITI-67_
 * search pharmacy documents [XDS CH:PHARM-1](chpharm1.md), _MHD CH:PHARM-5_
 
 For details about documents (content and metadata), see the [Documents page](documents.md).
+
+## Generic rules about transactions
+* In every transaction, the referenced patient has to match the same patient as the one in the XUA assertion.
+* XACML are checked but ignored. This will be re-enabled in the future.
+* Patients are allowed to perform every transactions
+* Healthcare Professionals are allowed to:
+    * [Search documents (registry stored query XDS ITI-18)](iti18.md), 
+    * [Retrieve document set (XDS ITI-43)](iti43.md), 
+    * [Provide and register document set (XDS ITI-41)](iti41.md), 
+    * [Update document set (XDS ITI-57)](iti57.md)
+* Healthcare Professionals cannot do anything related to [APPC documents (Advanced Patient Privacy Consent)](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_APPC.pdf).
+* Technical User (TCU)  can only [provide and register document set (XDS ITI-41)](iti41.md).
+* Anything else denied.
 
 !!! tip
 
