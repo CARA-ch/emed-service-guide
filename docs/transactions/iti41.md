@@ -25,66 +25,66 @@ Documents can be send to the eMedication service only once. Uniqueness is checke
 This section describes the rules applicable for any document's type metadata.
 #### SubmissionSet metadata
 See also the [SubmissionSet Metadata Attributes diagram](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.1.2).
-|Metadata|Mandatory|Rules|
+|Metadata|Opt|Rules|
 |--------|---------|-----|
-|`uniqueId`|yes|Must be a UUID. Can be used only once and must be globally unique.|
-|`author.authorRole`|yes|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorRole.html). For APPC, only `PAT` (patient) and `REP` (Representative) are allowed.|
-|`author.authorSpecialty`|no|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorSpeciality.html).|
-|`availabilityStatus`|no|The value set in the metadata is always ignored, and replaced by `approved`.|
-|`comments`|no|-|
-|`contentTypeCode`|yes|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.mimeType.html). Use `application/fhir+json` or `application/fhir+xml` for CH-EMED-EPR documents, and `text/xml` for APPC.|
-|`entryUUID`|yes|Must be globally unique.|
-|`homeCommunityId`|no|Not used. Can be left blank or omitted.|
-|`intendedRecipient`|no|Not used. Can be left blank or omitted.|
-|`limitedMetadata`|no|Must be left bank or omitted.|
-|`patientId`|yes|Must be a XAD-PID.|
-|`sourceId`|yes|Globally unique and immutable OID identifier of the source.|
-|`submissionTime`|yes|[HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) value in UTC.|
-|`title`|no|-|
+|`uniqueId`|R|Must be a UUID. Can be used only once and must be globally unique.|
+|`author.authorRole`|R|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorRole.html). For APPC, only `PAT` (patient) and `REP` (Representative) are allowed.|
+|`author.authorSpecialty`|O|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorSpeciality.html).|
+|`availabilityStatus`|O|The value set in the metadata is always ignored, and replaced by `approved`.|
+|`comments`|O|-|
+|`contentTypeCode`|R|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.mimeType.html). Use `application/fhir+json` or `application/fhir+xml` for CH-EMED-EPR documents, and `text/xml` for APPC.|
+|`entryUUID`|R|Must be globally unique.|
+|`homeCommunityId`|O|Not used. Can be left blank or omitted.|
+|`intendedRecipient`|O|Not used. Can be left blank or omitted.|
+|`limitedMetadata`|O|Must be left bank or omitted.|
+|`patientId`|R|Must be a XAD-PID.|
+|`sourceId`|R|Globally unique and immutable OID identifier of the source.|
+|`submissionTime`|R|[HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) value in UTC.|
+|`title`|O|-|
 
 #### DocumentEntry metadata
 See also the [DocumentEntry Metadata Attributes diagram](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.1.1).
 
-|Metadata|Mandatory|Rules|
+|Metadata|Opt|Rules|
 |--------|---------|-----|
-|`author.authorRole`|yes|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorRole.html). For APPC, only `PAT` (patient) and `REP` (Representative) are allowed.|
-|`author.authorSpecialty`|no|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorSpeciality.html).|
-|`availabilityStatus`|no|The value set in the metadata is always ignored, and replaced by `approved`.|
-|`classCode`|yes|See [CH-EMED-EPR](#ClassCode-metadata-to-use-for-each-document-type) and [APPC](#Publishing-a-PMP-APPC-document) sections below.|
-|`comments`|no|-|
-|`confidentialityCode`|yes|[Confidentiality level](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2.5) in the DocumentEntry metadata is forced to [`Normal`](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.confidentialityCode.html).|
-|`creationTime`|yes|[HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) value in UTC.|
-|`deletionStatus`|no|If present, deletionStatus must be `urn:e-health-suisse:2019:deletionStatus:deletionNotRequested`.|
-|`documentAvailability`|no|If present should be `Online`.|
-|`entryUUID`|yes|Must be globally unique.|
-|`eventCodeList`|no|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.eventCodeList.html).|
-|`formatCode`|yes|See [CH-EMED-EPR](#ClassCode-metadata-to-use-for-each-document-type) and [APPC](#Publishing-a-PMP-APPC-document) sections below.|
-|`hash`|no|Hash of the document content.|
-|`healthcareFacilityTypeCode`|yes|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.healthcareFacilityTypeCode.html).|
-|`homeCommunityId`|no|-|
-|`languageCode`|yes|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.languageCode.html).|
-|`legalAuthenticator`|no|-|
-|`limitedMetadata`|no|Must be left bank or omitted.|
-|`logicalId`|no|Shall be present when replacing a document.|
-|`mimeType`|no|Possible values are defined [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.mimeType.html). Use `application/fhir+json` or `application/fhir+xml` for CH-EMED-EPR documents, and `text/xml` for APPC.|
-|`objectType`|yes|Value is ignored and set to `Stable`.|
-|`patientId`|yes|-|
-|`practiceSettingCode`|yes|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.practiceSettingCode.html).|
-|`referenceIdList`|no|Must be omitted or empty as referencing external documents is not permitted (see [Referencing external documents](#Referencing-external-documents) section).|
-|`repositoryUniqueId`|no|If the attribute `repositoryUniqueId` is present and does not correspond to the `repositoryUniqueId` containing the documents the request is refused.|
-|`serviceStartTime`|no|Given as an [HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) in UTC. Shall be empty for APPC|
-|`serviceStopTime`|no|Given as an [HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) in UTC. Shall be empty for APPC|
-|`size`|no|-|
-|`sourcePatientId`|yes|Any id known or unknown to the local MPI, EPR-SPID and SSN are forbidden.|
-|`sourcePatientInfo`|no|Ignored by the service.|
-|`title`|yes|-|
-|`typeCode`|yes|See [section](#ClassCode-metadata-to-use-for-each-document-type) below.|
-|`uniqueId`|yes|Must be globally unique and be a UUID. Must match the document id in the case of CH-EMED-EPR documents.|
-|`URI`|no|-|
-|`version`|no|If present shall be empty, the value is ignored and set by the document registry.|
-|`DocumentEntry.patientId`|yes|Must match `SubmissionSet.patientId` and be a XAD-PID ([see above](#SubmissionSet-metadata)).|
-|`DocumentEntry.creationTime`|yes|Must match document content creation time ([see below](#Metadata-values-check)).|
-|`DocumentEntry.author`|yes|Must be aligned with document content author ([see below](#Metadata-values-check)).|
+|`author.authorRole`|R|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorRole.html). For APPC, only `PAT` (patient) and `REP` (Representative) are allowed.|
+|`author.authorSpecialty`|O|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorSpeciality.html).|
+|`availabilityStatus`|O|The value set in the metadata is always ignored, and replaced by `approved`.|
+|`classCode`|R|See [CH-EMED-EPR](#ClassCode-metadata-to-use-for-each-document-type) and [APPC](#Publishing-a-PMP-APPC-document) sections below.|
+|`comments`|O|-|
+|`confidentialityCode`|R|[Confidentiality level](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2.5) in the DocumentEntry metadata is forced to [`Normal`](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.confidentialityCode.html).|
+|`creationTime`|R|[HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) value in UTC.|
+|`deletionStatus`|O|If present, deletionStatus must be `urn:e-health-suisse:2019:deletionStatus:deletionNotRequested`.|
+|`documentAvailability`|O|If present should be `Online`.|
+|`entryUUID`|R|Must be globally unique.|
+|`eventCodeList`|O|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.eventCodeList.html).|
+|`formatCode`|R|See [CH-EMED-EPR](#ClassCode-metadata-to-use-for-each-document-type) and [APPC](#Publishing-a-PMP-APPC-document) sections below.|
+|`hash`|O|Hash of the document content.|
+|`healthcareFacilityTypeCode`|R|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.healthcareFacilityTypeCode.html).|
+|`homeCommunityId`|O|-|
+|`languageCode`|R|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.languageCode.html).|
+|`legalAuthenticator`|O|-|
+|`limitedMetadata`|O|Must be left bank or omitted.|
+|`logicalId`|O|Shall be present when replacing a document.|
+|`mimeType`|O|Possible values are defined [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.mimeType.html). Use `application/fhir+json` or `application/fhir+xml` for CH-EMED-EPR documents, and `text/xml` for APPC.|
+|`objectType`|R|Value is ignored and set to `Stable`.|
+|`patientId`|R|-|
+|`practiceSettingCode`|R|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.practiceSettingCode.html).|
+|`referenceIdList`|O|Must be omitted or empty as referencing external documents is not permitted (see [Referencing external documents](#Referencing-external-documents) section).|
+|`repositoryUniqueId`|O|If the attribute `repositoryUniqueId` is present and does not correspond to the `repositoryUniqueId` containing the documents the request is refused.|
+|`serviceStartTime`|O|Given as an [HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) in UTC. Shall be empty for APPC|
+|`serviceStopTime`|O|Given as an [HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) in UTC. Shall be empty for APPC|
+|`size`|O|-|
+|`sourcePatientId`|R|Any id known or unknown to the local MPI, EPR-SPID and SSN are forbidden.|
+|`sourcePatientInfo`|O|Ignored by the service.|
+|`title`|R|-|
+|`typeCode`|R|See [section](#ClassCode-metadata-to-use-for-each-document-type) below.|
+|`uniqueId`|R|Must be globally unique and be a UUID. Must match the document id in the case of CH-EMED-EPR documents.|
+|`URI`|O|-|
+|`version`|O|If present shall be empty, the value is ignored and set by the document registry.|
+|`DocumentEntry.patientId`|R|Must match `SubmissionSet.patientId` and be a XAD-PID ([see above](#SubmissionSet-metadata)).|
+|`DocumentEntry.creationTime`|R|Must match document content creation time ([see below](#Metadata-values-check)).|
+|`DocumentEntry.author`|R|Must be aligned with document content author ([see below](#Metadata-values-check)).|
 
 
 ## Publishing a CH-EMED-EPR document
@@ -104,25 +104,27 @@ This implies that the metadata cannot contain [Reference ids](https://profiles.i
 
 ### Rules for each type of document
 #### MTP
-* Treatment duration (defined in [dosage](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-dosage.html)) should be within the period of validity of the document (defined by [`DocumentEntry.serviceStatTime`](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2.19) and [`DocumentEntry.serviceStopTime`](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2.20) metadata).
+* Treatment duration (defined in [dosage](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-dosage.html)) should be within the period of validity of the document, defined by [`DocumentEntry.serviceStatTime`](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2.19) and [`DocumentEntry.serviceStopTime`](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2.20) metadata
 
 #### PRE
-* Treatment duration (defined in [dosage](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-dosage.html)) should be within the [period of validity of the document](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medicationrequest-definitions.html#MedicationRequest.dispenseRequest.validityPeriod).
-* Each PRE item should [refer to an MTP item](https://build.fhir.org/ig/hl7ch/ch-emed//StructureDefinition-ch-emed-medicationrequest-definitions.html#MedicationRequest.extension:treatmentplan) that must:
+* Treatment duration (defined in [dosage](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-dosage-medicationrequest.html) - `CHEMEDEPRDosageMedicationRequest.repeat.bounds`) should be within the [period of validity of the document](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medicationrequest.html) (`CHEMEDEPRMedicationRequest.validityPeriod`).
+
+* Each PRE item should [refer to an MTP item](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-document-medicationprescription.html) (`CHEMEDEPRMedicationRequest.treatmentplan`) that must:
     * Exist (has already been published, and never deleted)
     * Be [approved](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2.2), ie. `DocumentEntry.availabilityStatus = approved`, 
-    * Be valid, ie. the submission date must be within the [MTP `dosage`'s](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medicationstatement-treatmentplan-definitions.html#MedicationStatement.dosage) [`boundsPeriod`](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-dosage-definitions.html#Dosage.timing.repeat.bounds[x]:boundsPeriod).
-        * If the [`boundsPeriod`](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-dosage-definitions.html#Dosage.timing.repeat.bounds[x]:boundsPeriod) is not defined, the entry is considered to be always active.
+    * Be valid, ie. the submission date must be within the [MTP `dosage`'s](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-dosage.html) `boundsPeriod` (`CHEMEDEPRDosage.repeat.bounds`).
+        * If the `boundsPeriod` is not defined, the entry is considered to be always active.
         * If only a [`startDate`](http://hl7.org/fhir/R4/datatypes-definitions.html#Period.start) is specified, the MTP is considered to be active if the current date is after that date.
-    * [Active](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medicationstatement-treatmentplan-definitions.html#MedicationStatement.status), ie. `CHEMEDEPRMedicationStatement.status = active`
+    * Active, ie. `CHEMEDEPRDocumentMedicationTreatmentPlan.CHEMEDEPRMedicationStatement.status = active`
     * For the same patient.
  
-* [PRE document's date of validity](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medicationrequest-definitions.html#MedicationRequest.dispenseRequest.validityPeriod) must be after the [PRE document's creation time](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-composition-medicationprescription-definitions.html#Composition.date) and after the [start date of duration](https://build.fhir.org/ig/hl7ch/ch-emed//StructureDefinition-ch-emed-medicationstatement-definitions.html#MedicationStatement.effective[x]) of treatment defined in the [MTP referenced by the PRE](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medicationrequest-definitions.html#MedicationRequest.extension:treatmentplan).
-* [Code](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medication-definitions.html#Medication.code) of [medication](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medicationrequest-definitions.html#MedicationRequest.medication[x]:medicationReference) should match the code of medication of referenced MTP.      
-* If [lot number](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medication-definitions.html#Medication.batch.lotNumber) is specified in referenced MTP, the PRE item should match it.
+* [PRE document's date of validity](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medicationrequest.html) (`CHEMEDEPRMedicationRequest.validityPeriod` ) must be after the [PRE document's creation time](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-composition-medicationprescription.html) (`CHEMEDCompositionMedicationPrescription.date`) and after the [start date of duration](https://build.fhir.org/ig/hl7ch/ch-emed//StructureDefinition-ch-emed-medicationstatement.html) (`CHEMEDMedicationStatement.effective[x].effectiveDateTime`) of treatment defined in the [MTP referenced by the PRE](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-document-medicationprescription.html) (`CHEMEDEPRMedicationRequest.treatmentplan`).
+
+* Code of [medication](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medication.html) should match the code of medication of the [MTP referenced by the PRE](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-document-medicationprescription.html) (`CHEMEDEPRMedicationRequest.treatmentplan`).      
+* If [lot number](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medication.html) (`CHEMEDEPRMedication.batch`) is specified in referenced MTP, [the one in the PRE](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medicationrequest.html) (`CHEMEDEPRMedicationRequest.medication[x]:medicationReference.batch`) should match it.
 #### PADV
 ##### PADV against a provisional PRE
-A "provisional PRE" is a prescription for which the [`CHEMEDEPRMedicationRequest.status`](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medicationrequest-definitions.html#MedicationRequest.status) is `SUBMITTED` or `PROVISIONAL` and for which a PADV `OK` has not been completed yet. 
+A "provisional PRE" is a prescription for which the [`CHEMEDEPRMedicationRequest.status`](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medicationrequest.html) is `SUBMITTED` or `PROVISIONAL` and for which a PADV `OK` has not been completed yet. 
 * Medication cannot be changed.
 * Dosage instructions cannot be changed.
 * Substitution cannot be disallowed if the existing dispense includes one.
@@ -131,13 +133,13 @@ A "provisional PRE" is a prescription for which the [`CHEMEDEPRMedicationRequest
 * Not allowed against DIS or other PADV documents.
 
 #### DIS
-* If [lot number](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medication-definitions.html#Medication.batch.lotNumber) is specified in parent MTP or PRE, then it should match.
+* If [lot number](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medication.html) (`batch`) is specified in referenced [MTP(`treatmentPlan`) or PRE (`prescription`)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medicationdispense.html), then it should match the one in the DIS.
 ##### DIS against PRE or MTP:
 * Medication cannot be different if substitution is not allowed by PRE. _This rule might be extended in the future_. 
 * Dispense cannot occur after the end of validity of the PRE document. _This rule might be extended in the future_.
 * Dispense cannot occur after the end of the treatment if specified in the prescription item. _This rule might be extended in the future_.
 * If referenced PRE is not provisional, it should be [dispensable](#FIXME).
-* List of active [ingredients](https://build.fhir.org/ig/hl7ch/ch-emed//StructureDefinition-ch-emed-medication-medicationdispense-definitions.html#Medication.ingredient) should be the same than the one in the parent PRE.
+* List of active [ingredients](https://build.fhir.org/ig/hl7ch/ch-emed//StructureDefinition-ch-emed-medication-medicationdispense-definitions.html#Medication.ingredient) should be the same than the one in the referenced [PRE](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medicationdispense.html) (`prescription`). 
 
 
 ### Roles
@@ -158,13 +160,13 @@ Some values from the DocumentEntry are checked against the document (values in m
 | DocumentEntry | CH-EMED-EPR                                                  |
 | ------------- | ------------------------------------------------------------ |
 | author        | `Composition.author`                                         |
-| classCode     | ``                                           |
+| classCode     | `FIXME`                                           |
 | creationTime  | `Composition.date`                                           |
 | creationTime  | `Composition.date`                                           |
-| formatCode    | ``                                           |
+| formatCode    | `FIXME`                                           |
 | languageCode  | `Composition.language`                                       |
 | mimeType      | `application/fhir+xml` or `application/fhir+json`            |
-| typeCode      | ``            |
+| typeCode      | `FIXME`            |
 | uniqueId      | `Bundle.identifier.value` and `Composition.identifier.value` |
 
 ### ClassCode metadata to use for each document type
@@ -185,7 +187,7 @@ This section details the rules applicable to metadata when publishing [APPC docu
 ### Rules for APPC:
 * Only patients and their representatives or policy administrators can publish a new APPC document.
 	* representatives are not supported yet by the service.
-* No APPC for the specified patient exists in the system, otherwise refusal.
+* No APPC for the specified patient exists in the system, otherwise the document is refused.
 * APPC document structure described in specs §7.5
     * `1 Description` section for free text description of the policy set
     * `1 Target` section containing:
