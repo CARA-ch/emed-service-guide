@@ -28,6 +28,7 @@ See also the [SubmissionSet Metadata Attributes diagram](https://profiles.ihe.ne
 |Metadata|Opt|Rules|
 |--------|---------|-----|
 |`uniqueId`|R|Must be a UUID. Can be used only once and must be globally unique.|
+|`author`|R|Multiple values accepted.|
 |`author.authorRole`|R|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorRole.html). For APPC, only `PAT` (patient) and `REP` (Representative) are allowed.|
 |`author.authorSpecialty`|O|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorSpeciality.html).|
 |`availabilityStatus`|O|The value set in the metadata is always ignored, and replaced by `approved`.|
@@ -41,6 +42,7 @@ See also the [SubmissionSet Metadata Attributes diagram](https://profiles.ihe.ne
 |`sourceId`|R|Globally unique and immutable OID identifier of the source.|
 |`submissionTime`|R|[HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) value in UTC.|
 |`title`|O|-|
+|`uniqueId`|R|Globally unique id.|
 
 #### DocumentEntry metadata
 See also the [DocumentEntry Metadata Attributes diagram](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.1.1).
@@ -181,12 +183,31 @@ Some values from the DocumentEntry are checked against the document (values in m
 
 The class and type codes are from the SNOMED CT system: `2.16.840.1.113883.6.96`. The system for the [`formatCode`](http://www.fhir.org/guides/stats/codesystem-ch.fhir.ig.ch-epr-term-2.16.756.5.30.1.127.3.10.10.html) is `2.16.756.5.30.1.127.3.10.10`
 
+## Replacing a CH-EMED-EPR document
+
+The following rules must be observed when replacing a document :
+* [Patients](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-PAT) and their [representatives](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-REP) can only replace a document published by the same patient.
+	* representatives are not supported by the service yet.
+* [Healthcare professionals](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-HCP) (HCP) can only replace a document published by himself or by another HCP of same community of affiliation.
+    * Current implementation: an HCP can replace a document published by any other HCP. Further rules and possible implementations are under discussion.
+* [Document administrator](https://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html) may only replace a document published by an HCP of the same community of affiliation.
+	* Not implemented in PMP, to be discussed, for now a document admin can replace any document.
+* Replacing and replaced documents have to be of the same type (e.g. both MTP documents).
+* Replacing and replaced documents have to refer to the same patient.
+* Only documents at the end of a treatment chain can be replaced.
+* Replaced document must exist in the repository.
+* A replacement document must can be linked only to elements of the same medication chain. In case a PRE document is replaced, it may be linked only to elements of the medication chains of the referenced MTP. 
+* [Document administrator](https://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html) may only  can replace a document regardless of who published it.
+
 ## Publishing a PMP-APPC document
 This section details the rules applicable to metadata when publishing [APPC documents](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_APPC.pdf).
 
 ### Rules for APPC:
-* Only patients and their representatives or policy administrators can publish a new APPC document.
-	* representatives are not supported yet by the service.
+* Only  [Patients](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-PAT) and their [representatives](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-REP) or policy administrators can publish a new APPC document.
+	* representatives are not supported by the service yet.
+*  Only [Patients](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-PAT) and their [representatives](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-REP) can replace their own APPC documents (if it exists).
+	* representatives are not supported by the service yet.
+* Policy administrators of the reference community of the patient can replace any existing APPC document.
 * No APPC for the specified patient exists in the system, otherwise the document is refused.
 * APPC document structure described in specs §7.5
     * `1 Description` section for free text description of the policy set
