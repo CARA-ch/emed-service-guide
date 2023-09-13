@@ -35,7 +35,7 @@ IHE provides different [profiles](https://profiles.ihe.net/ITI/TF/Volume1/index.
 * [XDS (Cross Enterprise Document Sharing)](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html)
 * [MHD (Mobile access to Health Documents)](https://profiles.ihe.net/ITI/MHD/index.html)
 
-XDS is the profile prescribed by the [Swiss EPR ordinance](https://www.fedlex.admin.ch/eli/oc/2023/221/fr#annex_5/lvl_u1/lvl_1), but MHD is simpler to implement, as it doesn't require the complex XDS stack (SOAP, WSSE, MIME-Multipart, MTOM/XOP, ebRIM, and multi-depth XML), and relies on a lighter REST interface.
+XDS is the profile prescribed by the [Swiss EPR ordinance](https://www.fedlex.admin.ch/eli/cc/2017/205/fr), but MHD is simpler to implement, as it doesn't require the complex XDS stack (SOAP, WSSE, MIME-Multipart, MTOM/XOP, ebRIM, and multi-depth XML), and relies on a lighter REST interface.
 
 Even though the eMedication service doesn't support it yet, it is possible to use the MHD profile though a third party component named [mobile access gateway](https://www.mobileaccessgateway.ch/). This component is not affiliated with this service, but referenced here for information purpose.
 
