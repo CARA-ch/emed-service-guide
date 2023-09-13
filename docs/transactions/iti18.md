@@ -2,6 +2,8 @@
 
 The [ITI-18 (Registry Stored Query)](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html) transaction allows a [Document Consumer](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.2) to query a [Document Registry](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.2), using [Registry Stored Queries](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1).
 
+This transaction has been implemented in order to respect the Swiss EPR regulation. However, it is very generic, and [CH:PHARM-1](chpharm1.md) should be favored, as it offers emedication-specific query parameters.
+
 ## Stored queries
 ### Generic rules
 * Folders option not supported
