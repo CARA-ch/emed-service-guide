@@ -8,7 +8,7 @@ The eMedication service doesn't support CMA documents and these won't be present
 
 CH:PHARM-1 defines three new stored queries, `FindMedicationCard, FindConsolidatedPrescriptionsForValidation` and `FindConsolidatedPrescriptionsForDispense`.
 
-**Common query parameters**
+## Common query parameters
 
 * `$MetadataLevel`: if present, the attribute shall equal to `1`, as per *Nationale Anpassungen der Integrationsprofile nach Artikel 5 Absatz 1 Buchstabe b EPDV-EDI*.
 * `$XDSDocumentEntryPatientId`: the patient XAD-PID (MPI-PID), meaning CARA's assigned identifier.
