@@ -17,6 +17,8 @@ nav:
   - CH-EMED-EPR: emed/index.md
   - PMP-APPC:
     - appc/index.md
+  - EndPoints:
+    - endpoints.md
 markdown_extensions:
   - smarty
   - admonition
