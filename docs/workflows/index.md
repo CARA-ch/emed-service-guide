@@ -1,5 +1,8 @@
-# Introduction
-This page describes possible interactions between third party applications and the eMedication service in different situations (medical consultation, medication dispense at a pharmacy, visit at a hospital etc.). 
+# Treatment lifecycle
+![Medication Lifecycle](../assets/workflow-medication.svg)
+
+# Situational workflows
+This section describes possible interactions between third party applications and the eMedication service in different situations (medical consultation, medication dispense at a pharmacy, visit at a hospital etc.). 
 
 For each situation, and corresponding types of eMedication service clients, it details the documents that can be exchanged and the corresponding transactions.
 
