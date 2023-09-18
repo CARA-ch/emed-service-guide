@@ -42,7 +42,6 @@ See also the [SubmissionSet Metadata Attributes diagram](https://profiles.ihe.ne
 |`sourceId`|R|Globally unique and immutable OID identifier of the source.|
 |`submissionTime`|R|[HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) value in UTC.|
 |`title`|O|-|
-|`uniqueId`|R|Globally unique id.|
 
 #### DocumentEntry metadata
 See also the [DocumentEntry Metadata Attributes diagram](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.1.1).
