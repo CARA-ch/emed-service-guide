@@ -19,7 +19,7 @@ This transaction has been implemented in order to respect the Swiss EPR regulati
 
 ### FindDocuments
 
-This stored query allows to search for APPC and CH-EMED-EPR documents. CH-EMED-EPR documentscould also be searched through the [PHARM-1](Transactions/PHARM-1) transaction (it's a specialized ITI-18 transaction).
+This stored query allows to search for APPC and CH-EMED-EPR documents. CH-EMED-EPR documents could also be searched through the [PHARM-1](Transactions/PHARM-1) transaction (it's a specialized ITI-18 transaction).
 
 When processing requests, the following rules are applied:
 
