@@ -14,7 +14,6 @@ For details about documents (content and metadata), see the [Documents page](doc
 
 ## Generic rules about transactions
 * In every transaction, the referenced patient has to match the same patient as the one in the XUA assertion.
-* XACML are checked but ignored. This will be re-enabled in the future.
 * Patients are allowed to perform every transactions
 * Healthcare Professionals are allowed to:
     * [Search documents (registry stored query XDS ITI-18)](iti18.md), 
