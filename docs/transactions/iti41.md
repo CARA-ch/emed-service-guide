@@ -196,7 +196,7 @@ The following rules must be observed when replacing a document :
 * Only documents at the end of a treatment chain can be replaced.
 * Replaced document must exist in the repository.
 * A replacement document must be linked only to elements of the same medication chain. In case a PRE document is replaced, it may be linked only to elements of the medication chains of the referenced MTP. 
-* [Document administrator](https://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html) may only  can replace a document regardless of who published it.
+* [Document administrator](https://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html) can replace any document regardless of who published it.
 
 ## Publishing a PMP-APPC document
 This section details the rules applicable to metadata when publishing [APPC documents](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_APPC.pdf).
