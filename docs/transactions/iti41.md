@@ -195,7 +195,7 @@ The following rules must be observed when replacing a document :
 * Replacing and replaced documents have to refer to the same patient.
 * Only documents at the end of a treatment chain can be replaced.
 * Replaced document must exist in the repository.
-* A replacement document must can be linked only to elements of the same medication chain. In case a PRE document is replaced, it may be linked only to elements of the medication chains of the referenced MTP. 
+* A replacement document must be linked only to elements of the same medication chain. In case a PRE document is replaced, it may be linked only to elements of the medication chains of the referenced MTP. 
 * [Document administrator](https://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html) may only  can replace a document regardless of who published it.
 
 ## Publishing a PMP-APPC document
