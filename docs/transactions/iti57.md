@@ -1,6 +1,6 @@
 # ITI-57
 
-The [ITI-57 (Update Document Set)](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_XDS_Metadata_Update.pdf) transaction allows a _Document Administrator_ (see referenced documentation, appendix A) to update existing documents. 
+The [ITI-57 (Update Document Set)](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_XDS_Metadata_Update.pdf) transaction makes it possible to update existing documents. 
 
 ## Update DocumentEntry Metadata
 
