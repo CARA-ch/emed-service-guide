@@ -238,7 +238,7 @@ This section details the rules applicable to metadata when publishing [APPC docu
 * As for [CH-EMED-EPR](#Replacing_a_CH-EMED-EPR_document), APPC documents to be replaced must:
     * Be approved (as before, this is always the case for documents in the PMP repository when they are published, but their status might change to deprecated after a replacement).
     * Not have `deletionStatus = deletionRequested`.
-* APPC document structure is described in [Implementation Guide for eMedication architecture in the context 
+* APPC document structure is described in [Implementation Guide for eMedication architecture in the context 
 of the EPR](https://www.e-health-suisse.ch/fileadmin/user_upload/Dokumente/E/Implementation_Guide_eMedication_Architecture_Specs_013_Anhoerung.pdf), section §7.5
     * `1 Description` section for free text description of the policy set
     * `1 Target` section containing:
