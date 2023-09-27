@@ -6,7 +6,7 @@ The eMedication service doesn't support CMA documents and these won't be present
 
 ## Stored queries
 
-CH:PHARM-1 defines three new stored queries, `FindMedicationCard, FindConsolidatedPrescriptionsForValidation` and `FindConsolidatedPrescriptionsForDispense`.
+CH:PHARM-1 defines three new stored queries, `FindMedicationCard`, `FindConsolidatedPrescriptionsForValidation` and `FindConsolidatedPrescriptionsForDispense`.
 
 ## Common query parameters
 

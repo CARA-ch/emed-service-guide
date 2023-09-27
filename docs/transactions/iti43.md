@@ -6,7 +6,7 @@ This transaction, implemented as per the specifications. All documents are retri
 
 ## On-demand documents
 
-Generations rules for CH-EMED-EPR [PML (Medication List)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html) and [PMLC (Medication Card)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) documents are described in the [CH-EMED-EPR IG](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/).
+Generation rules for CH-EMED-EPR [PML (Medication List)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html) and [PMLC (Medication Card)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) documents are described in the [CH-EMED-EPR IG](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/).
 
 ## Error codes
 
