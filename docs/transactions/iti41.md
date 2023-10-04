@@ -185,13 +185,12 @@ Some values from the DocumentEntry are checked against the document (values in m
 | DocumentEntry | CH-EMED-EPR                                                  |
 | ------------- | ------------------------------------------------------------ |
 | author        | `Composition.author`                                         |
-| classCode     | `FIXME`                                           |
+| classCode     | `Composition.type`.  Must be consistent with the document type (see [below](#ClassCode-metadata-to-use-for-each-document-type))|
 | creationTime  | `Composition.date`                                           |
-| creationTime  | `Composition.date`                                           |
-| formatCode    | `FIXME`                                           |
+| formatCode    | Must be consistent with the document type (see [below](#ClassCode-metadata-to-use-for-each-document-type))|
 | languageCode  | `Composition.language`                                       |
 | mimeType      | `application/fhir+xml` or `application/fhir+json`            |
-| typeCode      | `FIXME`            |
+| typeCode      |  Must be consistent with the document type (see [below](#ClassCode-metadata-to-use-for-each-document-type))|
 | uniqueId      | `Bundle.identifier.value` and `Composition.identifier.value` |
 
 ### ClassCode metadata to use for each document type
