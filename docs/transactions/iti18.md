@@ -32,7 +32,7 @@ When processing requests, the following rules are applied:
 * `$XDSDocumentEntryServiceStopTimeFrom`: not considered for APPC documents
 * `$XDSDocumentEntryServiceStopTimeTo`: not considered for APPC documents
 * `$XDSDocumentEntryFormatCode`: N/A
-* `$XDSDocumentEntryDocumentAvailability`: if specified, everything else than `Online` will yield no result.
+* `$XDSDocumentEntryDocumentAvailability`: if specified, anything else than `Online` will yield no result.
 
 ### FindSubmissionSets
 
