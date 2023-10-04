@@ -218,7 +218,7 @@ The following rules must be observed when replacing a document :
 * Replacing and replaced documents have to refer to the same patient.
 * Only documents at the end of a treatment chain can be replaced.
 * Replaced document must exist in the repository.
-* A replacement document must can be linked only to elements of the same medication chain. In case a PRE document is replaced, it may be linked only to elements of the medication chains of the referenced MTP. 
+* A replacement document must can be linked only to elements of the same medication chain. In case a PRE document is replaced, it may be linked only to elements of the medication chain of the referenced MTP. 
 * [Document administrator](https://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html) can replace any document regardless of who published it.
 * Replaced document must be approved (although this is always the case after an initial ITI-41 transaction, documents might become `deprecated` after another ITI-41 transaction with a [replacement association]((https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.2.2))).
 * Replaced document must not have `deletionStatus = deletionRequested` (this is relevant since although it is not the case at the moment with the current implementation, there might be files in the repository flagged for deletion but not deleted yet).
