@@ -76,7 +76,7 @@ See also the [DocumentEntry Metadata Attributes diagram](https://profiles.ihe.ne
 |`serviceStartTime`|O|Given as an [HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) in UTC. Shall be empty for APPC|
 |`serviceStopTime`|O|Given as an [HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) in UTC. Shall be empty for APPC|
 |`size`|O|-|
-|`sourcePatientId`|R|Any id known or unknown to the local MPI, EPR-SPID and SSN are forbidden.|
+|`sourcePatientId`|R|Any id known or unknown to the local MP. EPR-SPID and SSN are forbidden.|
 |`sourcePatientInfo`|O|Ignored by the service.|
 |`title`|R|-|
 |`typeCode`|R|See [section](#ClassCode-metadata-to-use-for-each-document-type) below.|
