@@ -8,6 +8,7 @@ This transaction is implemented, but only for the *deletionStatus* attribute. Th
 
 ### Deleting a CH-EMED-EPR document
 The rules are similar to [ITI-41](iti41.md) replacement.
+
 * Patient / representative can only request the removal of a document published by the same patient. Hence a patient cannot request the removal of a document published by a healthcare professional.
     * Representatives are not supported by the service yet, but will be in the future.
 * Healthcare professionals can only request the removal of a document published by themselves or by another healthcare professional of the same community of affiliation.
