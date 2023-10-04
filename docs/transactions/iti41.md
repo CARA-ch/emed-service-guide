@@ -13,6 +13,7 @@ Two types of documents might be published to the service :
 The eMedication service does not support folders and can only receive ONE document at a time. Hence, the [metadata](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1) must always contain a [SubmissionSet](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.1.1) with a single [DocumentEntry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.1.3).
 
 Only the following [associations](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.2) are supported :
+
 |Association Type|Usage|
 |-------------------|-------|
 |[urn:oasis:names:tc:ebxml-regrep:AssociationType:HasMember](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.2.1.1)|[To link a DocumentEntry to the SubmissionSet](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.2.1).|
@@ -25,6 +26,7 @@ Documents can be sent to the eMedication service only once. Uniqueness is checke
 This section describes the rules applicable for any document's type metadata.
 #### SubmissionSet metadata
 See also the [SubmissionSet Metadata Attributes diagram](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.1.2).
+
 |Metadata|Opt|Rules|
 |--------|---------|-----|
 |`uniqueId`|R|Must be a UUID. Can be used only once and must be globally unique.|
