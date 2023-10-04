@@ -98,6 +98,7 @@ This implies that the metadata cannot contain [Reference ids](https://profiles.i
 
 ### Creation times
 [Creation time](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-composition-medicationtreatmentplan-definitions.html#Composition.date) of a document must be equal or greater than the creation time of the last document of the treatment chain, ie. the last published document targeting the treatment (either the original MTP if no other document, or the last document published referencing this treatment).
+
 * Creation time of the document has to be in the past.
 * All references to other documents or items have to refer to existing approved non deleted documents.
 
@@ -115,7 +116,8 @@ This implies that the metadata cannot contain [Reference ids](https://profiles.i
 * If [lot number](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medication.html) (`CHEMEDEPRMedication.batch`) is specified in referenced MTP, [the one in the PRE](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medicationrequest.html) (`CHEMEDEPRMedicationRequest.medication[x]:medicationReference.batch`) should match it.  _This rule is not enforced and might be extended in the future_.
 #### PADV
 ##### PADV against a provisional PRE
-A "provisional PRE" is a prescription for which the [`CHEMEDEPRMedicationRequest.status`](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medicationrequest.html) is `SUBMITTED` or `PROVISIONAL` and for which a `PADV` `OK` has not been completed yet. 
+A "provisional PRE" is a prescription for which the [`CHEMEDEPRMedicationRequest.status`](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medicationrequest.html) is `SUBMITTED` or `PROVISIONAL` and for which a `PADV` `OK` has not been completed yet.
+
 * Medication cannot be changed. _This rule is not enforced and might be extended in the future_.
 * Dosage instructions cannot be changed.  _This rule is not enforced and might be extended in the future_.
 * Substitution cannot be disallowed if the existing dispense includes one.  _This rule is not enforced and might be extended in the future_.
@@ -210,6 +212,7 @@ The class and type codes are from the SNOMED CT system: `2.16.840.1.113883.6.96`
 ## Replacing a CH-EMED-EPR document
 
 The following rules must be observed when replacing a document :
+
 * [Patients](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-PAT) and their [representatives](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-REP) can only replace a document published by the same patient.
 	* representatives are not supported by the service yet.
 * [Healthcare professionals](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-HCP) (HCP) can only replace a document published by himself or by another HCP of same community of affiliation.
