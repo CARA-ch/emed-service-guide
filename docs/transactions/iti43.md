@@ -1,12 +1,12 @@
 # ITI-43
 
-Nothing special about the transaction, implemented as per the spec. All documents are retrievable with an ITI-43 transaction (with the proper access rights).
+The [ITI-43 (Retrieve Document Set)](https://profiles.ihe.net/ITI/TF/Volume2/ITI-43.html) transaction allows a [Document Consumer](https://profiles.ihe.net/ITI/TF/Volume2/ITI-43.html#3.43.2) to retrieve a set of documents. 
 
-## Stable documents
+This transaction, implemented as per the specifications. All documents are retrievable with an ITI-43 transaction (with the proper access rights : only patients, representatives and policy administrators can retrieve [APPC (Advanced Patient Privacy Consent)](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_APPC.pdf) documents).
 
 ## On-demand documents
 
-Generations rules for CH-EMED-EPR [PML (Medication List)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html) and [PMLC (Medication Card)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) documents are described in the CH-EMED-EPR IG.
+Generation rules for CH-EMED-EPR [PML (Medication List)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html) and [PMLC (Medication Card)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) documents are described in the [CH-EMED-EPR IG](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/).
 
 ## Error codes
 

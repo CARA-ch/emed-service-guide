@@ -6,17 +6,17 @@ The eMedication service doesn't support CMA documents and these won't be present
 
 ## Stored queries
 
-CH:PHARM-1 defines three new stored queries, _FindMedicationCard_, _FindConsolidatedPrescriptionsForValidation_ and _FindConsolidatedPrescriptionsForDispense_.
+CH:PHARM-1 defines three new stored queries, `FindMedicationCard`, `FindConsolidatedPrescriptionsForValidation` and `FindConsolidatedPrescriptionsForDispense`.
 
-**Common query parameters**
+## Common query parameters
 
-* *$MetadataLevel*: if present, the attribute shall equal to "1", as per *Nationale Anpassungen der Integrationsprofile nach Artikel 5 Absatz 1 Buchstabe b EPDV-EDI*.
-* *$XDSDocumentEntryPatientId*: the patient XAD-PID (MPI-PID), meaning CARA's assigned identifier.
-* *$XDSDocumentEntryPracticeSettingCode*: only codes from the Swiss value set.
-* *$XDSDocumentEntryService(Start|Stop)Time(From|To)*: see the definition of XDSDocumentEntry.service(Start|Stop)Time
-* *$XDSDocumentEntryHealthcareFacilityTypeCode*: only codes from the Swiss value set.
-* *$XDSDocumentEntryEventCodeList*: only codes from the Swiss value set.
-* *$XDSDocumentEntryConfidentialityCode*: only 'Normal' supported by the service.
+* `$MetadataLevel`: if present, the attribute shall equal to `1`, as per *Nationale Anpassungen der Integrationsprofile nach Artikel 5 Absatz 1 Buchstabe b EPDV-EDI*.
+* `$XDSDocumentEntryPatientId`: the patient XAD-PID (MPI-PID), meaning CARA's assigned identifier.
+* `$XDSDocumentEntryPracticeSettingCode`: only codes from the Swiss value set.
+* `$XDSDocumentEntryService(Start|Stop)Time(From|To)`: see the definition of `XDSDocumentEntry.service(Start|Stop)Time`
+* `$XDSDocumentEntryHealthcareFacilityTypeCode`: only codes from the Swiss value set.
+* `$XDSDocumentEntryEventCodeList`: only codes from the Swiss value set.
+* `$XDSDocumentEntryConfidentialityCode`: only `Normal` supported by the service.
 
 ### FindMedicationTreatmentPlans
 
@@ -61,22 +61,22 @@ Treatment selection (via the search query execution) is done at document retriev
 
 **Query parameters**
 
-  | Parameter Name                    | Attribute                     | Opt | Mult |
-  | --------------------------------- | ----------------------------- | --- | ---- |
-  | $XDSDocumentEntryPatientId        | XDSDocumentEntry.patientId    | R   | --   |
-  | $XDSDocumentEntryStatus           | XDSDocumentEntry.objectType   | R   | M    |
-  | $XDSDocumentEntryFormatCode       | XDSDocumentEntry.formatCode   | O   | --   |
-  | $XDSDocumentEntryLanguageCode     | XDSDocumentEntry.languageCode | O   | --   |
-  | $XDSDocumentEntryServiceStartFrom | N/A                           | O   | --   |
-  | $XDSDocumentEntryServiceStartTo   | N/A                           | O   | --   |
-  | $XDSDocumentEntryServiceEndFrom   | N/A                           | O   | --   |
-  | $XDSDocumentEntryServiceEndTo     | N/A                           | O   | --   |
-  | $XDSDocumentEntryType             | N/A                           | O   | M    |
+  | Parameter Name                      | Attribute                      | Opt | Mult |
+  | ----------------------------------- | ------------------------------ | --- | ---- |
+  | `$XDSDocumentEntryPatientId`        | `XDSDocumentEntry.patientId`   | R   | --   |
+  | `$XDSDocumentEntryStatus`           | `XDSDocumentEntry.objectType`  | R   | M    |
+  | `$XDSDocumentEntryFormatCode`       | `XDSDocumentEntry.formatCode`  | O   | --   |
+  | `$XDSDocumentEntryLanguageCode`     | `XDSDocumentEntry.languageCode`| O   | --   |
+  | `$XDSDocumentEntryServiceStartFrom` | N/A                            | O   | --   |
+  | `$XDSDocumentEntryServiceStartTo`   | N/A                            | O   | --   |
+  | `$XDSDocumentEntryServiceEndFrom`   | N/A                            | O   | --   |
+  | `$XDSDocumentEntryServiceEndTo`     | N/A                            | O   | --   |
+  | `$XDSDocumentEntryType`             | N/A                            | O   | M    |
  <!-- TODO: ServiceStart/Stop map to treatment dates. Not only active treatments. If Stop absent, only active+suspended -->
 
 
-  * *$XDSDocumentEntryStatus*: This parameter is not used.
-  * *$XDSDocumentEntryFormatCode*: this parameter is used to determine what will be the type of the generated medication card:
+  * `$XDSDocumentEntryStatus`: This parameter is not used.
+  * `$XDSDocumentEntryFormatCode`: this parameter is used to determine what will be the type of the generated medication card:
 
     | Supported format code                      | Processing                                                 |
     | ------------------------------------------ | ---------------------------------------------------------- |
@@ -84,7 +84,7 @@ Treatment selection (via the search query execution) is done at document retriev
     | `urn:che:epr:EPR_Unstructured_Document`    | The medication card is a PDF document.                     |
 
 
-  * *$XDSDocumentEntryLanguageCode*: the language that will be used to generate the medication card. If not specified, the eMedication service uses the default language (french).
+  * `$XDSDocumentEntryLanguageCode`: the language that will be used to generate the medication card. If not specified, the eMedication service uses the default language (french).
 
     | Supported language | code    |
     | ------------------ | ------- |
@@ -97,9 +97,9 @@ Treatment selection (via the search query execution) is done at document retriev
 
         The service currently only supports french.
 
-  * *$XDSDocumentEntryServiceStartFrom*, *$XDSDocumentEntryServiceStartTo*: This parameter is not used.
-  * *$XDSDocumentEntryServiceEndFrom*, *$XDSDocumentEntryServiceEndTo*: This parameter is not used.
-  * *$XDSDocumentEntryType*: stable and/or on-demand. Stable documents are PML documents that have been generated and saved, on-demand are documents that can be generated. There's no stable PML in the eMedication service (the response is empty for requests that only specify stable types). If absent, all types are returned. A single on-demand document is returned.
+  * `$XDSDocumentEntryServiceStartFrom`, `$XDSDocumentEntryServiceStartTo`: This parameter is not used.
+  * `$XDSDocumentEntryServiceEndFrom`, `$XDSDocumentEntryServiceEndTo`: This parameter is not used.
+  * `$XDSDocumentEntryType`: stable and/or on-demand. Stable documents are PML documents that have been generated and saved, on-demand are documents that can be generated. There's no stable PML in the eMedication service (the response is empty for requests that only specify stable types). If absent, all types are returned. A single on-demand document is returned.
 
 ### Draft: FindConsolidatedPrescriptionsForValidation (🇨🇭)
 
@@ -111,21 +111,21 @@ Treatment selection (via the search query execution) is done at document retriev
   
   | Parameter Name                              | Attribute                             | Opt | Mult |
   | ------------------------------------------- | ------------------------------------- | --- | ---- |
-  | $XDSDocumentEntryPatientId                  | XDSDocumentEntry.patientId            | R   | --   |
-  | $XDSDocumentEntryEntryUUID                  | XDSDocumentEntry.entryUUID            | O   | M    |
-  | $XDSDocumentEntryUniqueId                   | XDSDocumentEntry.uniqueId             | O   | M    |
-  | $XDSDocumentEntryPracticeSettingCode        | XDSDocumentEntry. practiceSettingCode | O   | M    |
-  | $XDSDocumentEntryCreationTimeFrom           | XDSDocumentEntry.creationTime         | O   | --   |
-  | $XDSDocumentEntryCreationTimeTo             | XDSDocumentEntry.creationTime         | O   | --   |
-  | $XDSDocumentEntryServiceStartTimeFrom       | N/A                                   | O   | --   |
-  | $XDSDocumentEntryServiceStartTimeTo         | N/A                                   | O   | --   |
-  | $XDSDocumentEntryServiceStopTimeFrom        | N/A                                   | O   | --   |
-  | $XDSDocumentEntryServiceStopTimeTo          | N/A                                   | O   | --   |
-  | $XDSDocumentEntryHealthcareFacilityTypeCode |                                       | O   | M    |
-  | $XDSDocumentEntryEventCodeList              |                                       | O   | M    |
-  | $XDSDocumentEntryConfidentialityCode        | Keep?                                 | O   | M    |
-  | $XDSDocumentEntryAuthorPerson               | Keep?                                 | O   | M    |
-  | $XDSDocumentEntryStatus                     | No reason to keep it                  | O   | M    |
+  | `$XDSDocumentEntryPatientId`                  | `XDSDocumentEntry.patientId`            | R   | --   |
+  | `$XDSDocumentEntryEntryUUID`                  | `XDSDocumentEntry.entryUUID`            | O   | M    |
+  | `$XDSDocumentEntryUniqueId`                   | `XDSDocumentEntry.uniqueId`             | O   | M    |
+  | `$XDSDocumentEntryPracticeSettingCode`        | `XDSDocumentEntry. practiceSettingCode` | O   | M    |
+  | `$XDSDocumentEntryCreationTimeFrom`           | `XDSDocumentEntry.creationTime`         | O   | --   |
+  | `$XDSDocumentEntryCreationTimeTo`             | `XDSDocumentEntry.creationTime`         | O   | --   |
+  | `$XDSDocumentEntryServiceStartTimeFrom`       | N/A                                   | O   | --   |
+  | `$XDSDocumentEntryServiceStartTimeTo`         | N/A                                   | O   | --   |
+  | `$XDSDocumentEntryServiceStopTimeFrom`        | N/A                                   | O   | --   |
+  | `$XDSDocumentEntryServiceStopTimeTo`          | N/A                                   | O   | --   |
+  | `$XDSDocumentEntryHealthcareFacilityTypeCode` |                                       | O   | M    |
+  | `$XDSDocumentEntryEventCodeList`              |                                       | O   | M    |
+  | `$XDSDocumentEntryConfidentialityCode`        | Keep?                                 | O   | M    |
+  | `$XDSDocumentEntryAuthorPerson`               | Keep?                                 | O   | M    |
+  | `$XDSDocumentEntryStatus`                     | No reason to keep it                  | O   | M    |
 
 ### Draft: FindConsolidatedPrescriptionsForDispense (🇨🇭)
 
