@@ -104,7 +104,7 @@ This implies that the metadata cannot contain [Reference ids](https://profiles.i
 * Each PRE item should [refer to an MTP item](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-document-medicationprescription.html) (`CHEMEDEPRMedicationRequest.treatmentplan`) that must:
     * Exist (has already been published, and never deleted)
     * Be [approved](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2.2), ie. `DocumentEntry.availabilityStatus = approved`, 
-    * Preferably  be valid, ie. the submission date should be within the [MTP `dosage`'s](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-dosage.html) `boundsPeriod` (`CHEMEDEPRDosage.repeat.bounds`).
+    * Preferably  be valid, i.e. the submission date should be within the [MTP `dosage`'s](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-dosage.html) `boundsPeriod` (`CHEMEDEPRDosage.repeat.bounds`).
         * If the `boundsPeriod` is not defined, the entry is considered to be always active.
         * If only a [`startDate`](http://hl7.org/fhir/R4/datatypes-definitions.html#Period.start) is specified, the MTP is considered to be active if the current date is after that date.
     * Active, ie. `CHEMEDEPRDocumentMedicationTreatmentPlan.CHEMEDEPRMedicationStatement.status = active`
