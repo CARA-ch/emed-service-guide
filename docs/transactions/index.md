@@ -14,7 +14,7 @@ For details about documents (content and metadata), see the [Documents page](doc
 
 ## Generic rules about transactions
 * In every transaction, the referenced patient has to match the same patient as the one in the XUA assertion.
-* Patients are allowed to perform every transactions
+* Patients are allowed to perform all types of transactions
 * Healthcare Professionals are allowed to:
     * [Search documents (registry stored query XDS ITI-18)](iti18.md), 
     * [Retrieve document set (XDS ITI-43)](iti43.md), 
