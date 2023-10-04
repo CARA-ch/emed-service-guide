@@ -11,6 +11,7 @@ The rules are similar to [ITI-41](iti41.md) replacement.
 * Patient / representative can only request the removal of a document published by the same patient. Hence a patient cannot request the removal of a document published by a healthcare professional.
     * Representatives are not supported by the service yet, but will be in the future.
 * Healthcare professionals can only request the removal of a document published by themselves or by another healthcare professional of the same community of affiliation.
+	  * Deletion rights related to HCP are not implemented yet and will be subject to further discussion before implementation. For now, patients are allowed to delete documents provided by HCPs and HCPs are not allowed to delete any documents.
 * Document administrator may only request the removal of any document published by either a patient, representative, or healthcare professional.
 * Only approved documents at the end of a treatment chain can be requested to be deleted.
 * Requested deletion of a CH-EMED-EPR document will also flag for deletion the chain of replaced documents by this document, if it exists.
