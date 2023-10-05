@@ -103,6 +103,8 @@ This implies that the metadata cannot contain [Reference ids](https://profiles.i
 * All references to other documents or items have to refer to existing approved non deleted documents.
 
 ### Rules for each type of document
+#### MTP
+* The [medication referenced in the MTP](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-medicationstatement-treatmentplan.html) (`CHEMEDEPRMedicationStatement`) should follow some rules. These are detailed in the implementation guide's [treatment guidance page](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/guidance_treatment.html).
 #### PRE
 * Each PRE item should [refer to an MTP item](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/StructureDefinition-ch-emed-epr-document-medicationprescription.html) (`CHEMEDEPRMedicationRequest.treatmentplan`) that must:
     * Exist (has already been published, and never deleted)
