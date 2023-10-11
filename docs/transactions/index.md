@@ -45,3 +45,14 @@ Even though the eMedication service doesn't support it yet, it is possible to us
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | XDSRegistryError    | In case of business rule error, missing/invalid XUA (authentication errors), unexpected exception.                                                  |
 | XDSUnknownPatientId | If the patient ID is unknown (i.e. the patient has not registered), if the subjects is missing rights to preform the action (authorization errors). |
+
+## Other transactions
+In addition to the [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) transactions implemented by the service, implementers may find it useful to check out the following profiles and transactions :
+* [Cross Enterprise User Assertion (XUA)](https://profiles.ihe.net/ITI/TF/Volume1/ch-13.html) profile, and the [Provide X-User Assertion (XUA ITI-40)](https://profiles.ihe.net/ITI/TF/Volume2/ITI-40.html#3.40) transaction.
+    * The XUA profile defines the format of assertions inserted in transactions, that contain information about the users and their roles.
+    * The ITI-40 transaction is used to obtain the assertions from an assertion provider.
+* [Healthcare Provider Directory (HPD)](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_HPD.pdf) profile, and the [Provider Information Query (HPD ITI-58)](https://profiles.ihe.net/ITI/TF/Volume2/ITI-58.html) transaction.
+    * The HPD profile defines the management of healthcare provider information in a directory structure.
+    * The ITI-58 transaction can be used to lookup healthcare provider information from a healthcare provider directory.
+* [Audit Trail and Node Authentication (ATNA)](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html) profile, and the [record audit event (ATNA ITI-20)](https://profiles.ihe.net/ITI/TF/Volume2/ITI-20.html#3.20) transaction.
+    * The ATNA profile might be used by implementers to record audit events through the ITI-20 transaction.
