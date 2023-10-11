@@ -4,6 +4,8 @@ The [ITI-18 (Registry Stored Query)](https://profiles.ihe.net/ITI/TF/Volume2/ITI
 
 This transaction has been implemented in order to respect the Swiss EPR regulation. However, it is very generic, and [CH:PHARM-1](chpharm1.md) should be favored, as it offers emedication-specific query parameters.
 
+See also [EPD by example's Registry Stored Query](https://github.com/ehealthsuisse/EPD-by-example/blob/main/files/AuthenticateUser.md) page.
+
 ## Stored queries
 ### Generic rules
 * Folders option not supported

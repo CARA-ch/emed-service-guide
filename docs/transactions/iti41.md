@@ -2,7 +2,9 @@
 
 The [ITI-41 (Provide and Register Document Set-b)](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html) transaction allows a [content sender](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html#3.41.2) to send documents to the eMedication service ([content receiver](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html#3.41.2)). 
 
-Generic [DocumentEntry metadata](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.1.1) are described in the [documents section](documents.md). This page references additional constraints specific to ITI-41. See also IHE's documentation for [metadata in Document Sharing profiles](https://profiles.ihe.net/ITI/TF/Volume3/index.html).
+Generic [DocumentEntry metadata](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.1.1) are described in the [documents section](documents.md). This page references additional constraints specific to ITI-41. 
+
+See also IHE's documentation for [metadata in Document Sharing profiles](https://profiles.ihe.net/ITI/TF/Volume3/index.html) as well as [EPD by example's Provide and Register Document Set](https://github.com/ehealthsuisse/EPD-by-example/blob/main/files/ProvideAndRegister.md) page.
 
 ## Publishing documents
 ### Document types
