@@ -9,7 +9,7 @@ Welcome to the Integration Guide for the eMedication service of CARA's community
 
 Other resources:
 
-- IPF : Open eHealth Integration Platform - interfaces for health-care related integration solutions.
+- IPF: Open eHealth Integration Platform - interfaces for health-care related integration solutions.
   - [IPF code](https://github.com/oehf/ipf): IPF provides an Apache Camel implementation of pretty much all transactions
   used in the Swiss EPR.
   - [IPF documentation](https://oehf.github.io/ipf-docs/)
