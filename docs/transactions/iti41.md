@@ -9,8 +9,9 @@ See also IHE's documentation for [metadata in Document Sharing profiles](https:/
 ## Publishing documents
 ### Document types
 Two types of documents might be published to the service :
-- [CH-EMED-EPR](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/) documents ([MTP](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_mtp.html), [PRE](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pre.html), [DIS](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_dis.html) and [PADV](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_padv.html) only, [PML](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html) and [PMLC](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) can only be retrieved from the service and not published to it). These documents contain the eMedication data. See also the [corresponding page](../emed/index.md) in this guide.
-- [APPC (Advanced Patient Privacy Consent)](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_APPC.pdf) documents. These documents are used to let patients define access rights to their data (who can publish and retrieve their data). See also the [corresponding page](../appc/index.md) in this guide.
+* [CH-EMED-EPR](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/) documents ([MTP](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_mtp.html), [PRE](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pre.html), [DIS](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_dis.html) and [PADV](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_padv.html) only, [PML](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html) and [PMLC](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) can only be retrieved from the service and not published to it). These documents contain the eMedication data. See also the [corresponding page](../emed/index.md) in this guide.
+* [APPC (Advanced Patient Privacy Consent)](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_APPC.pdf) documents. These documents are used to let patients define access rights to their data (who can publish and retrieve their data). See also the [corresponding page](../appc/index.md) in this guide.
+
 ### SubmissionSet and relations
 The eMedication service does not support folders and can only receive ONE document at a time. Hence, the [metadata](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1) must always contain a [SubmissionSet](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.1.1) with a single [DocumentEntry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.1.3).
 
@@ -211,7 +212,7 @@ Some values from the DocumentEntry are checked against the document (values in m
 | PML           | `422735006` _Summary clinical document_ | `urn:che:epr:ch-emed:pml:2022`             | `721912009` _Medication summary document_                     |
 | PMLC          | `422735006` _Summary clinical document_ | `urn:che:epr:ch-emed:medication-card:2022` |`736378000` _Medication management plan (record artifact)_ |
 
-The class and type codes are from the SNOMED CT system: `2.16.840.1.113883.6.96`. The system for the [`formatCode`](http://www.fhir.org/guides/stats/codesystem-ch.fhir.ig.ch-epr-term-2.16.756.5.30.1.127.3.10.10.html) is `2.16.756.5.30.1.127.3.10.10`
+The class and type codes are from the SNOMED CT system: `2.16.840.1.113883.6.96`. The system for the [`formatCode`](https://fhir.ch/ig/ch-epr-term/CodeSystem-2.16.756.5.30.1.127.3.10.10.html) is `2.16.756.5.30.1.127.3.10.10`
 
 ## Replacing a CH-EMED-EPR document
 
