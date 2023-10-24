@@ -52,18 +52,18 @@ See also the [DocumentEntry Metadata Attributes diagram](https://profiles.ihe.ne
 
 |Metadata|Opt|Rules|
 |--------|---------|-----|
-|`author.authorRole`|R|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorRole.html). For APPC, only `PAT` (patient) and `REP` (Representative) are allowed. Must be aligned with document content author ([see below](#Metadata-values-check)).|
-|`author.authorSpecialty`|O|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorSpeciality.html). Must be aligned with document content author ([see below](#Metadata-values-check)).|
+|`author.authorRole`|R|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorRole.html). For APPC, only `PAT` (patient) and `REP` (Representative) are allowed. Must be aligned with document content author ([see below](#metadata-values-check)).|
+|`author.authorSpecialty`|O|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorSpeciality.html). Must be aligned with document content author ([see below](#metadata-values-check)).|
 |`availabilityStatus`|O|The value set in the metadata is always ignored, and replaced by `approved`.|
-|`classCode`|R|See [CH-EMED-EPR](#ClassCode-metadata-to-use-for-each-document-type) and [APPC](#Publishing-a-PMP-APPC-document) sections below.|
+|`classCode`|R|See [CH-EMED-EPR](#classcode-metadata-to-use-for-each-document-type) and [APPC](#publishing-a-pmp-appc-document) sections below.|
 |`comments`|O|-|
 |`confidentialityCode`|R|[Confidentiality level](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2.5) in the DocumentEntry metadata is forced to [`Normal`](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.confidentialityCode.html).|
-|`creationTime`|R|[HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) value in UTC. Must match document content creation time ([see below](#Metadata-values-check)).|
+|`creationTime`|R|[HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) value in UTC. Must match document content creation time ([see below](#metadata-values-check)).|
 |`deletionStatus`|O|If present, deletionStatus must be `urn:e-health-suisse:2019:deletionStatus:deletionNotRequested`.|
 |`documentAvailability`|O|If present should be `Online`.|
 |`entryUUID`|R|Must be globally unique.|
 |`eventCodeList`|O|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.eventCodeList.html).|
-|`formatCode`|R|See [CH-EMED-EPR](#ClassCode-metadata-to-use-for-each-document-type) and [APPC](#Publishing-a-PMP-APPC-document) sections below.|
+|`formatCode`|R|See [CH-EMED-EPR](#classcode-metadata-to-use-for-each-document-type) and [APPC](#publishing-a-pmp-appc-document) sections below.|
 |`hash`|O|Hash of the document content.|
 |`healthcareFacilityTypeCode`|R|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.healthcareFacilityTypeCode.html).|
 |`homeCommunityId`|O|-|
@@ -73,9 +73,9 @@ See also the [DocumentEntry Metadata Attributes diagram](https://profiles.ihe.ne
 |`logicalId`|O|Shall be present when replacing a document.|
 |`mimeType`|O|Possible values are defined [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.mimeType.html). Use `application/fhir+json` or `application/fhir+xml` for CH-EMED-EPR documents, and `text/xml` for APPC.|
 |`objectType`|R|Value is ignored and set to `Stable`.|
-|`patientId`|R|Must match `SubmissionSet.patientId` and be a XAD-PID ([see above](#SubmissionSet-metadata)).|
+|`patientId`|R|Must match `SubmissionSet.patientId` and be a XAD-PID ([see above](#submissionset-metadata)).|
 |`practiceSettingCode`|R|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.practiceSettingCode.html).|
-|`referenceIdList`|O|Must be omitted or empty as referencing external documents is not permitted (see [Referencing external documents](#Referencing-external-documents) section).|
+|`referenceIdList`|O|Must be omitted or empty as referencing external documents is not permitted (see [Referencing external documents](#referencing-external-documents) section).|
 |`repositoryUniqueId`|O|If the attribute `repositoryUniqueId` is present and does not correspond to the `repositoryUniqueId` containing the documents the request is refused.|
 |`serviceStartTime`|O|Given as an [HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) in UTC. Shall be empty for APPC|
 |`serviceStopTime`|O|Given as an [HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) in UTC. Shall be empty for APPC|
@@ -83,7 +83,7 @@ See also the [DocumentEntry Metadata Attributes diagram](https://profiles.ihe.ne
 |`sourcePatientId`|R|Any id known or unknown to the local MPI. EPR-SPID and SSN are forbidden.|
 |`sourcePatientInfo`|O|Ignored by the service.|
 |`title`|R|-|
-|`typeCode`|R|See [section](#ClassCode-metadata-to-use-for-each-document-type) below.|
+|`typeCode`|R|See [section](#classcode-metadata-to-use-for-each-document-type) below.|
 |`uniqueId`|R|Must be globally unique and be a UUID. Must match the document id in the case of CH-EMED-EPR documents.|
 |`URI`|O|-|
 |`version`|O|If present shall be empty, the value is ignored and set by the document registry.|
@@ -193,12 +193,12 @@ Some values from the DocumentEntry are checked against the document (values in m
 | DocumentEntry | CH-EMED-EPR                                                  |
 | ------------- | ------------------------------------------------------------ |
 | author        | `Composition.author`                                         |
-| classCode     | `Composition.type`.  Must be consistent with the document type (see [below](#ClassCode-metadata-to-use-for-each-document-type))|
+| classCode     | `Composition.type`.  Must be consistent with the document type (see [below](#classcode-metadata-to-use-for-each-document-type))|
 | creationTime  | `Composition.date`                                           |
-| formatCode    | Must be consistent with the document type (see [below](#ClassCode-metadata-to-use-for-each-document-type))|
+| formatCode    | Must be consistent with the document type (see [below](#classcode-metadata-to-use-for-each-document-type))|
 | languageCode  | `Composition.language`                                       |
 | mimeType      | `application/fhir+xml` or `application/fhir+json`            |
-| typeCode      |  Must be consistent with the document type (see [below](#ClassCode-metadata-to-use-for-each-document-type))|
+| typeCode      |  Must be consistent with the document type (see [below](#classcode-metadata-to-use-for-each-document-type))|
 | uniqueId      | `Bundle.identifier.value` and `Composition.identifier.value` |
 
 ### ClassCode metadata to use for each document type
@@ -235,14 +235,14 @@ The following rules must be observed when replacing a document :
 ## Publishing a PMP-APPC document
 This section details the rules applicable to metadata when publishing [APPC documents](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_APPC.pdf).
 
-### Rules for APPC:
+### Rules for APPC
 * Only  [Patients](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-PAT) and their [representatives](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-REP) or policy administrators can publish a new APPC document.
 	* representatives are not supported by the service yet.
 *  Only [Patients](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-PAT) and their [representatives](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-REP) can replace their own APPC documents (if it exists).
 	* representatives are not supported by the service yet.
 * Policy administrators of the reference community of the patient can replace any existing APPC document.
 * No APPC for the specified patient exists in the system (unless the published document is a replacement), otherwise the document is refused.
-* As for [CH-EMED-EPR](#Replacing_a_CH-EMED-EPR_document), APPC documents to be replaced must:
+* As for [CH-EMED-EPR](#replacing-a-ch-emed-epr-document), APPC documents to be replaced must:
     * Be approved (as before, this is always the case for documents in the PMP repository when they are published, but their status might change to deprecated after a replacement).
     * Not have `deletionStatus = deletionRequested`.
 * APPC document structure is described in [Implementation Guide for eMedication architecture in the context 

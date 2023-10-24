@@ -14,6 +14,8 @@ nav:
     - 'XDS: delete documents (ITI-57)': transactions/iti57.md
     - 'XDS: search pharmacy documents (CH:PHARM-1)': transactions/chpharm1.md
     - 'Date processing': transactions/date_processing.md
+  - Workflows:
+    - workflows/index.md
   - CH-EMED-EPR: emed/index.md
   - PMP-APPC:
     - appc/index.md
