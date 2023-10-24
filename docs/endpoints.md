@@ -18,7 +18,7 @@ This page lists the different endpoints available to use the e-medication servic
 |Query Pharmacy Documents (CH:PHARM-1)|`/services/xds/chpharm1`| [CH:PHARM-1](transactions/chpharm1.md)|
 
 ## MHD EndPoints
-[MHD transactions](https://profiles.ihe.net/ITI/MHD/index.html) are still a work in progress. They will be available through the `/fhir` and `/mhd` endPoints :
+[MHD transactions](https://profiles.ihe.net/ITI/MHD/index.html) are still a work in progress. They will be available through the `/fhir` and `/mhd` endPoints:
 
 | Transaction | Path | Comment |
 | --- | --- | --- |
