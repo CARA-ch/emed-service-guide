@@ -13,7 +13,7 @@ Other resources:
   - [IPF code](https://github.com/oehf/ipf): IPF provides an Apache Camel implementation of pretty much all transactions
   used in the Swiss EPR.
   - [IPF documentation](https://oehf.github.io/ipf-docs/)
-- Husky : Health Usability Key - convenience API for IHE transactions and CDA documents, as well as CH-EMED-EPR related FHIR.
+- Husky: Health Usability Key - convenience API for IHE transactions and CDA documents, as well as CH-EMED-EPR related FHIR.
   - [Husky code](https://github.com/project-husky/husky)
   - [Husky javadoc](https://project-husky.github.io/husky/)
   - [Husky wiki](https://github.com/project-husky/husky/wiki)
