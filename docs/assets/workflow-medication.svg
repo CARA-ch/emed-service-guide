@@ -3,7 +3,7 @@
 <!-- Généré par Microsoft Visio, SVG Export workflow medication.svg PAT -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
 		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="11.6929in" height="8.26772in"
-		viewBox="0 0 841.89 595.276" xml:space="preserve" color-interpolation-filters="sRGB" class="st36">
+		viewBox="0 0 800 600" xml:space="preserve" color-interpolation-filters="sRGB" class="st36">
 	<v:documentProperties v:langID="1036" v:metric="true" v:viewMarkup="false">
 		<v:userDefs>
 			<v:ud v:nameU="msvNoAutoConnect" v:val="VT0(0):26"/>
@@ -339,7 +339,7 @@
 			<text x="-35" y="650.93" class="st12" v:langID="4108"><v:paragraph v:horizAlign="1"/><v:tabList/>ITI-41</text>		</g>
 		<g id="shape21-109" v:mID="21" v:groupContext="shape" v:layerMember="0" transform="translate(575.433,-305.321)">
 			<title>Processus.21</title>
-			<desc>PLM (Medication List)</desc>
+			<desc>PML (Medication List)</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Coût" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1036" v:cal="0"/>
@@ -370,7 +370,7 @@
 						x="14.93" dy="1.2em" class="st8">(</tspan>Medication List)</text>		</g>
 		<g id="shape22-114" v:mID="22" v:groupContext="shape" v:layerMember="0" transform="translate(575.433,-247.136)">
 			<title>Processus.22</title>
-			<desc>PLMC (Medication Card)</desc>
+			<desc>PLMc (Medication Card)</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Coût" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1036" v:cal="0"/>
@@ -417,7 +417,7 @@
 			<text x="23.78" y="621.17" class="st12" v:langID="4108"><v:paragraph v:horizAlign="1"/><v:tabList/>PHARM-1 + ITI-43</text>		</g>
 		<g id="shape25-133" v:mID="25" v:groupContext="shape" v:layerMember="0" transform="translate(155.906,-355.748)">
 			<title>Processus.25</title>
-			<desc>PADV [OK, SUSPEND, CANCEL, REFUSE, COMMENT,CHANGE] (Pharmaceu...</desc>
+			<desc>PADV [OK, SUSPEND, CANCEL, REFUSE, COMMENT,CHANGE] (Pharmaceu...)</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Coût" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1036" v:cal="0"/>
