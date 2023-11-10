@@ -15,7 +15,9 @@ nav:
     - 'XDS: search pharmacy documents (CH:PHARM-1)': transactions/chpharm1.md
     - 'Date processing': transactions/date_processing.md
   - Workflows:
-    - workflows/index.md
+    - 'Treatment lifecycle': workflows/index.md
+    - 'Situational workflows': workflows/situationalworkflows.md
+    - 'Aggregation': workflows/aggregation.md
   - CH-EMED-EPR: emed/index.md
   - PMP-APPC:
     - appc/index.md
