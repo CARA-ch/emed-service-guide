@@ -3,12 +3,13 @@
 Welcome to the Integration Guide for the eMedication service of CARA's community.
 
 * [Transactions](transactions/index.md): information about the implemented transactions.
-* [Workflows](workflows/index.md) : description of the different workflows clients of this service can follow.
+* [Workflows](workflows/index.md): description of the different workflows clients of this service can follow.
 * [CH-EMED-EPR](emed/index.md): description of the eMedication [file format](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/).
 * [PMP-APPC](appc/index.md): description of the policy file format.
 
 Other resources:
 
+* [EPD by example](https://github.com/ehealthsuisse/EPD-by-example): a repository of sample transactions, including documents and patients management, authentication etc.
 * IPF: Open eHealth Integration Platform - interfaces for health-care related integration solutions.
 	* [IPF code](https://github.com/oehf/ipf): IPF provides an Apache Camel implementation of pretty much all transactions
   used in the Swiss EPR.

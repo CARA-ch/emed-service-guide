@@ -7,7 +7,7 @@ This page lists the different endpoints available to use the e-medication servic
 | Integration | https://pmp.posttenebrassilico.ch/pmp2 |
 
 ## XDS EndPoints
-[XDS transactions](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) are available through the `/services` endpoint :
+[XDS transactions](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) are available through the `/services` endpoint:
 
 | Transaction | Path | Documentation |
 | --- | --- | --- |

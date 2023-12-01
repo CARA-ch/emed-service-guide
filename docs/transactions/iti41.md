@@ -8,14 +8,16 @@ See also IHE's documentation for [metadata in Document Sharing profiles](https:/
 
 ## Publishing documents
 ### Document types
-Two types of documents might be published to the service :
+
+Two types of documents might be published to the service:
+
 * [CH-EMED-EPR](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/) documents ([MTP](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_mtp.html), [PRE](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pre.html), [DIS](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_dis.html) and [PADV](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_padv.html) only, [PML](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html) and [PMLC](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) can only be retrieved from the service and not published to it). These documents contain the eMedication data. See also the [corresponding page](../emed/index.md) in this guide.
 * [APPC (Advanced Patient Privacy Consent)](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_APPC.pdf) documents. These documents are used to let patients define access rights to their data (who can publish and retrieve their data). See also the [corresponding page](../appc/index.md) in this guide.
 
 ### SubmissionSet and relations
 The eMedication service does not support folders and can only receive ONE document at a time. Hence, the [metadata](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1) must always contain a [SubmissionSet](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.1.1) with a single [DocumentEntry](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.1.3).
 
-Only the following [associations](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.2) are supported :
+Only the following [associations](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.2) are supported:
 
 |Association Type|Usage|
 |-------------------|-------|
@@ -216,7 +218,7 @@ The class and type codes are from the SNOMED CT system: `2.16.840.1.113883.6.96`
 
 ## Replacing a CH-EMED-EPR document
 
-The following rules must be observed when replacing a document :
+The following rules must be observed when replacing a document:
 
 * [Patients](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-PAT) and their [representatives](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-REP) can only replace a document published by the same patient.
 	* representatives are not supported by the service yet.
