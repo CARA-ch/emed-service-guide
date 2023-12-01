@@ -28,7 +28,7 @@ Interacting with the eMedication service essentially comes down to:
 During a medical consultation, the typical workflow for a prescriber (medical practitioner), and the corresponding transactions would be:
 
 * To check the current medication of a patient during the anamnesis.
-    * Import [PMLc (Medication card)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) to retrieve the current medication plan ([CH:PHARM-1 (```FindMedicationList```)](../transactions/chpharm1.md) then [ITI-43 (retrieve document)](../transactions/iti43.md)).
+    * Import [PMLc (Medication card)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) to retrieve the current medication plan ([CH:PHARM-1 (```FindMedicationCard```)](../transactions/chpharm1.md) then [ITI-43 (retrieve document)](../transactions/iti43.md)).
 * To prescribe new medication.
     * Export [MTP (Medication Treatment Plan)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_mtp.html) for each new medication introduced into the plan ([ITI-41 (publish document)](../transactions/iti41.md)).
     * [PRE (Prescription)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pre.html) to issue a new prescription.
@@ -41,7 +41,7 @@ While visiting a pharmacy after a medical consultation, a patient and a pharmaci
 The typical workflow for a pharmacist (dispenser), and the corresponding transactions would be:
 
 * To check the current medication of a patient.
-    * Import [PMLc (Medication card)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) (or [PML (Medication list)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html) if history is needed) to retrieve the current medication plan ([CH:PHARM-1 (```FindMedicationList```)](../transactions/chpharm1.md) then [ITI-43 (retrieve document)](../transactions/iti43.md)).
+    * Import [PMLc (Medication card)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) (or [PML (Medication list)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html) if history is needed) to retrieve the current medication plan ([CH:PHARM-1 (```FindMedicationCard```)](../transactions/chpharm1.md) then [ITI-43 (retrieve document)](../transactions/iti43.md)).
 * To update the medication plan in case it is not up-to-date (for instance a new prescription has been issued by a prescriber not connected to the eMedication service).
     * Export [MTP (Medication Treatment Plan)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_mtp.html) for each treatment not in the plan to introduce it into it ([ITI-41 (publish document)](../transactions/iti41.md)).
     * [PADV (Pharmaceutical advice)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_padv.html).
@@ -51,8 +51,8 @@ The typical workflow for a pharmacist (dispenser), and the corresponding transac
         * [OK](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_padv.html#padv-ok) for each [PRE (Prescription)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pre.html) entry of the prescription that can be dispensed ([ITI-41 (publish document)](../transactions/iti41.md)).
         * [REFUSE](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_padv.html#padv-refuse) for each [PRE (Prescription)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pre.html) entry of the prescription that cannot be dispensed ([ITI-41 (publish document)](../transactions/iti41.md)).
 * To prescribe new medication.
-    * [PRE (Prescription)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pre.html) for each medication prescribed by the dispenser ([ITI-41 (publish document)](../transactions/iti41.md)).
     * Export [MTP (Medication Treatment Plan)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_mtp.html) for each new treatment to introduce them into the plan ([ITI-41 (publish document)](../transactions/iti41.md)).
+    * [PRE (Prescription)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pre.html) for each medication prescribed by the dispenser ([ITI-41 (publish document)](../transactions/iti41.md)).    
 * To dispense the prescribed medication or appropriate generics, possibly changing the dosage form.
     * [DIS (Dispense)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_dis.html) for each medication actually dispensed.
 * To generate a medication card for the patient ([ITI-41 (publish document)](../transactions/iti41.md)).
@@ -79,7 +79,7 @@ During a visit at a hospital, the medication is handled by the hospital's inform
 The typical workflow at admission, and the corresponding transactions would be:
 
 * To check the current medication of a patient.
-    * Import [PML (Medication list)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html) to retrieve the current medication plan ([CH:PHARM-1 (```FindMedicationList```)](../transactions/chpharm1.md) then [ITI-43 (retrieve document)](../transactions/iti43.md)).
+    * Import [PMLc (Medication card)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) to retrieve the current medication plan ([CH:PHARM-1 (```FindMedicationCard```)](../transactions/chpharm1.md) then [ITI-43 (retrieve document)](../transactions/iti43.md)).
 * To update the medication plan in case it is not up-to-date (for instance a new prescription has been issued by a prescriber not connected to the eMedication service) ([ITI-41 (publish document)](../transactions/iti41.md)).
     * Export [MTP (Medication Treatment Plan)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_mtp.html) for each  treatment not in the plan to introduce it into it ([ITI-41 (publish document)](../transactions/iti41.md)).
     * [PADV (Pharmaceutical advice)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_padv.html).
@@ -98,4 +98,4 @@ At release, the medication plan might be entirely revised: former medication sto
     * [PADV (Pharmaceutical advice)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_padv.html) [CHANGE](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_padv.html#padv-change) for each former MTP entry that should be updated ([ITI-41 (publish document)](../transactions/iti41.md)).
     * [PADV (Pharmaceutical advice)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_padv.html) [OK](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_padv.html#padv-ok) for each former MTP entry whose treatment was suspended and should be now resumed ([ITI-41 (publish document)](../transactions/iti41.md)).
 * Generating a medication card for the patient.
-    * Import [PMLc (Medication card)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) to create a document describing the new actual medication of the patient ([CH:PHARM-1 (```FindMedicationList```)](../transactions/chpharm1.md) then [ITI-43 (retrieve document)](../transactions/iti43.md)).
+    * Import [PMLc (Medication card)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) to create a document describing the new actual medication of the patient ([CH:PHARM-1 (```FindMedicationCard```)](../transactions/chpharm1.md) then [ITI-43 (retrieve document)](../transactions/iti43.md)).
