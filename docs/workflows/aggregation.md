@@ -10,6 +10,7 @@
 
 ## Triggers
 Aggregation occurs when:
+
 * A new [emed document](../emed/index.md) is provided via the [ITI-41 transaction](../transactions/iti41.md).
 * An [emed document](../emed/index.md) is removed via the [ITI-57 transaction](../transactions/iti57.md).
 * An [emed document](../emed/index.md) is replaced via the [ITI-41 transaction](../transactions/iti41.md) and the [replace](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.2.2) association.
