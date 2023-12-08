@@ -269,7 +269,7 @@ The table below shows an overview of the elements updated or created during the 
         treatments to display.</td>
       <td class="ref">-</td>
       <td class="add">Initialize &quot;active&quot;.</td>
-      <td class="check">Check value : must be active (not updated).</td>
+      <td class="check">Check value: must be active (not updated).</td>
       <td class="none">-</td>
       <td class="none">-</td>
       <td class="none">-</td>
@@ -375,7 +375,7 @@ The table below shows an overview of the elements updated or created during the 
       <td class="ref">6</td>
       <td class="add">Initialize with incoming MTP's medication additional dosages.</td>
       <td class="update">Add PRE's medication request additional dosages.</td>
-      <td class="update">Checks is existing dosage is equal to incoming DIS dosage.
+      <td class="update">Checks if existing dosage is equal to incoming DIS dosage.
         Update additional dosages with DIS's medication dispense additional dosages
         if necessary.</td>
       <td class="none">-</td>
@@ -437,7 +437,7 @@ The table below shows an overview of the elements updated or created during the 
         5 (start and end date of dosage)</td>
       <td class="add">Initialize with incoming MTP's medication base dosage.</td>
       <td class="update">Set PRE's medication request base dosage.</td>
-      <td class="update">Checks is existing dosage is equal to incoming DIS dosage.
+      <td class="update">Checks if existing dosage is equal to incoming DIS dosage.
         Update base dosage with DIS's medication dispense dosage if necessary.</td>
       <td class="none">-</td>
       <td class="none">-</td>
