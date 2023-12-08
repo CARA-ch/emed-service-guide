@@ -1,0 +1,30 @@
+Relevant changes from (upcoming) CH EMED EPR 1.0.0 based on CH EMED 4.0.0 (the latter should be published before the end of the current year):
+  - Authorship and authorship timestamps. Please refer to the [CH EMED authorship guidance page](https://build.fhir.org/ig/hl7ch/ch-emed/authorship.html) for further reading:
+    - All eMed entries will **require** the relevant authorship and authorship timestamp fields to be filled (i.e. `1..1` cardinality):
+      - `MedicationStatement` resources (MTP, PADV, PML, PMLC docs):
+		- `.informationSource` shall refer to the author of the medical decision.
+		- `.dateAsserted` shall specify the date of said medical decision (treatment plan).
+	  - All `MedicationRequest` resources (PRE, PADV, PML docs):
+		- `.requester` shall refer to the author of the medical decision.
+		- `.authoredOn` shall specify the date of said medical decision (prescription).
+	  - All `MediationDispense` resources (DIS, PML docs):
+		- `.performer.actor` shall refer to the author of the medical decision (dispense).
+		- `.whenHandedOver` shall specify the date of the dispense.
+	  - All `Observation` resources (PADV, PML docs):
+		- `.performer` shall refer to the author of the observation.
+		- `.issued` shall specify the date of the observation.
+	- All `Composition` resources:
+	  - No changes to the composition `.author`: this shall contain the author of the **document**, which may match any eMed entry's author but not necessarily (e.g. an assistant adding an MTP to the PMP on behalf of a practitioner would be the composition author while the practitioner would be the entry's author).
+	  - eMed sections of `Composition` resources will no longer support the `.author` element, which previously would optionally specify a medical author if different from the document (i.e. composition) author.
+	- PML and PMLC eMed entries shall continue (as it is already the case) to include the `authorDocument` extension if for the last aggregated entry the document author differs from the entry's author. Note that as per the rules above, the author of the entry (i.e. medical author) is always included in the entry.
+  - Changes to CH EMED's `UnitCode` value set:
+	- Several UCUM annotations have been replaced by equivalent SNOMED codes, please refer to https://build.fhir.org/ig/hl7ch/ch-emed//ValueSet-UnitCode.html
+      - `{Piece}` remains valid for now in the value set because the equivalent SNOMED term is missing, this will be solved for the next version of CH EMED when it should be replaced by a SNOMED code.
+	- The UnitCode-based [`CHEMEDEPRAmountQuantityUnitCode`](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/ValueSet-ch-emed-epr-amount-quantity-unit-code.html) value set reflects those changes.
+  - Removed `N` from the [`CHEMEDEprActSubstanceAdminSubstitutionCode`](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/ValueSet-ch-emed-epr-amount-quantity-unit-code.html) value set. This affects only `MedicationDispense` resources:
+	- The value set now contains only `E` as allowed code as a consequence.
+	- New CH EMED constraint: if no substitution has been performed, the `MedicationDispense.substitution.type` element SHALL NOT be present (see constraint `ch-emed-dis-1` on either the  CH EMED or CH EMED EPR resource definition).
+  - Te CH EMED EPR IG now reflects that the `.prescription` extension of the `MedicationDispense` resource is supported. 
+	- If the treatment has been prescribed, the aggregator's logic will continue to enforce that this extension is filled and that it references a valid prescription for the same treatment.
+  - For all eMed resources, `note.time` shall not be supported any more: it is assumed that the time is the same as for the entry's authorship.
+	- With the exception of the PMLC `CHEMEDEPRMedicationStatementCard` that will continue to include `note.time` for each note.
