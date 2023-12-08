@@ -85,7 +85,7 @@ The typical workflow at admission, and the corresponding transactions would be:
     * [PADV (Pharmaceutical advice)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_padv.html).
         * [CANCEL](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_padv.html#padv-cancel) for each MTP entry that is no longer active ([ITI-41 (publish document)](../transactions/iti41.md)).
         * [SUSPEND](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_padv.html#padv-suspend) for each MTP entry that should be suspended ([ITI-41 (publish document)](../transactions/iti41.md)).
-
+        
 ##### Release
 At release, the medication plan might be entirely revised: former medication stopped or altered, new medication introduced. The typical workflow and corresponding transactions would therefore be a combination of:
 
