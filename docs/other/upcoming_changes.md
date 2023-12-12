@@ -67,5 +67,4 @@ Other aggregator changes:
 - Support for a new custom parameter for `FindMedicationCard` queries, `$PMLCIncludeNonActive` has been added. If specified and `true`, it will include all the (aggregated) treatments (constrained by the specified dates criteria) for the patient, whether they are active or not (i.e. it will include also suspended or cancelled treatments). These treatments will be included as medication statements in the content of the PMLC document but will not be added to the generated PDF. Support for this parameter is already included in the current snapshot (`2.1.2-SNAPSHOT`) of [Husky](https://github.com/project-husky/husky).
 
 
-!!! warning
-  Note that possible changes on Husky or other libraries/dependencies are not listed here and it is up to integrators to keep track of them.
+!!! warning Note that possible changes on Husky or other libraries/dependencies are not listed here and it is up to integrators to keep track of them.
