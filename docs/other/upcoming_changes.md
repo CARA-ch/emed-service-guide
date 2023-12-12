@@ -51,7 +51,7 @@ Other aggregator changes:
 	- If neither `ServiceEndFrom` nor `ServiceEndTo` are specified, all treatments ending at any date will meet the service end criterium.
 	- Note that if a treatment does not have an explicit end date provided by a published document, it is assumed by the aggregator to be *the end of time*, i.e. will have no end date.
 - Implementation of XDS `ServiceStartFrom`, `ServiceStartTo`, `ServiceEndFrom`, `ServiceEndTo` criteria for all ITI-18 and PHARM-1 queries.
-  - `ITI-18` queries will match the criteria ranges against the stored metadata `XDSDocumentEntry.serviceStartTime` and `XDSDocumentEntry.serviceStopTime` as provided at ITI-41. See [date processing](transactions/date_processing.md).
+  - `ITI-18` queries will match the criteria ranges against the stored metadata `XDSDocumentEntry.serviceStartTime` and `XDSDocumentEntry.serviceStopTime` as provided at ITI-41 time. See [date processing](transactions/date_processing.md).
   - `PHARM-1` subqueries:
     - `FindMedicationTreatmentPlans`, `FindMedicationList` and `FindMedicationCard` follow the same logic explained on the previous point.
 	- `FindPrescriptions`, `FindPrescriptionsForValidation` and `FindPrescriptionsForDispense` will apply the criteria against the consolidated prescription's validity period. 
