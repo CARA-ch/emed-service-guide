@@ -21,10 +21,10 @@ Relevant changes from (upcoming) CH EMED EPR 1.0.0 based on CH EMED 4.0.0 (the l
 	- Several UCUM annotations have been replaced by equivalent SNOMED codes, please refer to https://build.fhir.org/ig/hl7ch/ch-emed//ValueSet-UnitCode.html
       - `{Piece}` remains valid for now in the value set because the equivalent SNOMED term is missing, this will be solved for the next version of CH EMED when it should be replaced by a SNOMED code.
 	- The UnitCode-based [`CHEMEDEPRAmountQuantityUnitCode`](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/ValueSet-ch-emed-epr-amount-quantity-unit-code.html) value set reflects those changes.
-  - Removed `N` from the [`CHEMEDEprActSubstanceAdminSubstitutionCode`](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/ValueSet-ch-emed-epr-amount-quantity-unit-code.html) value set. This affects only `MedicationDispense` resources:
+  - Removed `N` from the [`CHEMEDEprActSubstanceAdminSubstitutionCode`](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/ValueSet-ch-emed-epr-amount-quantity-unit-code.html) value set. This affects `MedicationDispense` resources only:
 	- The value set now contains only `E` as allowed code as a consequence.
 	- New CH EMED constraint: if no substitution has been performed, the `MedicationDispense.substitution.type` element SHALL NOT be present (see constraint `ch-emed-dis-1` on either the  CH EMED or CH EMED EPR resource definition).
-  - Te CH EMED EPR IG now reflects that the `.prescription` extension of the `MedicationDispense` resource is supported. 
+  - Te CH EMED EPR IG reflects now that the `prescription` extension of the `MedicationDispense` resource is supported. 
 	- If the treatment has been prescribed, the aggregator's logic will continue to enforce that this extension is filled and that it references a valid prescription for the same treatment.
   - For all eMed resources, `note.time` shall not be supported any more: it is assumed that the time is the same as for the entry's authorship.
 	- With the exception of the PMLC `CHEMEDEPRMedicationStatementCard` that will continue to include `note.time` for each note.

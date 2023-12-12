@@ -23,6 +23,10 @@ Other resources:
 * [CARA organization on GitHub](https://github.com/CARA-ch)
 * [HAPI FHIR](https://hapifhir.io): a Java library for FHIR.
 
+Upcoming changes:
+
+*[Upcoming changes](other/upcoming_changes.md)
+
 
 !!! info
 
