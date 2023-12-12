@@ -14,7 +14,7 @@ Relevant changes from (upcoming) CH EMED EPR 1.0.0 based on CH EMED 4.0.0 (the l
 	  - All `MedicationRequest` resources (PRE, PADV, PML docs):
 		- `.requester` shall refer to the author of the medical decision.
 		- `.authoredOn` shall specify the date of said medical decision (prescription).
-	  - All `MediationDispense` resources (DIS, PML docs):
+	  - All `MedicationDispense` resources (DIS, PML docs):
 		- `.performer.actor` shall refer to the author of the medical decision (dispense).
 		- `.whenHandedOver` shall specify the date of the dispense.
 	  - All `Observation` resources (PADV, PML docs):
@@ -25,11 +25,11 @@ Relevant changes from (upcoming) CH EMED EPR 1.0.0 based on CH EMED 4.0.0 (the l
 	  - eMed sections of `Composition` resources will no longer support the `.author` element, which previously would optionally specify a medical author if different from the document (i.e. composition) author.
 	- PML and PMLC eMed entries shall continue (as it is already the case) to include the `authorDocument` extension if for the last aggregated entry the document author differs from the entry's author. Note that as per the rules above, the author of the entry (i.e. medical author) is always included in the entry.
   - Changes to CH EMED's `UnitCode` value set:
-	- Several UCUM annotations have been replaced by equivalent SNOMED codes, please refer to https://build.fhir.org/ig/hl7ch/ch-emed//ValueSet-UnitCode.html
+	- Several UCUM annotations have been replaced by equivalent SNOMED codes, please refer to [CH EMED `UnitCode`](https://build.fhir.org/ig/hl7ch/ch-emed/ValueSet-UnitCode.html)
       - `{Piece}` remains valid for now in the value set because the equivalent SNOMED term is missing, this will be solved for the next version of CH EMED when it should be replaced by a SNOMED code.
 	- The UnitCode-based [`CHEMEDEPRAmountQuantityUnitCode`](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/ValueSet-ch-emed-epr-amount-quantity-unit-code.html) value set reflects those changes.
   - Removed `N` from the [`CHEMEDEprActSubstanceAdminSubstitutionCode`](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/ValueSet-ch-emed-epr-amount-quantity-unit-code.html) value set. This affects `MedicationDispense` resources only:
-	- The value set now contains only `E` as allowed code as a consequence.
+	- The value set now contains only `E` as allowed code.
 	- New CH EMED constraint: if no substitution has been performed, the `MedicationDispense.substitution.type` element SHALL NOT be present (see constraint `ch-emed-dis-1` on either the  CH EMED or CH EMED EPR resource definition).
   - Te CH EMED EPR IG reflects now that the `prescription` extension of the `MedicationDispense` resource is supported. 
 	- If the treatment has been prescribed, the aggregator's logic will continue to enforce that this extension is filled and that it references a valid prescription for the same treatment.
@@ -40,22 +40,21 @@ Relevant changes from (upcoming) CH EMED EPR 1.0.0 based on CH EMED 4.0.0 (the l
 Other aggregator changes:
 
 - `FindMedicationCard` queries will support the `ServiceStartFrom`, `ServiceStartTo`, `ServiceEndFrom`, `ServiceEndTo` parameters and apply them as follows:
-  - The aggregated start date of returned treatments must be between the specified `ServiceStartFrom` and `ServiceStartTo` parameters.
+  - The consolidated (i.e. aggregated) start date of returned treatments must be between the specified `ServiceStartFrom` and `ServiceStartTo` parameters.
     - If `ServiceStartFrom` is not specified, any treatment starting at or after the specified `ServiceStartTo` will meet the service start criterium.
 	- If `ServiceStartTo` is not specified,  any treatment starting before the specified `ServiceStartFrom` will meet the service start criterium.
 	- If neither `ServiceStartFrom` nor `ServiceStartTo` are specified, all treatments starting at any date will meet the service start criterium.
 	- Note that if a treatment does not have an explicit start date provided by a published document, it is assumed by the aggregator to be the date of creation of the MTP.
-  - The aggregated end date of returned treatments must be between the specified `ServiceEndFrom` and `ServiceEndTo` parameters.
+  - The consolidated end date of returned treatments must be between the specified `ServiceEndFrom` and `ServiceEndTo` parameters.
     - If `ServiceEndFrom` is not specified, any treatment ending at or after the specified `ServiceEndTo` will meet the service end criterium.
 	- If `ServiceEndTo` is not specified,  any treatment ending before the specified `ServiceEndFrom` will meet the service end criterium.
 	- If neither `ServiceEndFrom` nor `ServiceEndTo` are specified, all treatments ending at any date will meet the service end criterium.
 	- Note that if a treatment does not have an explicit end date provided by a published document, it is assumed by the aggregator to be *the end of time*, i.e. will have no end date.
 - Implementation of XDS `ServiceStartFrom`, `ServiceStartTo`, `ServiceEndFrom`, `ServiceEndTo` criteria for all ITI-18 and PHARM-1 queries.
-  - `PHARM-1 FindMedicationList` queries: same logic as for `FindMedicationCard`.
   - `ITI-18` queries will match the criteria ranges against the stored metadata `XDSDocumentEntry.serviceStartTime` and `XDSDocumentEntry.serviceStopTime` as provided at ITI-41. See [date processing](transactions/date_processing.md).
   - `PHARM-1` subqueries:
     - `FindMedicationTreatmentPlans`, `FindMedicationList` and `FindMedicationCard` follow the same logic explained on the previous point.
-	- `FindPrescriptions`, `FindPrescriptionsForValidation` and `FindPrescriptionsForDispense` will apply the criteria against the prescription's validity period. 
+	- `FindPrescriptions`, `FindPrescriptionsForValidation` and `FindPrescriptionsForDispense` will apply the criteria against the consolidated prescription's validity period. 
 		- The prescription validy start date shall match if:
 			- Greater or equal than `ServiceStartFrom` if specified.
 			- Lesser than `ServiceStartTo` if specified.
@@ -69,5 +68,4 @@ Other aggregator changes:
 
 
 !!! warning
-
   Note that possible changes on Husky or other libraries/dependencies are not listed here and it is up to integrators to keep track of them.

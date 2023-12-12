@@ -25,7 +25,7 @@ Other resources:
 
 Upcoming changes:
 
-*[Upcoming changes](other/upcoming_changes.md)
+* [Upcoming changes](other/upcoming_changes.md)
 
 
 !!! info
