@@ -1,4 +1,5 @@
 Relevant changes from (upcoming) CH EMED EPR 1.0.0 based on CH EMED 4.0.0 (the latter should be published before the end of the current year):
+
   - Authorship and authorship timestamps. Please refer to the [CH EMED authorship guidance page](https://build.fhir.org/ig/hl7ch/ch-emed/authorship.html) for further reading:
     - All eMed entries will **require** the relevant authorship and authorship timestamp fields to be filled (i.e. `1..1` cardinality):
       - `MedicationStatement` resources (MTP, PADV, PML, PMLC docs):
