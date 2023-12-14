@@ -35,6 +35,9 @@ Relevant changes from (upcoming) CH EMED EPR 1.0.0 based on CH EMED 4.0.0 (the l
 	- If the treatment has been prescribed, the aggregator's logic will continue to enforce that this extension is filled and that it references a valid prescription for the same treatment.
   - For all eMed resources, `note.time` shall not be supported any more: it is assumed that the time is the same as for the entry's authorship.
 	- With the exception of the PMLC `CHEMEDEPRMedicationStatementCard` that will continue to include `note.time` for each note.
+  - `MedicationRequest.validityPeriod` is now optional, i.e. cardinality is `0..1`.
+    - If not specified, start is assumed to be the `MedicationRequest.authoredOn` date.
+	- If not specified, end is assumed to be *the end of time*, i.e. the request remains valid indefinitely to the aggregator.
 
 
 Other aggregator changes:
