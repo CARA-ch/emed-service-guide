@@ -79,7 +79,7 @@ See also the [DocumentEntry Metadata Attributes diagram](https://profiles.ihe.ne
 |`patientId`|R|Must match `SubmissionSet.patientId` and be a XAD-PID ([see above](#submissionset-metadata)).|
 |`practiceSettingCode`|R|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.practiceSettingCode.html).|
 |`referenceIdList`|O|Must be omitted or empty as referencing external documents is not permitted (see [Referencing external documents](#referencing-external-documents) section).|
-|`repositoryUniqueId`|O|If the attribute `repositoryUniqueId` is present and does not correspond to the `repositoryUniqueId` containing the documents the request is refused.|
+|`repositoryUniqueId`|O|If the attribute `repositoryUniqueId` is present and does not correspond to the `repositoryUniqueId` the relevant [document repository OID](oids.md), the request is rejected.|
 |`serviceStartTime`|O|Given as an [HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) in UTC. Shall be empty for APPC|
 |`serviceStopTime`|O|Given as an [HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) in UTC. Shall be empty for APPC|
 |`size`|O|-|

@@ -23,6 +23,7 @@ nav:
     - appc/index.md
   - EndPoints:
     - endpoints.md
+  - OIDs: oids.md
   - Upcoming Changes: other/upcoming_changes.md
 markdown_extensions:
   - smarty

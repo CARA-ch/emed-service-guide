@@ -17,7 +17,7 @@ See also [EPD by example's Registry Stored Query](https://github.com/ehealthsuis
 
 * `$MetadataLevel`: If present, the attribute shall equal to `1`, as per *Nationale Anpassungen der Integrationsprofile nach Artikel 5 Absatz 1 Buchstabe b EPDV-EDI*.
 * `$XDSDocumentEntryPatientId`, `$patientId`: The patient XAD-PID.
-* `homeCommunityId`: If present, it shall be the eMedication service OID.
+* `homeCommunityId`: If present, it shall be [CARA's community root OID](oids.md). <!--TODO replace by emedication service root oid?-->
 
 ### FindDocuments
 

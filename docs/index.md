@@ -6,6 +6,7 @@ Welcome to the Integration Guide for the eMedication service of CARA's community
 * [Workflows](workflows/index.md): description of the different workflows clients of this service can follow.
 * [CH-EMED-EPR](emed/index.md): description of the eMedication [file format](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/).
 * [PMP-APPC](appc/index.md): description of the policy file format.
+* [OIDs](oids.md): relevant OIDs to be used within the scope of the eMedication service.
 
 Other resources:
 

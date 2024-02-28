@@ -39,7 +39,7 @@ When two cardinalities are given, the first one is for Content Sender actor and 
 | `patientId`                      |      1      | The XAD-PID                                       | <!-- Reviewed -->
 | `practiceSettingCode`            |      1      |                                                   |
 | `referenceIdList`                |  0..* / 0   | Ignored by the eMedication service                | <!-- Reviewed -->
-| `repositoryUniqueId`             |  0..1 / 1   |                                                   |
+| `repositoryUniqueId`             |  0..1 / 1   | Use the eMedication service document repository OID for the relevant environment |
 | `serviceStartTime`               |    0..1     |                                                   |
 | `serviceStopTime`                |    0..1     |                                                   |
 | `size`                           |  0..1 / 1   |                                                   | <!-- Reviewed -->
