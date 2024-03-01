@@ -4,7 +4,7 @@ This page lists the different endpoints available to use the e-medication servic
 ## Base EndPoint
 | Environnement | Base URL |
 | --- | --- |
-| Integration | https://pmp.posttenebrassilico.ch/pmp2 |
+| Integration | https://ws-pmp-dev.cara.ch/pmp2 |
 | Development | https://ws-pmp-dev.cara.ch/pmp |
 
 ## PIX EndPoints
