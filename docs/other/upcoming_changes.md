@@ -44,13 +44,13 @@ Other aggregator changes:
 
 - `FindMedicationCard` queries will support the `ServiceStartFrom`, `ServiceStartTo`, `ServiceEndFrom`, `ServiceEndTo` parameters and apply them as follows:
   - The consolidated (i.e. aggregated) start date of returned treatments must be between the specified `ServiceStartFrom` and `ServiceStartTo` parameters.
-    - If `ServiceStartFrom` is not specified, any treatment starting at or after the specified `ServiceStartTo` will meet the service start criterium.
-	- If `ServiceStartTo` is not specified,  any treatment starting before the specified `ServiceStartFrom` will meet the service start criterium.
+    - If `ServiceStartFrom` is not specified,  any treatment starting before the specified `ServiceStartTo` will meet the service start criterium.
+	- If `ServiceStartTo` is not specified, any treatment starting at or after the specified `ServiceStartFrom` will meet the service start criterium.
 	- If neither `ServiceStartFrom` nor `ServiceStartTo` are specified, all treatments starting at any date will meet the service start criterium.
 	- Note that if a treatment does not have an explicit start date provided by a published document, it is assumed by the aggregator to be the date of creation of the MTP.
   - The consolidated end date of returned treatments must be between the specified `ServiceEndFrom` and `ServiceEndTo` parameters.
-    - If `ServiceEndFrom` is not specified, any treatment ending at or after the specified `ServiceEndTo` will meet the service end criterium.
-	- If `ServiceEndTo` is not specified,  any treatment ending before the specified `ServiceEndFrom` will meet the service end criterium.
+    - If `ServiceEndFrom` is not specified,  any treatment ending before the specified `ServiceEndTo` will meet the service end criterium.
+	- If `ServiceEndTo` is not specified, any treatment ending at or after the specified `ServiceEndFrom` will meet the service end criterium.
 	- If neither `ServiceEndFrom` nor `ServiceEndTo` are specified, all treatments ending at any date will meet the service end criterium.
 	- Note that if a treatment does not have an explicit end date provided by a published document, it is assumed by the aggregator to be *the end of time*, i.e. will have no end date.
 - Implementation of XDS `ServiceStartFrom`, `ServiceStartTo`, `ServiceEndFrom`, `ServiceEndTo` criteria for all ITI-18 and PHARM-1 queries.
