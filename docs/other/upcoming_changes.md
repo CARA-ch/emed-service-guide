@@ -25,7 +25,7 @@ Relevant changes from (upcoming) CH EMED EPR 1.0.0 based on CH EMED 4.0.0 (the l
 	  - eMed sections of `Composition` resources will no longer support the `.author` element, which previously would optionally specify a medical author if different from the document (i.e. composition) author.
 	- PML and PMLC eMed entries shall continue (as it is already the case) to include the `authorDocument` extension if for the last aggregated entry the document author differs from the entry's author. Note that as per the rules above, the author of the entry (i.e. medical author) is always included in the entry.
   - Changes to CH EMED's `UnitCode` value set:
-	- Several UCUM annotations have been replaced by equivalent SNOMED codes, please refer to [CH EMED `UnitCode`](https://build.fhir.org/ig/hl7ch/ch-emed/ValueSet-UnitCode.html)
+	- Several UCUM annotations have been replaced by equivalent SNOMED codes, please refer to [CH EMED `UnitCode`](https://fhir.ch/ig/ch-emed/ValueSet-UnitCode.html)
       - `{Piece}` remains valid for now in the value set because the equivalent SNOMED term is missing, this will be solved for the next version of CH EMED when it should be replaced by a SNOMED code.
 	- The UnitCode-based [`CHEMEDEPRAmountQuantityUnitCode`](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/ValueSet-ch-emed-epr-amount-quantity-unit-code.html) value set reflects those changes.
   - Removed `N` from the [`CHEMEDEprActSubstanceAdminSubstitutionCode`](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/ValueSet-ch-emed-epr-amount-quantity-unit-code.html) value set. This affects `MedicationDispense` resources only:
