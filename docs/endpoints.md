@@ -10,6 +10,7 @@ This page lists the different endpoints available to use the e-medication servic
 ## PIX EndPoints
 | Transaction | Path | Documentation |
 | --- | --- | --- |
+|Patient Identity Feed HL7 V3 (ITI-44)|`/services/iti44`| [ITI-44](transactions/iti44.md). See also the [IHE documentation](https://profiles.ihe.net/ITI/TF/Volume2/ITI-44.html).|
 |PIXV3 Query (ITI-45)|`/services/iti45`| [ITI-45](transactions/iti45.md). See also the [IHE documentation](https://profiles.ihe.net/ITI/TF/Volume2/ITI-45.html).|
 
 ## XDS EndPoints
