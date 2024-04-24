@@ -21,7 +21,7 @@ The PMP is abandoning the use of CARA's MPI-PID as XAD-PID and with the v0.4.0 s
   - Patient registration:
     - Query: an ITI-45 query (added with v0.3.0) allows a system to know if a patient has a PMP registration (whether active or not) and to fetch the PMP-PID.
 	- Add: to register a patient, the following steps will be needed:
-	  1) Perform an ITI-44 query (PIXV3 feed) to add the new patient to the PMP.
+	  1) Perform an ITI-44 *Patient Registry Record __Added__* (PIXV3 feed) to add the new patient to the PMP.
 	  2) Fetch the PMP-PID with an ITI-45 query to the PMP.
 	  3) Perform an ITI-41 with the APPC document to activate the registration. Until this is done, no other transaction for providing, fetching or searching documents will be accepted.
   - All requests (other than PIX) expect now the use of PMP-PID ids (SubmissionSet.patientId and DocumentEntry.patientId). Systems can continue to use CARA's MPI-PIDs for this and the aggregator will perform a translation but include a warning with the response. The grace period for transitioning towards PMP-PIDs has not been defined.
