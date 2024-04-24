@@ -1,11 +1,11 @@
 ## Currently Deployed
 
-- dev:
-  - PMP (aggregator) v0.4.0 (deployed 2024-04-23, DB recreated), works with [https://fhir.ch/ig/ch-emed-epr/index.html](CH EMED EPR 1.0.0).
-  - alpage v0.0.3 (deployed 2024-04-23 due to VM migration, same version as prev. VM, DB recreated)
-- int:
-  - PMP (aggregator) v0.3.0 (deployed ~2024-04-15, DB recreated), works with [https://fhir.ch/ig/ch-emed-epr/index.html](CH EMED EPR 1.0.0).
-  - alpage v0.0.3 (deployed ~2024-04-15 due to VM migration, same version as prev. VM, DB recreated)
+  - dev:
+    - PMP (aggregator) v0.4.0 (deployed 2024-04-23, DB recreated), works with [https://fhir.ch/ig/ch-emed-epr/index.html](CH EMED EPR 1.0.0).
+    - alpage v0.0.3 (deployed 2024-04-23 due to VM migration, same version as prev. VM, DB recreated)
+  - int:
+    - PMP (aggregator) v0.3.0 (deployed ~2024-04-15, DB recreated), works with [https://fhir.ch/ig/ch-emed-epr/index.html](CH EMED EPR 1.0.0).
+    - alpage v0.0.3 (deployed ~2024-04-15 due to VM migration, same version as prev. VM, DB recreated)
 
 
 ## Next Release Dates
@@ -18,6 +18,7 @@
 
 ### PMP v0.4.0
 The PMP is abandoning the use of CARA's MPI-PID as XAD-PID and with the v0.4.0 starts a transition period towards the use of a PMP-PID (*PMP assigned patient id*) as XAD-PID in order to pave the road to support systems with patients from other reference communities. What this entails for PMP v0.4.0:
+
   - Patient registration:
     - Query: an ITI-45 query (added with v0.3.0) allows a system to know if a patient has a PMP registration (whether active or not) and to fetch the PMP-PID.
 	- Add: to register a patient, the following steps will be needed:
