@@ -1,7 +1,7 @@
 ## Currently Deployed
 
   - dev:
-    - PMP (aggregator) v0.4.2 (deployed 2024-04-26, DB recreated with v0.4.0 deployed 2024-04-23), works with [CH EMED EPR 1.0.0](https://fhir.ch/ig/ch-emed-epr/index.html).
+    - PMP (aggregator) v0.4.3 (deployed 2024-05-23, DB recreated with v0.4.0 deployed 2024-04-23), works with [CH EMED EPR 1.0.0](https://fhir.ch/ig/ch-emed-epr/index.html).
     - ALPAGE v0.0.3 (deployed 2024-04-23 due to VM migration, same version as prev. VM, DB recreated)
   - int:
     - PMP (aggregator) v0.3.0 (deployed ~2024-04-15, DB recreated), works with [CH EMED EPR 1.0.0](https://fhir.ch/ig/ch-emed-epr/index.html).
@@ -15,6 +15,12 @@
 - Next aggregator deployment: *TBD*
 
 ## Relevant Changes
+
+### PMP v0.4.3
+The aggregator has reactivated the application of APPC rules to grant or deny access rights to the PMP. An exception has been kept for TCUs to always allow publication for a TCU since:
+
+  - TCU access rules have not yet been defined by CARA.
+  - Some systems like Presco have yet to transation from TCU publication to HCP publication (to be done before pilot phase).
 
 ### PMP v0.4.0
 The PMP is abandoning the use of CARA's MPI-PID as XAD-PID and with the v0.4.0 starts a transition period towards the use of a PMP-PID (*PMP assigned patient id*) as XAD-PID in order to pave the road to support systems with patients from other reference communities. What this entails for PMP v0.4.0:
