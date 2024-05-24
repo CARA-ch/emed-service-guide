@@ -17,10 +17,10 @@
 ## Relevant Changes
 
 ### PMP v0.4.4
-The aggregator has reactivated the application of APPC rules to grant or deny access rights to the PMP. An exception has been kept for TCUs to always allow publication for a TCU since:
+The aggregator has reactivated the application of APPC rules to grant or deny access rights to the PMP. An exception has been kept for TCUs to always allow TCUs right of publication:
 
   - TCU access rules have not yet been defined by CARA.
-  - Some systems like Presco have yet to transation from TCU publication to HCP publication (to be done before pilot phase).
+  - Some systems like Presco have yet to transition from TCU publication to HCP publication (to be done before pilot phase).
 
 ### PMP v0.4.0
 The PMP is abandoning the use of CARA's MPI-PID as XAD-PID and with the v0.4.0 starts a transition period towards the use of a PMP-PID (*PMP assigned patient id*) as XAD-PID in order to pave the road to support systems with patients from other reference communities. What this entails for PMP v0.4.0:
@@ -28,6 +28,7 @@ The PMP is abandoning the use of CARA's MPI-PID as XAD-PID and with the v0.4.0 s
   - Patient registration:
     - Query: an ITI-45 query (added with v0.3.0) allows a system to know if a patient has a PMP registration (whether active or not) and to fetch the PMP-PID.
 	- Add: to register a patient, the following steps will be needed:
+
 	    1) Perform an ITI-44 *Patient Registry Record __Added__* (PIXV3 feed) to add the new patient to the PMP.
 	    2) Fetch the PMP-PID with an ITI-45 query to the PMP.
 	    3) Perform an ITI-41 with the APPC document to activate the registration. Until this is done, no other transaction for providing, fetching or searching documents will be accepted.
