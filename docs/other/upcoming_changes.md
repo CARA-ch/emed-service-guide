@@ -1,7 +1,7 @@
 ## Currently Deployed
 
   - dev:
-    - PMP (aggregator) v0.4.4 (deployed 2024-05-23, DB recreated with v0.4.0 deployed 2024-04-23), works with [CH EMED EPR 1.0.0](https://fhir.ch/ig/ch-emed-epr/index.html).
+    - PMP (aggregator) v0.4.5 (deployed 2024-05-28, DB recreated with v0.4.0 deployed 2024-04-23), works with [CH EMED EPR 1.0.0](https://fhir.ch/ig/ch-emed-epr/index.html).
     - ALPAGE v0.0.3 (deployed 2024-04-23 due to VM migration, same version as prev. VM, DB recreated)
   - int:
     - PMP (aggregator) v0.3.0 (deployed ~2024-04-15, DB recreated), works with [CH EMED EPR 1.0.0](https://fhir.ch/ig/ch-emed-epr/index.html).
@@ -15,6 +15,8 @@
 - Next aggregator deployment: *TBD*
 
 ## Relevant Changes
+### PMP v0.4.5
+The aggregator has again disabled the application of APPC rules to unblock integration tests in dev and until better debugging information is added to the affected code.
 
 ### PMP v0.4.4
 The aggregator has reactivated the application of APPC rules to grant or deny access rights to the PMP. An exception has been kept for TCUs to always allow TCUs right of publication:
