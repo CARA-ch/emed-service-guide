@@ -15,6 +15,11 @@
 - Next aggregator deployment: *TBD*
 
 ## Relevant Changes
+### PMP v0.4.9 (unreleased)
+- Fixed several bugs affecting the application of matching APPC policy sets (problems with access rights).
+- All the notes received with any resource are now aggregated (e.g. a note provided with a `MedicationStatement` resource within an MTP document).
+- All the aggregated comments/notes, for both medication treatment and medication treatment instance(s), will be now added to the PMLC medication statements. Previously only treatment comments were added to the PMLC.
+
 ### PMP v0.4.8
 The aggregator can enable and disable the application of APPC rules (for debugging purposes) with a restart of the service, no redeployment needed.
 
