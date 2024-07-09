@@ -9,12 +9,15 @@ This page lists some OIDs relevant to the eMedication service.
 | 2.16.756.5.30.1.1625.3.1.1 | eMedication service aggregator's application. | production |
 | 2.16.756.5.30.1.1625.3.1.1.1 | eMedication service's patient identification domain (assigning authority). | production |
 | 2.16.756.5.30.1.1625.3.1.1.2 | eMedication service's document repository. | production |
+| 2.16.756.5.30.1.1625.3.1.1.3 | eMedication service's ATNA repository. | production |
 | 2.16.756.5.30.1.1625.3.1.2 | eMedication service aggregator's application. | integration |
 | 2.16.756.5.30.1.1625.3.1.2.1 | eMedication service's patient identification domain (assigning authority). | integration |
 | 2.16.756.5.30.1.1625.3.1.2.2 | eMedication service's document repository. | integration |
+| 2.16.756.5.30.1.1625.3.1.2.3 | eMedication service's ATNA repository. | integration |
 | 2.16.756.5.30.1.1625.3.1.3 | eMedication service aggregator's application. | development |
 | 2.16.756.5.30.1.1625.3.1.3.1 | eMedication service's patient identification domain (assigning authority). | development |
 | 2.16.756.5.30.1.1625.3.1.3.2 | eMedication service's document repository. | development |
+| 2.16.756.5.30.1.1625.3.1.3.3 | eMedication service's ATNA repository. | development |
 
 ## Other OIDs
 | OID | Description | Environment |
