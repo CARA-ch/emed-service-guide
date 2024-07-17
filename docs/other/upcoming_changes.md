@@ -1,8 +1,8 @@
 ## Currently Deployed
 
   - dev:
-    - PMP (aggregator) v0.4.8 (deployed 2024-06-27, DB recreated with v0.4.0 deployed 2024-04-23), works with [CH EMED EPR 1.0.0](https://fhir.ch/ig/ch-emed-epr/index.html).
-    - ALPAGE v0.0.3 (deployed 2024-04-23 due to VM migration, same version as prev. VM, DB recreated)
+    - PMP (aggregator) v0.4.9 (deployed 2024-07-17, DB recreated with v0.4.0 deployed 2024-04-23), works with [CH EMED EPR 1.0.0](https://fhir.ch/ig/ch-emed-epr/index.html).
+    - ALPAGE v0.0.4 (deployed 2024-07-17)
   - int:
     - PMP (aggregator) v0.3.0 (deployed ~2024-04-15, DB recreated), works with [CH EMED EPR 1.0.0](https://fhir.ch/ig/ch-emed-epr/index.html).
     - ALPAGE v0.0.3 (deployed ~2024-04-15 due to VM migration, same version as prev. VM, DB recreated)
@@ -15,10 +15,12 @@
 - Next aggregator deployment: *TBD*
 
 ## Relevant Changes
-### PMP v0.4.9 (unreleased)
+### PMP v0.4.9
 - Fixed several bugs affecting the application of matching APPC policy sets (problems with access rights).
 - All the notes received with any resource are now aggregated (e.g. a note provided with a `MedicationStatement` resource within an MTP document).
 - All the aggregated comments/notes, for both medication treatment and medication treatment instance(s), will be now added to the PMLC medication statements. Previously only treatment comments were added to the PMLC.
+- Fixed bug on aggregation of PADV CANCEL targeting a PRE, preventing the transaction from completing.
+- Improved audit trail log generation for ITI-18 and PHARM-1 transactions (WIP for all transactions).
 
 ### PMP v0.4.8
 The aggregator can enable and disable the application of APPC rules (for debugging purposes) with a restart of the service, no redeployment needed.
