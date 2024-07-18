@@ -1,7 +1,7 @@
 ## Currently Deployed
 
   - dev:
-    - PMP (aggregator) v0.4.9 (deployed 2024-07-17, DB recreated with v0.4.0 deployed 2024-04-23), works with [CH EMED EPR 1.0.0](https://fhir.ch/ig/ch-emed-epr/index.html).
+    - PMP (aggregator) v0.4.10 (deployed 2024-07-18, DB recreated with v0.4.0 deployed 2024-04-23), works with [CH EMED EPR 1.0.0](https://fhir.ch/ig/ch-emed-epr/index.html).
     - ALPAGE v0.0.4 (deployed 2024-07-17)
   - int:
     - PMP (aggregator) v0.3.0 (deployed ~2024-04-15, DB recreated), works with [CH EMED EPR 1.0.0](https://fhir.ch/ig/ch-emed-epr/index.html).
@@ -15,6 +15,9 @@
 - Next aggregator deployment: *TBD*
 
 ## Relevant Changes
+### PMP v0.4.10
+No relevant changes. Version deployed with a workaround for a problem with the routes of administration on PMLC generation while waiting for the next release of Husky to fix the issue. See https://github.com/project-husky/husky/issues/153
+
 ### PMP v0.4.9
 - Fixed several bugs affecting the application of matching APPC policy sets (problems with access rights).
 - All the notes received with any resource are now aggregated (e.g. a note provided with a `MedicationStatement` resource within an MTP document).
