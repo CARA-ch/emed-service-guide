@@ -204,7 +204,7 @@ Some values from the DocumentEntry are checked against the document (values in m
 | typeCode      |  Must be consistent with the document type (see [below](#classcode-metadata-to-use-for-each-document-type))|
 | uniqueId      | `Bundle.identifier.value` and `Composition.identifier.value` |
 
-### ClassCode metadata to use for each document type
+### Metadata codes per document type
 | Document type | DocumentEntry.classCode                   | DocumentEntry.formatCode                   | DocumentEntry.typeCode      |
 | ------------- | ----------------------------------------- | ------------------------------------------ | ------------------------------------------------------------- |
 | MTP           | `440545006` _Prescription record_       | `urn:che:epr:ch-emed:mtp:2022`             |`761931002` _Medication treatment plan report (record artifact)_ |

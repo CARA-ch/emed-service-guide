@@ -16,25 +16,34 @@ See also [EPD by example's Registry Stored Query](https://github.com/ehealthsuis
 ### Common query parameters
 
 * `$MetadataLevel`: If present, the attribute shall equal to `1`, as per *Nationale Anpassungen der Integrationsprofile nach Artikel 5 Absatz 1 Buchstabe b EPDV-EDI*.
-* `$XDSDocumentEntryPatientId`, `$patientId`: The patient XAD-PID.
-* `homeCommunityId`: If present, it shall be [CARA's community root OID](oids.md). <!--TODO replace by emedication service root oid?-->
+<!--* `homeCommunityId`: If present, it shall be [CARA's community root OID](oids.md). <!--TODO replace by emedication service root oid?-->
 
 ### FindDocuments
 
-This stored query allows to search for APPC and CH-EMED-EPR documents. CH-EMED-EPR documents could also be searched through the [PHARM-1](Transactions/PHARM-1) transaction (it's a specialized ITI-18 transaction).
+This stored query allows to search for APPC and CH-EMED-EPR documents. CH-EMED-EPR documents could also be searched through the [PHARM-1](Transactions/PHARM-1) transaction (it's a specialized ITI-18 transaction). The parameters are matched against the corresponding `XDSDocumentEntry` metadata attributes of the documents in the registry.
 
-When processing requests, the following rules are applied:
+All the [parameters defined in the IHE profile](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.1) are supported:
 
-* `$XDSDocumentEntryClassCode`: N/A
-* `$XDSDocumentEntryTypeCode`: N/A
-* `$XDSDocumentEntryCreationTimeFrom`: see [dates processing](DatesProcessing).
-* `$XDSDocumentEntryCreationTimeTo`: see [dates processing](DatesProcessing).
-* `$XDSDocumentEntryServiceStartTimeFrom`: not considered for APPC documents
-* `$XDSDocumentEntryServiceStartTimeTo`: not considered for APPC documents
-* `$XDSDocumentEntryServiceStopTimeFrom`: not considered for APPC documents
-* `$XDSDocumentEntryServiceStopTimeTo`: not considered for APPC documents
-* `$XDSDocumentEntryFormatCode`: N/A
-* `$XDSDocumentEntryDocumentAvailability`: if specified, anything else than `Online` will yield no result.
+| Parameter Name                                | Required | Remarks               |
+| --------------------------------------------- | -------- | --------------------- |
+| `$XDSDocumentEntryPatientId`                  | yes      | The patient's PMP-PID |
+| `$XDSDocumentEntryClassCode`                  | no       | -                     |
+| `$XDSDocumentEntryTypeCode`                   | no       | -                     |
+| `$XDSDocumentEntryPracticeSettingCode`        | no       | -                     |
+| `$XDSDocumentEntryCreationTimeFrom`           | no       | see [dates processing](date_processing) |
+| `$XDSDocumentEntryCreationTimeTo`             | no       | see [dates processing](date_processing) |
+| `$XDSDocumentEntryServiceStartTimeFrom`       | no       | Ignored for APPC documents. see [dates processing](date_processing) |
+| `$XDSDocumentEntryServiceStartTimeTo`         | no       | Ignored for APPC documents. see [dates processing](date_processing) |
+| `$XDSDocumentEntryServiceStopTimeFrom`        | no       | Ignored for APPC documents. see [dates processing](date_processing) |
+| `$XDSDocumentEntryServiceStopTimeTo`          | no       | Ignored for APPC documents. see [dates processing](date_processing) |
+| `$XDSDocumentEntryHealthcareFacilityTypeCode` | no       | -                     |
+| `$XDSDocumentEntryEventCodeList`              | no       | -                     |
+| `$XDSDocumentEntryConfidentialityCode`        | no       | All documents in the eMedication service are set to `Normal` as per the [EPR metadata specs](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf) |
+| `$XDSDocumentEntryAuthorPerson`               | no       | -                     |
+| `$XDSDocumentEntryFormatCode`                 | no       | See the [ITI-41 section in this guide](iti41#metadata-codes-per-document-type) |
+| `$XDSDocumentEntryStatus`                     | yes      | -                     |
+| `$XDSDocumentEntryType`                       | no       | If empty, `Stable` will be assumed |
+| `$XDSDocumentEntryDocumentAvailability`       | no       | All documents in the eMedication service are set to `Online` |
 
 ### FindSubmissionSets
 
