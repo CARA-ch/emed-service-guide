@@ -20,7 +20,7 @@ See also [EPD by example's Registry Stored Query](https://github.com/ehealthsuis
 
 ### FindDocuments
 
-This stored query allows to search for APPC and CH-EMED-EPR documents. CH-EMED-EPR documents could also be searched through the [PHARM-1](Transactions/PHARM-1) transaction (it's a specialized ITI-18 transaction). The parameters are matched against the corresponding `XDSDocumentEntry` metadata attributes of the documents in the registry.
+This stored query allows to search for APPC and CH EMED EPR documents. CH EMED EPR documents could also be searched through the [PHARM-1](Transactions/PHARM-1) transaction (it's a specialized ITI-18 transaction). The parameters are matched against the corresponding `XDSDocumentEntry` metadata attributes of the documents in the registry.
 
 All the [parameters defined in the IHE profile](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.1) are supported:
 
@@ -38,7 +38,7 @@ All the [parameters defined in the IHE profile](https://profiles.ihe.net/ITI/TF/
 | `$XDSDocumentEntryServiceStopTimeTo`          | no       | Ignored for APPC documents. see [dates processing](date_processing.md) |
 | `$XDSDocumentEntryHealthcareFacilityTypeCode` | no       | -                     |
 | `$XDSDocumentEntryEventCodeList`              | no       | -                     |
-| `$XDSDocumentEntryConfidentialityCode`        | no       | All documents in the eMedication service are set to `Normal` as per the [EPR metadata specs](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf) |
+| `$XDSDocumentEntryConfidentialityCode`        | no       | All documents in the eMedication service are set to [Normal](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf) |
 | `$XDSDocumentEntryAuthorPerson`               | no       | -                     |
 | `$XDSDocumentEntryFormatCode`                 | no       | See the [ITI-41 section in this guide](iti41.md#metadata-codes-per-document-type) |
 | `$XDSDocumentEntryStatus`                     | yes      | -                     |
@@ -47,17 +47,54 @@ All the [parameters defined in the IHE profile](https://profiles.ihe.net/ITI/TF/
 
 ### FindSubmissionSets
 
+This stored query allows to search for submission sets in the eMedication service registry. Query parameters are matched against the corresponding submission set metadata attributes in the registry. All the [parameters defined in the IHE profile](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.2) are supported.
+
+| Parameter Name                        | Required | Remarks               |
+| ------------------------------------- | -------- | --------------------- |
+| `$XDSSubmissionSetPatientId`          | yes      | The patient's PMP-PID |
+| `$XDSSubmissionSetSourceId`           | no       | -                     |
+| `$XDSSubmissionSetSubmissionTimeFrom` | no       | see [dates processing](date_processing.md) |
+| `$XDSSubmissionSetSubmissionTimeTo`   | no       | see [dates processing](date_processing.md) |
+| `$XDSSubmissionSetAuthorPerson`       | no       | -                     |
+| `$XDSSubmissionSetContentType`        | no       | All submission sets in the eMedication service are of `Procedure` content type |
+| `$XDSSubmissionSetStatus`             | yes      | All submission sets in the eMedication service are `Approved` |
+
 
 ### FindFolders
 
-The response is empty, as folders are not implemented.
+This query is not supported by the eMedication service.
 
 ### GetAll
 
-The response won't contain folders, as they're not implemented.
+This stored query allows search for all registry content for a given patient and returns:
+
+- `XDSSubmissionSet` and `XDSDocumentEntry` objects matching the query parameters.
+- `Association` objects with `sourceObject` or `targetObject` attribute matching one of the above objects.
+
+All the [parameters defined in the IHE profile](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.4) are supported.
+
+| Parameter Name                         | Required | Remarks               |
+| -------------------------------------- | -------- | --------------------- |
+| `$patientId`                           | yes      | The patient's PMP-PID |
+| `$XDSDocumentEntryStatus`              | yes      | -                     |
+| `$XDSSubmissionSetStatus`              | yes      | All submission sets in the eMedication service are `Approved` |
+| `$XDSFolderStatus`                     | yes      | Ignored by the eMedication service |
+| `$XDSDocumentEntryFormatCode`          | no       | See the [ITI-41 section in this guide](iti41.md#metadata-codes-per-document-type) |
+| `$XDSDocumentEntryConfidentialityCode` | no       | All documents in the eMedication service are set to [Normal](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf) |
+| `$XDSDocumentEntryType`                | no       | If empty, `Stable` will be assumed |
+| `$XDSAssociationStatus`                | no       | Associations in the eMedication service can only be `Approved`. If empty, `Approved` will be assumed |
 
 ### GetDocuments
 
+This stored query allows to fetch a collection of `XDSDocumentEntry` objects. All the [IHE profile parameters](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.5) are supported.
+
+| Parameter Name               | Required | Remarks               |
+| ---------------------------- | -------- | --------------------- |
+| `$XDSDocumentEntryEntryUUID` | no<sup>*</sup> | - |
+| `$XDSDocumentEntryUniqueId`  | no<sup>*</sup> | - |
+| `$homeCommunityId`           | no       | - |
+
+<sup>*</sup> Either `$XDSDocumentEntryEntryUUID` or `$XDSDocumentEntryUniqueId` shall be specified. This transaction shall return an `XDSStoredQueryParamNumber` error (see [error codes](error-codes)) if both parameters are specified.
 
 ### GetFolders
 
