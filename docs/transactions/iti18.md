@@ -166,8 +166,8 @@ The response is empty, as folders are not supported. A warning is added to the r
 
 This stored query allows to fetch `XDSDocumentEntry` objects that are related to the specified document via `Association` objects satisfying all the following conditions:
 - The `sourceObject` attribute or the `targetObject` attribute references the specified document.
-- The `sourceObject` and the `targetObject` attributes reference documents
-- The `associationType` attribute matches a value included in the `$AssociationTypes` parameter.
+- The `sourceObject` and the `targetObject` attributes reference documents.
+- The `associationType` attribute matches a value included in the `$AssociationTypes` parameter. See [Association Types](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.2).
 
 Matching associations are also included in the result set, along with the `XDSDocumentEntry` objects referenced by the `sourceObject` or `targetObject` attributes of the matching associations.
 
