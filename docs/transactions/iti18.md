@@ -7,15 +7,16 @@ This transaction has been implemented in order to respect the Swiss EPR regulati
 See also [EPD by example's Registry Stored Query](https://github.com/ehealthsuisse/EPD-by-example/blob/main/files/AuthenticateUser.md) page.
 
 ## Stored queries
-### Generic rules
-* Folders option not supported
-* The only [association](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.2.2) supported is [RPLC (replace)](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#t4.2.2-1)
-* Documents with `deletionStatus=deletionRequested` are ignored
+### Generic rules specific to the eMedication service
+* The folders option is not supported.
+* The only [association](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.2.2) supported is [RPLC (replace)](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#t4.2.2-1).
+* Documents with `deletionStatus=deletionRequested` are ignored.
+* Objects belonging to a patient other than the patient of the provided XUA token are ignored.
 
 
 ### Common query parameters
 
-* `$MetadataLevel`: If present, the attribute shall equal to `1`, as per *Nationale Anpassungen der Integrationsprofile nach Artikel 5 Absatz 1 Buchstabe b EPDV-EDI*.
+* `$MetadataLevel`: If present, the attribute shall be equal to `1`, as per [*Nationale Anpassungen der Integrationsprofile nach Artikel 5 Absatz 1 Buchstabe b EPDV-EDI*].
 <!--* `homeCommunityId`: If present, it shall be [CARA's community root OID](oids.md). <!--TODO replace by emedication service root oid?-->
 
 ### FindDocuments
@@ -27,18 +28,18 @@ All the [parameters defined in the IHE profile](https://profiles.ihe.net/ITI/TF/
 | Parameter Name                                | Required | Remarks               |
 | --------------------------------------------- | -------- | --------------------- |
 | `$XDSDocumentEntryPatientId`                  | yes      | The patient's PMP-PID |
-| `$XDSDocumentEntryClassCode`                  | no       | -                     |
-| `$XDSDocumentEntryTypeCode`                   | no       | -                     |
-| `$XDSDocumentEntryPracticeSettingCode`        | no       | -                     |
+| `$XDSDocumentEntryClassCode`                  | no       | See the [Annex 3 of the EPR Act](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf), section 2.5, for possible values |
+| `$XDSDocumentEntryTypeCode`                   | no       | See the [Annex 3 of the EPR Act](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf), section 2.6, for possible values|
+| `$XDSDocumentEntryPracticeSettingCode`        | no       | See the [Annex 3 of the EPR Act](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf), section 2.4, for possible values |
 | `$XDSDocumentEntryCreationTimeFrom`           | no       | see [dates processing](date_processing.md) |
 | `$XDSDocumentEntryCreationTimeTo`             | no       | see [dates processing](date_processing.md) |
 | `$XDSDocumentEntryServiceStartTimeFrom`       | no       | Ignored for APPC documents. see [dates processing](date_processing.md) |
 | `$XDSDocumentEntryServiceStartTimeTo`         | no       | Ignored for APPC documents. see [dates processing](date_processing.md) |
 | `$XDSDocumentEntryServiceStopTimeFrom`        | no       | Ignored for APPC documents. see [dates processing](date_processing.md) |
 | `$XDSDocumentEntryServiceStopTimeTo`          | no       | Ignored for APPC documents. see [dates processing](date_processing.md) |
-| `$XDSDocumentEntryHealthcareFacilityTypeCode` | no       | -                     |
-| `$XDSDocumentEntryEventCodeList`              | no       | -                     |
-| `$XDSDocumentEntryConfidentialityCode`        | no       | All documents in the eMedication service are set to [Normal](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf) |
+| `$XDSDocumentEntryHealthcareFacilityTypeCode` | no       | See the [Annex 3 of the EPR Act](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf), section 2.3, for possible values |
+| `$XDSDocumentEntryEventCodeList`              | no       | See the [Annex 3 of the EPR Act](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf), section 2.8, for possible values |
+| `$XDSDocumentEntryConfidentialityCode`        | no       | All documents in the eMedication service are set to `Normal`. See the [Annex 3 of the EPR Act](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf), section 2.8 |
 | `$XDSDocumentEntryAuthorPerson`               | no       | -                     |
 | `$XDSDocumentEntryFormatCode`                 | no       | See the [ITI-41 section in this guide](iti41.md#metadata-codes-per-document-type) |
 | `$XDSDocumentEntryStatus`                     | yes      | -                     |
@@ -56,7 +57,7 @@ This stored query allows to search for submission sets in the eMedication servic
 | `$XDSSubmissionSetSubmissionTimeFrom` | no       | see [dates processing](date_processing.md) |
 | `$XDSSubmissionSetSubmissionTimeTo`   | no       | see [dates processing](date_processing.md) |
 | `$XDSSubmissionSetAuthorPerson`       | no       | -                     |
-| `$XDSSubmissionSetContentType`        | no       | All submission sets in the eMedication service are of `Procedure` content type |
+| `$XDSSubmissionSetContentType`        | no       | All submission sets in the eMedication service are of `Procedure` content type. See the [Annex 3 of the EPR Act](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf), section 2.15 |
 | `$XDSSubmissionSetStatus`             | yes      | All submission sets in the eMedication service are `Approved` |
 
 
@@ -80,7 +81,7 @@ All the [parameters defined in the IHE profile](https://profiles.ihe.net/ITI/TF/
 | `$XDSSubmissionSetStatus`              | yes      | All submission sets in the eMedication service are `Approved` |
 | `$XDSFolderStatus`                     | yes      | Ignored by the eMedication service |
 | `$XDSDocumentEntryFormatCode`          | no       | See the [ITI-41 section in this guide](iti41.md#metadata-codes-per-document-type) |
-| `$XDSDocumentEntryConfidentialityCode` | no       | All documents in the eMedication service are set to [Normal](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf) |
+| `$XDSDocumentEntryConfidentialityCode` | no       | All documents in the eMedication service are set to `Normal`. See the [Annex 3 of the EPR Act](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf), section 2.8 |
 | `$XDSDocumentEntryType`                | no       | If empty, `Stable` will be assumed |
 | `$XDSAssociationStatus`                | no       | Associations in the eMedication service can only be `Approved`. If empty, `Approved` will be assumed |
 
