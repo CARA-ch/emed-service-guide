@@ -143,7 +143,6 @@ On top of the common PHARM-1 parameters, the following parameters are supported:
 - `$XDSDocumentEntryLanguageCode`: the language that will be used to generate the medication card. If not specified, the eMedication service uses the default language (French). At present, the eMedicationService supports only French language (`fr-CH`).
 - `$PMLCIncludeNonActive`: either `true` or `false`. If ommitted, `false` will be assumed. When `false`, the query will return only active treatments (plus the last treatment to be added or modified to the patient's eMedication even if it is no-longer active). When true, all treatments matching the query's criteria will be returned, whether active or not at the moment.
 - `$PMLCPaperFormat`: TBD.
-- `$XDSDocumentEntryLanguageCode`: the language that will be used to generate the medication card. If not specified, the eMedication service uses the default language (french).  
 
 The `$XDSDocumentEntryService(Start|Stop)Time(From|To)` parameters, if present, will be matched against the treatments' __consolidated__ start and end times:
 
