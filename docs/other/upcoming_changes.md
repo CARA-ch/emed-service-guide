@@ -61,6 +61,7 @@ Relevant changes from (upcoming) CH EMED EPR 1.0.0 based on CH EMED 4.0.0 (the l
 
   - Authorship and authorship timestamps. Please refer to the [CH EMED authorship guidance page](https://build.fhir.org/ig/hl7ch/ch-emed/authorship.html) for further reading:
     - All eMed entries will **require** the relevant authorship and authorship timestamp fields to be filled (i.e. `1..1` cardinality):
+
       - `MedicationStatement` resources (MTP, PADV, PML, PMLC docs):
 		- `.informationSource` shall refer to the author of the medical decision.
 		- `.dateAsserted` shall specify the date of said medical decision (treatment plan).
@@ -74,6 +75,7 @@ Relevant changes from (upcoming) CH EMED EPR 1.0.0 based on CH EMED 4.0.0 (the l
 		- `.performer` shall refer to the author of the observation.
 		- `.issued` shall specify the date of the observation.
 	- All `Composition` resources:
+	
 	  - No changes to the composition `.author`: this shall contain the author of the **document**, which may match any eMed entry's author but not necessarily (e.g. an assistant adding an MTP to the PMP on behalf of a practitioner would be the composition author while the practitioner would be the entry's author).
 	  - eMed sections of `Composition` resources will no longer support the `.author` element, which previously would optionally specify a medical author if different from the document (i.e. composition) author.
 	- PML and PMLC eMed entries shall continue (as it is already the case) to include the `authorDocument` extension if for the last aggregated entry the document author differs from the entry's author. Note that as per the rules above, the author of the entry (i.e. medical author) is always included in the entry.
