@@ -165,6 +165,7 @@ The response is empty, as folders are not supported. A warning is added to the r
 ### GetRelatedDocuments
 
 This stored query allows to fetch `XDSDocumentEntry` objects that are related to the specified document via `Association` objects satisfying all the following conditions:
+
 - The `sourceObject` attribute or the `targetObject` attribute references the specified document.
 - The `sourceObject` and the `targetObject` attributes reference documents.
 - The `associationType` attribute matches a value included in the `$AssociationTypes` parameter. See [Association Types](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.2).
@@ -201,4 +202,4 @@ Specific codes not covered by generic codes.
 | `XDSStoredQueryParamNumber`  | If too many/too much search parameters are provided |
 | `XDSUnknownStoredQuery`      | If the search query is unknown                      |
 | `XDSRegistryError`           | If the search query is known but unsupported        |
-| `XDSRegistryMetadataError`   | If $MetadataLevel is not "1"                        |
+| `XDSRegistryMetadataError`   | If `$MetadataLevel` is not "1"                      |
