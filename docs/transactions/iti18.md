@@ -179,7 +179,7 @@ All the [IHE profile parameters](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.
 | ---------------------------- | -------- | --------------------- |
 | `$XDSDocumentEntryEntryUUID` | no<sup>*</sup> | - |
 | `$XDSDocumentEntryUniqueId`  | no<sup>*</sup> | - |
-| `$AssociationTypes`          | yes      | - |
+| `$AssociationTypes`          | yes      | Only `RPLC` and `HasMember` are supported by the eMedication service |
 | `$homeCommunityId`           | no       | - |
 | `$XDSDocumentEntryType`      | no       | If empty, `Stable` will be assumed |
 | `$XDSAssociationStatus`      | no       | Associations in the eMedication service can only be `Approved`. If empty, `Approved` will be assumed |
