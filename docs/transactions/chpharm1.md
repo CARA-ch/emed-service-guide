@@ -51,6 +51,7 @@ The `$XDSDocumentEntryService(Start|Stop)Time(From|To)` parameters, if present, 
 Implemented, as per IHE specs. 
 
 The `$XDSDocumentEntryService(Start|Stop)Time(From|To)` parameters, if present, will be matched against the prescriptions' __consolidated__ validity period:
+
 - The prescription validity start date shall match if:
     - Greater or equal than `ServiceStartFrom` if specified.
     - Lesser than `ServiceStartTo` if specified.
@@ -75,6 +76,7 @@ The `$XDSDocumentEntryService(Start|Stop)Time(From|To)` parameters, if present, 
 Implemented, as per IHE specs.
 
 The `$XDSDocumentEntryService(Start|Stop)Time(From|To)` parameters, if present, will be matched against the prescriptions' consolidated validity period:
+
 - The prescription validity start date shall match if:
     - Greater or equal than `ServiceStartFrom` if specified.
     - Lesser than `ServiceStartTo` if specified.
@@ -90,6 +92,7 @@ Implemented, as per IHE specs.
 Return only prescriptions that are actually provisional or active (i.e. dispensable).
 
 The `$XDSDocumentEntryService(Start|Stop)Time(From|To)` parameters, if present, will be matched against the prescriptions' consolidated validity period:
+
 - The prescription validity start date shall match if:
     - Greater or equal than `ServiceStartFrom` if specified.
     - Lesser than `ServiceStartTo` if specified.
@@ -106,10 +109,12 @@ Implemented, as per IHE specs.
 Entry selection (via the search query execution) is done at document retrieval time, not search time.
 
 On top of the common PHARM-1 parameters, the following parameters are supported:
+
 - `$XDSDocumentEntryType` (required): If empty, `Stable` will be assumed.
 - `$XDSFormatCode`: See the [ITI-41 section in this guide](iti41.md#metadata-codes-per-document-type).
 
 The `$XDSDocumentEntryService(Start|Stop)Time(From|To)` parameters, if present, will be matched against the treatments' __consolidated__ start and end times:
+
 - The consolidated start date of returned treatments must be between the specified `$XDSDocumentEntryServiceStartFrom` and `$XDSDocumentEntryServiceStarTo` parameters:
     - If `$XDSDocumentEntryServiceStartFrom` is not specified, any treatment starting before the specified `$XDSDocumentEntryServiceStarTo` will meet the service start criterium.
     - If `$XDSDocumentEntryServiceStartTo` is not specified, any treatment starting at or after the specified `$XDSDocumentEntryServiceStartFrom` will meet the service start criterium.
@@ -132,6 +137,7 @@ Treatment selection (via the search query execution) is done at document retriev
 **Query parameters**
 
 On top of the common PHARM-1 parameters, the following parameters are supported:
+
 - `$XDSDocumentEntryType` (required): should be `On-demand`. A query for `Stable` documents only will yield an empty result set.
 - `$XDSFormatCode`: this parameter is used to specify whether the query should return only a PDF (`urn:che:epr:EPR_Unstructured_Document`) or a PMLC document as specified in CH EMED EPR (`urn:che:epr:ch-emed:medication-card:2022`), containing the PDF as well as original representation of the FHIR document. If not specified, PMLC document is assumed.
 - `$XDSDocumentEntryLanguageCode`: the language that will be used to generate the medication card. If not specified, the eMedication service uses the default language (French). At present, the eMedicationService supports only French language (`fr-CH`).
@@ -140,6 +146,7 @@ On top of the common PHARM-1 parameters, the following parameters are supported:
 - `$XDSDocumentEntryLanguageCode`: the language that will be used to generate the medication card. If not specified, the eMedication service uses the default language (french).  
 
 The `$XDSDocumentEntryService(Start|Stop)Time(From|To)` parameters, if present, will be matched against the treatments' __consolidated__ start and end times:
+
 - The consolidated start date of returned treatments must be between the specified `$XDSDocumentEntryServiceStartFrom` and `$XDSDocumentEntryServiceStarTo` parameters:
     - If `$XDSDocumentEntryServiceStartFrom` is not specified, any treatment starting before the specified `$XDSDocumentEntryServiceStarTo` will meet the service start criterium.
     - If `$XDSDocumentEntryServiceStartTo` is not specified, any treatment starting at or after the specified `$XDSDocumentEntryServiceStartFrom` will meet the service start criterium.
