@@ -21,7 +21,7 @@ See also [EPD by example's Registry Stored Query](https://github.com/ehealthsuis
 
 ### FindDocuments
 
-This stored query allows to search for APPC and CH EMED EPR documents. CH EMED EPR documents could also be searched through the [PHARM-1](Transactions/PHARM-1) transaction (it's a specialized ITI-18 transaction). The parameters are matched against the corresponding `XDSDocumentEntry` metadata attributes of the documents in the registry.
+This stored query allows to search for APPC and CH EMED EPR documents. CH EMED EPR documents could also be searched through the [PHARM-1](chpharm1.md) transaction (it's a specialized ITI-18 transaction). The parameters are matched against the corresponding `XDSDocumentEntry` metadata attributes of the documents in the registry.
 
 All the [parameters defined in the IHE profile](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html#3.18.4.1.2.3.7.1) are supported:
 
