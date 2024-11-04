@@ -9,7 +9,7 @@ See also [EPD by example's Registry Stored Query](https://github.com/ehealthsuis
 ## Stored queries
 ### Generic rules
 * Folders option not supported
-* The only [association]https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.2.2) supported is [RPLC (replace)](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#t4.2.2-1)
+* The only [association](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.2.2) supported is [RPLC (replace)](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#t4.2.2-1)
 * Documents with `deletionStatus=deletionRequested` are ignored
 
 
