@@ -94,7 +94,7 @@ This stored query allows to fetch a collection of `XDSDocumentEntry` objects. Al
 | `$XDSDocumentEntryUniqueId`  | no<sup>*</sup> | - |
 | `$homeCommunityId`           | no       | - |
 
-<sup>*</sup> Either `$XDSDocumentEntryEntryUUID` or `$XDSDocumentEntryUniqueId` shall be specified. This transaction shall return an `XDSStoredQueryParamNumber` error (see [error codes](error-codes)) if both parameters are specified.
+<sup>*</sup> Either `$XDSDocumentEntryEntryUUID` or `$XDSDocumentEntryUniqueId` shall be specified. This transaction shall return an `XDSStoredQueryParamNumber` error (see [error codes](#error-codes)) if both parameters are specified.
 
 ### GetFolders
 
