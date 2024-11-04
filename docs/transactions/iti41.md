@@ -30,11 +30,11 @@ Documents can be sent to the eMedication service only once. Uniqueness is checke
 ### Metadata
 This section describes the rules applicable for any document's type metadata.
 #### SubmissionSet metadata
-See also the [SubmissionSet Metadata Attributes diagram](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.1.2).
+See also the [IHE SubmissionSet Metadata Attributes diagram](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.1.2) or the [IHE SubmissionSet Attributes section](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.3).
 
 |Metadata|Opt|Rules|
 |--------|---------|-----|
-|`uniqueId`|R|Must be a UUID. Can be used only once and must be globally unique.|
+|`uniqueId`|R|Must be an OID. Can be used only once and must be globally unique.|
 |`author`|R|Multiple values accepted.|
 |`author.authorRole`|R|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorRole.html). For APPC, only `PAT` (patient) and `REP` (Representative) are allowed.|
 |`author.authorSpecialty`|O|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorSpeciality.html).|
