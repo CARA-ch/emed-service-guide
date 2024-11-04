@@ -30,17 +30,17 @@ All the [parameters defined in the IHE profile](https://profiles.ihe.net/ITI/TF/
 | `$XDSDocumentEntryClassCode`                  | no       | -                     |
 | `$XDSDocumentEntryTypeCode`                   | no       | -                     |
 | `$XDSDocumentEntryPracticeSettingCode`        | no       | -                     |
-| `$XDSDocumentEntryCreationTimeFrom`           | no       | see [dates processing](date_processing) |
-| `$XDSDocumentEntryCreationTimeTo`             | no       | see [dates processing](date_processing) |
-| `$XDSDocumentEntryServiceStartTimeFrom`       | no       | Ignored for APPC documents. see [dates processing](date_processing) |
-| `$XDSDocumentEntryServiceStartTimeTo`         | no       | Ignored for APPC documents. see [dates processing](date_processing) |
-| `$XDSDocumentEntryServiceStopTimeFrom`        | no       | Ignored for APPC documents. see [dates processing](date_processing) |
-| `$XDSDocumentEntryServiceStopTimeTo`          | no       | Ignored for APPC documents. see [dates processing](date_processing) |
+| `$XDSDocumentEntryCreationTimeFrom`           | no       | see [dates processing](date_processing.md) |
+| `$XDSDocumentEntryCreationTimeTo`             | no       | see [dates processing](date_processing.md) |
+| `$XDSDocumentEntryServiceStartTimeFrom`       | no       | Ignored for APPC documents. see [dates processing](date_processing.md) |
+| `$XDSDocumentEntryServiceStartTimeTo`         | no       | Ignored for APPC documents. see [dates processing](date_processing.md) |
+| `$XDSDocumentEntryServiceStopTimeFrom`        | no       | Ignored for APPC documents. see [dates processing](date_processing.md) |
+| `$XDSDocumentEntryServiceStopTimeTo`          | no       | Ignored for APPC documents. see [dates processing](date_processing.md) |
 | `$XDSDocumentEntryHealthcareFacilityTypeCode` | no       | -                     |
 | `$XDSDocumentEntryEventCodeList`              | no       | -                     |
 | `$XDSDocumentEntryConfidentialityCode`        | no       | All documents in the eMedication service are set to `Normal` as per the [EPR metadata specs](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf) |
 | `$XDSDocumentEntryAuthorPerson`               | no       | -                     |
-| `$XDSDocumentEntryFormatCode`                 | no       | See the [ITI-41 section in this guide](iti41#metadata-codes-per-document-type) |
+| `$XDSDocumentEntryFormatCode`                 | no       | See the [ITI-41 section in this guide](iti41.md#metadata-codes-per-document-type) |
 | `$XDSDocumentEntryStatus`                     | yes      | -                     |
 | `$XDSDocumentEntryType`                       | no       | If empty, `Stable` will be assumed |
 | `$XDSDocumentEntryDocumentAvailability`       | no       | All documents in the eMedication service are set to `Online` |
