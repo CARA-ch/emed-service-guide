@@ -1,6 +1,10 @@
 # Transactions
 
-The eMedication service exposes its own endpoints.
+The eMedication service exposes its own [endpoints](../endpoints.md).
+
+The transactions supported by these exposed endpoints can be classified as either belonging to the eMedication service content, that is, document-based (XDS or XDS-like transactions), or of a more infrastructure-like nature (e.g. PIX queries).
+
+## XDS and XDS-like transactions
 
 Implemented transactions are [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) [ITI-18](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html), [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html), [ITI-43](https://profiles.ihe.net/ITI/TF/Volume2/ITI-43.html), [ITI-57](https://profiles.ihe.net/ITI/TF/Volume2/ITI-57.html) and [CH:PHARM-1](chpharm1.md). [MHD](https://profiles.ihe.net/ITI/MHD/index.html) equivalents are given here for information but are not supported yet by the eMedication service.
 
@@ -12,7 +16,7 @@ Implemented transactions are [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10
 
 For details about documents (content and metadata), see the [Documents page](documents.md).
 
-## Generic rules about transactions
+### Generic rules about transactions
 * In every transaction, the referenced patient has to match the same patient as the one in the XUA assertion.
 * Patients are allowed to perform all types of transactions
 * Healthcare Professionals are allowed to:
@@ -28,7 +32,7 @@ For details about documents (content and metadata), see the [Documents page](doc
 
     MHD-equivalent transactions will be implemented in the future.
 
-## XDS vs. MHD
+### XDS vs. MHD
 IHE provides different [profiles](https://profiles.ihe.net/ITI/TF/Volume1/index.html), among which XDS and MHD make it possible to exchange documents:
 
 * [XDS (Cross Enterprise Document Sharing)](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html)
@@ -39,7 +43,7 @@ XDS is the profile prescribed by the [Swiss EPR ordinance](https://www.fedlex.ad
 Even though the eMedication service doesn't support it yet, it is possible to use the MHD profile though a third party component named [mobile access gateway](https://www.mobileaccessgateway.ch/). This component is not affiliated with this service, but referenced here for information purpose.
 
 
-## Generic error codes
+### Generic error codes
 
 | XDS error code      | Details                                                                                                                                             |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -47,6 +51,15 @@ Even though the eMedication service doesn't support it yet, it is possible to us
 | XDSUnknownPatientId | If the patient ID is unknown (i.e. the patient has not registered), if the subjects is missing rights to preform the action (authorization errors). |
 
 ## Other transactions
+
+Besides the document-based transactions, other transactions are supported as part of the eMedication service.
+
+- [ITI-20: Record Audit Event](iti20.md)
+- [ITI-44: Patient Identity Feed HL7 V3](iti44.md)
+- [ITI-45: PIXV3 Query](iti45.md)
+- [CH ATC: Audit Trail Consumption](chatc.md)
+
+## Other links of interest
 In addition to the [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) transactions implemented by the service, implementers may find it useful to check out the following profiles and transactions:
 
 * [Cross Enterprise User Assertion (XUA)](https://profiles.ihe.net/ITI/TF/Volume1/ch-13.html) profile, and the [Provide X-User Assertion (XUA ITI-40)](https://profiles.ihe.net/ITI/TF/Volume2/ITI-40.html#3.40) transaction.
