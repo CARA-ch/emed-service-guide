@@ -96,7 +96,7 @@ In order to register a patient in the eMedication service, a client system must 
 
     These rules are currently under revision by CARA, particularly regarding the patient's formal consent to use the eMedication service, and might change before, during or after completion of the pilot program of the eMedication service.
 
-## Opt-out
+### Opt-out
 
 Patients can opt out of the eMedication service at any time. This is simply done by deleting their current APPC document via an [ITI-57](iti57.md) transaction. Completion of this transaction will permanently delete the enterity of the patient's eMedication record. 
 
