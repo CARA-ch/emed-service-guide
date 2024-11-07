@@ -13,6 +13,10 @@ nav:
     - 'XDS: search documents (ITI-18)': transactions/iti18.md
     - 'XDS: delete documents (ITI-57)': transactions/iti57.md
     - 'XDS: search pharmacy documents (CH:PHARM-1)': transactions/chpharm1.md
+    - 'Patient Identity Feed HL7 V3 (ITI-44)': transactions/iti44.md
+    - 'PIXV3 Query (ITI-45)': transactions/iti45.md
+    - Record Audit Event (ITI-20): transactions/iti20.md
+    - 'Audit Trail Consumption (CH:ATC)': transactions/chatc.md
     - 'Date processing': transactions/date_processing.md
   - Workflows:
     - 'Treatment lifecycle': workflows/index.md
