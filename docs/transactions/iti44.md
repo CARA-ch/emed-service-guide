@@ -22,5 +22,4 @@ The transaction follows the IHE profile specifications, with the following parti
             - If the patient is not registered at all in CARA's MPI, the eMedication service will assign a new PMP-PID to the patient, the eMedication service will create a new registration for this patient in CARA's MPI with the associated PMP-PID and finally create an eMedication registration with the associated PMP-PID. The response will have an `OK` code with proper detail. Note that this is the only case in which the patient information conveyed with the `Patient Registry Record Added` message, other than the patient ids, will be used.
 
 !!!
-
     Please note that the enrollment process will not be completed until an [APPC](../appc/index.md) document has been provided after adding the patient to the eMedication PIX service. Clients shall not start an ITI-44 transaction unless they can provide an APPC document for the patient immediately after successfully finishing this PIX feed transaction.
