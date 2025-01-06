@@ -35,6 +35,7 @@ Either `$XDSDocumentEntryEntryUUID` or `$XDSDocumentEntryUniqueId` shall be spec
 Implemented, as per IHE specs.
 
 The `$XDSDocumentEntryService(Start|Stop)Time(From|To)` parameters, if present, will be matched against the treatments' __consolidated__ start and end times:
+
 - The consolidated start date of returned treatments must be between the specified `$XDSDocumentEntryServiceStartFrom` and `$XDSDocumentEntryServiceStarTo` parameters:
     - If `$XDSDocumentEntryServiceStartFrom` is not specified, any treatment starting before the specified `$XDSDocumentEntryServiceStarTo` will meet the service start criterium.
     - If `$XDSDocumentEntryServiceStartTo` is not specified, any treatment starting at or after the specified `$XDSDocumentEntryServiceStartFrom` will meet the service start criterium.
