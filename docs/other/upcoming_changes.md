@@ -14,11 +14,15 @@
 
 ## Next Release Dates
 
-- Next CH EMED EPR version release: *TBD*
-- Next aggregator release: *TBD*
+- Next CH EMED EPR version release: planned for end of January 2025.
+- Next aggregator release: planned for end of January 2025 or early February.
 - Next aggregator deployment: *TBD*
 
 ## Relevant Changes
+### PMP v0.5.0 (to be released)
+- Works with the newly release [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0), see the CH EMED EPR 2.0.0 [changelog](https://fhir.ch/ig/ch-emed-epr/2.0.0/changelog.html) for detailed changes.
+- TBD
+
 ### PMP v0.4.13
 Minor fixes and improved audit log generation.
 
