@@ -20,7 +20,23 @@
 
 ## Relevant Changes
 ### PMP v0.5.0 (to be released)
-- Works with the newly release [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0), see the CH EMED EPR 2.0.0 [changelog](https://fhir.ch/ig/ch-emed-epr/2.0.0/changelog.html) for detailed changes.
+- Works with the newly release [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0), see the CH EMED EPR 2.0.0 [changelog](https://fhir.ch/ig/ch-emed-epr/2.0.0/changelog.html) for detailed changes:
+	- Units: 
+		- Added `Bq`, `kBq`, `MBq`, `GBq`, `nmol`, `413568008` (_Application_) and `246205007` (_Quantity_).
+		- `{Piece}` has been removed, please use the SNOMED `246205007` (_Quantity_) code instead.
+		- Added [concept maps](https://fhir.ch/ig/ch-emed-epr/2.0.0/artifacts.html#5) to provide guidance to map to/from HCI's CdTyp9 unit codes. Please bear in mind that these are provided on a best effort basis and that they are by no means of normative value and in no way sanctioned by eHealthSuisse or any other entity.
+		- A new invariant has been added to all medication statement, medication request and medication dispense profiles to enforce that all dosage elements within each one of said resources uses the same unit. _E.g._ if the base dosage element specifies a dose of 1 tablet for the morning, then a split dosage element cannot say 2g in the evening.
+	- PMLC:
+		- Medication statements now contain a new `lastConsideredDocument` extension, always filled by the aggregator. This extension contains the identifier of the last document that was used for aggregating data resulting in this PMLC medication statement. This includes PADV comments. This extension might be of use for implementers wishing to _detect_ whether new changes or comments have been performed on a treatment line since last import.
+	- PML:
+		- Changed medication request resources and changed medication statement resources added by the aggregator to a PML now conform to the new [`CHEMEDEPRMedicationRequestChangedList`](https://fhir.ch/ig/ch-emed-epr/2.0.0/StructureDefinition-ch-emed-epr-medication-request-changed-list.html) and [`CHEMEDEPRMedicationStatementChangedList`](https://fhir.ch/ig/ch-emed-epr/2.0.0/StructureDefinition-ch-emed-epr-medicationstatement-changed-list.html) profiles.
+	- Misc:
+		- Added a new warning invariant to all composition profiles that will check whether the composition title is correct according to the specified composition's language.
+		- Added a constraint to all base dosages ([CHEMEDEPRDosage](https://fhir.ch/ig/ch-emed-epr/2.0.0/StructureDefinition-ch-emed-epr-dosage.html) and [CHEMEDEPRDosageMedicationRequest](https://fhir.ch/ig/ch-emed-epr/2.0.0/StructureDefinition-ch-emed-epr-dosage-medicationrequest.html)) that will result in a warning if the `.text` element is missing or blank.
+		- `route.text`
+		- Examples have been added and some updated.
+		- Added a new guidance page on [comments/notes](https://fhir.ch/ig/ch-emed-epr/2.0.0/guidance_comments.html).
+		- Fixed the `time-quantity-only-integer` constraint on the [CHEMEDEPRTimeQuantity](https://fhir.ch/ig/ch-emed-epr/2.0.0/StructureDefinition-ch-emed-epr-time-quantity.html) profile that was effectively preventing a structured max dose (`maxDosePerPeriod`) from being used.
 - TBD
 
 ### PMP v0.4.13
