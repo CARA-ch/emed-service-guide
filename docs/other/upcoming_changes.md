@@ -44,7 +44,7 @@
 		- [ITI-68 (Retrieve Document)](../transactions/iti68.md)
 		- [CH:MHD-1 (Update Document Metadata)](../transactions/chmhd1.md)
 		- [CH:ATC (Audit Trail Consumption)](../transactions/chatc.md)
-	- [CH:PHARM-5](transactions/chpharm5.md) (XUA token only, for now)
+	- [CH:PHARM-5](../transactions/chpharm5.md) (XUA token only, for now)
 	- PIXm (no token):
 		- [ITI-83 (Mobile Patient Identifier Cross-reference Query)](../transactions/iti83.md)
 		- [ITI-104 (Patient Identity Feed)](../transactions/iti104.md)
