@@ -25,14 +25,14 @@ This page lists the different endpoints available to use the e-medication servic
 |Query Pharmacy Documents (CH:PHARM-1)|`/pmp/services/xds/chpharm1`| [CH:PHARM-1](transactions/chpharm1.md)|
 
 ## MHD EndPoints
-[MHD transactions](https://profiles.ihe.net/ITI/MHD/index.html) are now supported, as profiled by [CH EPR FHIR](https://fhir.ch/ig/ch-epr-fhir/index.htmls). They will be available through the `/pmp/fhir` and `/pmp/mhd` endPoints:
+[MHD transactions](https://profiles.ihe.net/ITI/MHD/index.html) are now supported, as profiled by [CH EPR FHIR](https://fhir.ch/ig/ch-epr-fhir/index.htmls), and available through the `/pmp/fhir` and `/pmp/mhd` endPoints:
 
 | Transaction | Path | Comment |
 | --- | --- | --- |
 | [Provide Document Bundle (ITI-65)](transactions/iti65.md)|`/pmp/fhir`|MHD equivalent to [ITI-41](transactions/iti41.md).|
 | [Find Document References (ITI-67)](transactions/iti67.md)|`/pmp/fhir/DocumentReference`|MHD equivalent to [ITI-18](transactions/iti18.md).|
 | [Retrieve Document (ITI-68)](transactions/iti68.md)|`/pmp/mhd/iti68`|MHD equivalent to [ITI-43](transactions/iti43.md).|
-| [Update Document Metadata (CH:MHD-1)](transactions/chmhd1.md) | `pmp/fhir/DocumentReference` |MHD equivalent to [ITI-57](transactions/iti57.md).|
+| [Update Document Metadata (CH:MHD-1)](transactions/chmhd1.md) | `/pmp/fhir/DocumentReference` |MHD equivalent to [ITI-57](transactions/iti57.md).|
 | [CH:PHARM-5](transactions/chpharm5.md)|`/pmp/fhir/DocumentReference/`|MHD equivalent to [CH:PHARM-1](transactions/chpharm1.md).|
 
 ## PIXm EndPoints

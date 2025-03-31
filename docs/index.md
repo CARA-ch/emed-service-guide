@@ -9,7 +9,14 @@ Welcome to the Integration Guide for the eMedication service of CARA's community
 * [OIDs](oids.md): relevant OIDs to be used within the scope of the eMedication service.
 * [Endpoints](endpoints.md): the eMedication service endpoints available to clients.
 
-Other resources:
+
+## Reporting Issues or Suggestions
+
+- Issues or suggestions about this guide can be reported on the [guide's GitHub](https://github.com/CARA-ch/emed-service-guide/issues).
+- Issues or suggestions about the eMedication service can be reported [here](https://github.com/CARA-ch/pmp-issues/issues).
+- [CH-EMED-EPR issues](https://github.com/CARA-ch/ch-emed-epr/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
+
+## Other Resources
 
 * [EPD by example](https://github.com/ehealthsuisse/EPD-by-example): a repository of sample transactions, including documents and patients management, authentication etc.
 * IPF: Open eHealth Integration Platform - interfaces for health-care related integration solutions.
@@ -20,14 +27,11 @@ Other resources:
 	* [Husky code](https://github.com/project-husky/husky)
 	* [Husky javadoc](https://project-husky.github.io/husky/)
 	* [Husky wiki](https://github.com/project-husky/husky/wiki)
-* [CH-EMED-EPR issues](https://github.com/CARA-ch/ch-emed-epr/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
-* [CH-EMED issues](https://github.com/hl7ch/ch-emed/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
-* [CARA organization on GitHub](https://github.com/CARA-ch)
 * [HAPI FHIR](https://hapifhir.io): a Java library for FHIR.
 
-Upcoming changes:
+## Upcoming Changes
 
-* [Upcoming changes](other/upcoming_changes.md)
+See the [upcoming changes](other/upcoming_changes.md) section on this site.
 
 
 !!! info
