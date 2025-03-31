@@ -55,11 +55,11 @@ Mapping per document type are given in [the ITI-41 page](iti41.md).
 
 **Value sets**:
 
-1. [author.authorRole](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.authorRole.html)
-1. [author.authorSpecialty](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.authorSpeciality.html)
-1. [deletionStatus](https://fhir.ch/ig/ch-epr-mhealth/ValueSet-ch-ehealth-valueset-deletionstatus.html) <!-- TODO https://github.com/hl7ch/ch-epr-term/issues/11 -->
-1. [eventCodeList](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.eventCodeList.html)
-1. [healthcareFacilityTypeCode](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.healthcareFacilityTypeCode.html)
-1. [languageCode](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.languageCode.html)
-1. [originalProviderRole](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.originalProviderRole.html)
-1. [practiceSettingCode](http://fhir.ch/ig/ch-epr-term/ValueSet-DocumentEntry.practiceSettingCode.html)
+1. [author.authorRole](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.authorRole.html)
+1. [author.authorSpecialty](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.authorSpeciality.html)
+1. [deletionStatus](http://fhir.ch/ig/ch-term/ValueSet/DocumentEntry.Ext.EprDeletionStatus)
+1. [eventCodeList](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.eventCodeList.html)
+1. [healthcareFacilityTypeCode](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.healthcareFacilityTypeCode.html)
+1. [languageCode](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.languageCode.html)
+1. [originalProviderRole](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.originalProviderRole.html)
+1. [practiceSettingCode](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.practiceSettingCode.html)

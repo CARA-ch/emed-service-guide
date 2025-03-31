@@ -20,7 +20,7 @@
 
 ## Relevant Changes
 ### PMP v0.5.0 (to be released)
-- Works with the newly release [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0), see the CH EMED EPR 2.0.0 [changelog](https://fhir.ch/ig/ch-emed-epr/2.0.0/changelog.html) for detailed changes:
+- Works with the newly released [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0), see the CH EMED EPR 2.0.0 [changelog](https://fhir.ch/ig/ch-emed-epr/2.0.0/changelog.html) for detailed changes:
 	- Units: 
 		- Added `Bq`, `kBq`, `MBq`, `GBq`, `nmol`, `413568008` (_Application_) and `246205007` (_Quantity_).
 		- `{Piece}` has been removed, please use the SNOMED `246205007` (_Quantity_) code instead.
@@ -37,7 +37,26 @@
 		- Examples have been added and some updated.
 		- Added a new guidance page on [comments/notes](https://fhir.ch/ig/ch-emed-epr/2.0.0/guidance_comments.html).
 		- Fixed the `time-quantity-only-integer` constraint on the [CHEMEDEPRTimeQuantity](https://fhir.ch/ig/ch-emed-epr/2.0.0/StructureDefinition-ch-emed-epr-time-quantity.html) profile that was effectively preventing a structured max dose (`maxDosePerPeriod`) from being used.
-- TBD
+- Added support for the following transactions:
+	- CH EPR FHIR (MHD) (XUA token only, for now):
+		- [ITI-65 (Provide Document Bundle)](transactions/iti65.html)
+		- [ITI-67 (Find Document References)](transactions/iti67.html)
+		- [ITI-68 (Retrieve Document)](transactions/iti68.html)
+		- [CH:MHD-1 (Update Document Metadata)](transactions/chmhd1.html)
+		- [CH:ATC (Audit Trail Consumption)](transactions/chatc.html)
+	- [CH:PHARM-5](transactions/chpharm5.html) (XUA token only, for now)
+	- PIXm (no token):
+		- [ITI-83 (Mobile Patient Identifier Cross-reference Query)](transactions/iti83.html)
+		- [ITI-104 (Patient Identity Feed)](transactions/iti104.html)
+	- [RESTful ATNA Feed](transactions/iti20.html)
+- PML documents are now properly generated for treatments containing changed medication requests or changed medication statements.
+- PMLC PDF:
+	- The aggregator allows clients to request the PMLC PDF to be in eMediplan format. See the [CH:PHARM-1](transactions/chpharm1.html) page for more information on this.
+	- CARA's PDF format:
+		- Improved display of dosage when quantity is provided but not the when.
+		- Added display of active ingredients (if provided) under the medication name.
+- Updated codes from the Swiss EPR to use the values from the 202406.2-stable release. See [ITI-41](transactions/iti41.html) to verify some of the values.
+- Misc. improvements, fixes and better audit log generation.
 
 ### PMP v0.4.13
 Minor fixes and improved audit log generation.

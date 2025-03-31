@@ -36,11 +36,11 @@ See also the [IHE SubmissionSet Metadata Attributes diagram](https://profiles.ih
 |--------|---------|-----|
 |`uniqueId`|R|Must be an OID. Can be used only once and must be globally unique.|
 |`author`|R|Multiple values accepted.|
-|`author.authorRole`|R|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorRole.html). For APPC, only `PAT` (patient) and `REP` (Representative) are allowed.|
-|`author.authorSpecialty`|O|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorSpeciality.html).|
+|`author.authorRole`|R|Possible values are defined in [CH Term IG](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.authorRole.html). For APPC, only `PAT` (patient) and `REP` (Representative) are allowed.|
+|`author.authorSpecialty`|O|Possible values are defined in [CH Term IG](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.authorSpeciality.html).|
 |`availabilityStatus`|O|The value set in the metadata is always ignored, and replaced by `approved`.|
 |`comments`|O|-|
-|`contentTypeCode`|R|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.mimeType.html). Use `application/fhir+json` or `application/fhir+xml` for CH-EMED-EPR documents, and `text/xml` for APPC.|
+|`contentTypeCode`|R|Possible values are defined in [CH Term IG](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.mimeType.html). Use `application/fhir+json` or `application/fhir+xml` for CH-EMED-EPR documents, and `text/xml` for APPC.|
 |`entryUUID`|R|Must be globally unique.|
 |`homeCommunityId`|O|Not used. Can be left blank or omitted.|
 |`intendedRecipient`|O|Not used. Can be left blank or omitted.|
@@ -55,29 +55,29 @@ See also the [DocumentEntry Metadata Attributes diagram](https://profiles.ihe.ne
 
 |Metadata|Opt|Rules|
 |--------|---------|-----|
-|`author.authorRole`|R|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorRole.html). For APPC, only `PAT` (patient) and `REP` (Representative) are allowed. Must be aligned with document content author ([see below](#metadata-values-check)).|
-|`author.authorSpecialty`|O|Possible values are defined in [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.authorSpeciality.html). Must be aligned with document content author ([see below](#metadata-values-check)).|
+|`author.authorRole`|R|Possible values are defined in [CH Term IG](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.authorRole.html). For APPC, only `PAT` (patient) and `REP` (Representative) are allowed. Must be aligned with document content author ([see below](#metadata-values-check)).|
+|`author.authorSpecialty`|O|Possible values are defined in [CH Term IG](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.authorSpeciality.html). Must be aligned with document content author ([see below](#metadata-values-check)).|
 |`availabilityStatus`|O|The value set in the metadata is always ignored, and replaced by `approved`.|
 |`classCode`|R|See [CH-EMED-EPR](#classcode-metadata-to-use-for-each-document-type) and [APPC](#publishing-a-pmp-appc-document) sections below.|
 |`comments`|O|-|
-|`confidentialityCode`|R|[Confidentiality level](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2.5) in the DocumentEntry metadata is forced to [`Normal`](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.confidentialityCode.html).|
+|`confidentialityCode`|R|[Confidentiality level](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2.5) in the DocumentEntry metadata is forced to [`Normal`](http://fhir.ch/ig/ch-term/2.0.9/ValueSet-DocumentEntry.confidentialityCode.html).|
 |`creationTime`|R|[HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) value in UTC. Must match document content creation time ([see below](#metadata-values-check)).|
 |`deletionStatus`|O|If present, deletionStatus must be `urn:e-health-suisse:2019:deletionStatus:deletionNotRequested`.|
 |`documentAvailability`|O|If present should be `Online`.|
 |`entryUUID`|R|Must be globally unique.|
-|`eventCodeList`|O|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.eventCodeList.html).|
+|`eventCodeList`|O|See the [list of available codes](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.eventCodeList.html).|
 |`formatCode`|R|See [CH-EMED-EPR](#classcode-metadata-to-use-for-each-document-type) and [APPC](#publishing-a-pmp-appc-document) sections below.|
 |`hash`|O|Hash of the document content.|
-|`healthcareFacilityTypeCode`|R|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.healthcareFacilityTypeCode.html).|
+|`healthcareFacilityTypeCode`|R|See the [list of available codes](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.healthcareFacilityTypeCode.html).|
 |`homeCommunityId`|O|-|
-|`languageCode`|R|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.languageCode.html).|
+|`languageCode`|R|See the [list of available codes](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.languageCode.html).|
 |`legalAuthenticator`|O|-|
 |`limitedMetadata`|O|Must be left bank or omitted.|
 |`logicalId`|O|Shall be present when replacing a document.|
-|`mimeType`|O|Possible values are defined [ch-epr-term IG](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.mimeType.html). Use `application/fhir+json` or `application/fhir+xml` for CH-EMED-EPR documents, and `text/xml` for APPC.|
+|`mimeType`|O|Possible values are defined [CH Term IG](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.mimeType.html). Use `application/fhir+json` or `application/fhir+xml` for CH-EMED-EPR documents, and `text/xml` for APPC.|
 |`objectType`|R|Value is ignored and set to `Stable`.|
 |`patientId`|R|Must match `SubmissionSet.patientId` and be a XAD-PID ([see above](#submissionset-metadata)).|
-|`practiceSettingCode`|R|See the [list of available codes](http://fhir.ch/ig/ch-epr-term/2.0.9/ValueSet-DocumentEntry.practiceSettingCode.html).|
+|`practiceSettingCode`|R|See the [list of available codes](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.practiceSettingCode.html).|
 |`referenceIdList`|O|Must be omitted or empty as referencing external documents is not permitted (see [Referencing external documents](#referencing-external-documents) section).|
 |`repositoryUniqueId`|O|If the attribute `repositoryUniqueId` is present and does not correspond to the `repositoryUniqueId` the relevant [document repository OID](oids.md), the request is rejected.|
 |`serviceStartTime`|O|Given as an [HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) in UTC. Shall be empty for APPC|
@@ -179,11 +179,11 @@ A "provisional PRE" is a prescription for which the [`CHEMEDEPRMedicationRequest
 * If the treatment has been prescribed (at least one PRE document has been successfully submitted for it), then any DIS document targeting this treatment must reference one of its prescriptions as well.
 
 ### Roles
-* [Patients](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-PAT) and their [representatives](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-REP) are allowed to publish only the following type of docs:
+* [Patients](http://fhir.ch/ig/ch-term/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-PAT) and their [representatives](http://fhir.ch/ig/ch-term/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-REP) are allowed to publish only the following type of docs:
     * MTP
     * PADV with a `COMMENT` observation code with no restriction.
     * PADV with any other observation code only when referencing a document published by the same patient or a representative of the same patient.     
-* [Healthcare professionals](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-HCP) are allowed to publish only the following types of docs:
+* [Healthcare professionals](http://fhir.ch/ig/ch-term/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-HCP) are allowed to publish only the following types of docs:
     * MTP
     * PRE
     * DIS
@@ -206,32 +206,32 @@ Some values from the DocumentEntry are checked against the document (values in m
 
 ### Metadata codes per document type
 | Document type | DocumentEntry.classCode                   | DocumentEntry.formatCode                   | DocumentEntry.typeCode      |
-| ------------- | ----------------------------------------- | ------------------------------------------ | ------------------------------------------------------------- |
-| MTP           | `440545006` _Prescription record_       | `urn:che:epr:ch-emed:mtp:2022`             |`761931002` _Medication treatment plan report (record artifact)_ |
-| PRE           | `440545006` _Prescription record_       | `urn:che:epr:ch-emed:pre:2022`             | `761938008` _Medicinal Prescription record (record artifact)_ |
-| DIS           | `440545006` _Prescription record_       | `urn:che:epr:ch-emed:dis:2022`             | `294121000195110` _Medication dispense document (record artifact)_ |
-| PADV          | `440545006` _Prescription record_       | `urn:che:epr:ch-emed:padv:2022`            | `419891008` _Record artifact_                                 |
-| PML           | `422735006` _Summary clinical document_ | `urn:che:epr:ch-emed:pml:2022`             | `721912009` _Medication summary document_                     |
-| PMLC          | `422735006` _Summary clinical document_ | `urn:che:epr:ch-emed:medication-card:2022` |`736378000` _Medication management plan (record artifact)_ |
+| ------------- | ----------------------------------------- | ------------------------------------------ | ----------------------------------------------------------- |
+| MTP           | `734163000` _Care plan (record artifact)_ | `urn:che:epr:ch-emed:mtp:2024`             |`761931002` _Medication treatment plan report (record artifact)_ |
+| PRE           | `440545006` _Prescription record_         | `urn:che:epr:ch-emed:pre:2024`             | `761938008` _Medicinal Prescription record (record artifact)_ |
+| DIS           | `417319006` _Record of health event (record artifact)_ | `urn:che:epr:ch-emed:dis:2024`             | `82291000195104` _Medication dispense document (record artifact)_ |
+| PADV          | `440545006` _Prescription record_       | `urn:che:epr:ch-emed:padv:2024`            | `419891008` _Record artifact_                                 |
+| PML           | `422735006` _Summary clinical document (record artifact)_ | `urn:che:epr:ch-emed:pml:2024`             | `721912009` _Medication summary document_                     |
+| PMLC          | `422735006` _Summary clinical document (record artifact)_ | `urn:che:epr:ch-emed:medication-card:2023` |`736378000` _Medication management plan (record artifact)_ |
 
-The class and type codes are from the SNOMED CT system: `2.16.840.1.113883.6.96`. The system for the [`formatCode`](https://fhir.ch/ig/ch-epr-term/CodeSystem-2.16.756.5.30.1.127.3.10.10.html) is `2.16.756.5.30.1.127.3.10.10`
+The class and type codes are from the SNOMED CT system: `2.16.840.1.113883.6.96`. The system for the [`formatCode`](https://fhir.ch/ig/ch-term/CodeSystem-2.16.756.5.30.1.127.3.10.10.html) is `2.16.756.5.30.1.127.3.10.10`
 
 ## Replacing a CH-EMED-EPR document
 
 The following rules must be observed when replacing a document:
 
-* [Patients](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-PAT) and their [representatives](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-REP) can only replace a document published by the same patient.
+* [Patients](http://fhir.ch/ig/ch-term/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-PAT) and their [representatives](http://fhir.ch/ig/ch-term/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-REP) can only replace a document published by the same patient.
 	* representatives are not supported by the service yet.
-* [Healthcare professionals](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-HCP) (HCP) can only replace a document published by himself or by another HCP of same community of affiliation.
+* [Healthcare professionals](http://fhir.ch/ig/ch-term/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-HCP) (HCP) can only replace a document published by himself or by another HCP of same community of affiliation.
     * Current implementation: an HCP can replace a document published by any other HCP. Further rules and possible implementations are under discussion.
-* [Document administrator](https://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html) may only replace a document published by an HCP of the same community of affiliation.
+* [Document administrator](https://fhir.ch/ig/ch-term/CodeSystem-2.16.756.5.30.1.127.3.10.6.html) may only replace a document published by an HCP of the same community of affiliation.
 	* Not implemented in PMP, to be discussed, for now a document admin can replace any document.
 * Replacing and replaced documents have to be of the same type (e.g. both MTP documents).
 * Replacing and replaced documents have to refer to the same patient.
 * Only documents at the end of a treatment chain can be replaced.
 * Replaced document must exist in the repository.
 * A replacement document must can be linked only to elements of the same medication chain. In case a PRE document is replaced, it may be linked only to elements of the medication chain of the referenced MTP. 
-* [Document administrator](https://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html) can replace any document regardless of who published it.
+* [Document administrator](https://fhir.ch/ig/ch-term/CodeSystem-2.16.756.5.30.1.127.3.10.6.html) can replace any document regardless of who published it.
 * Replaced document must be approved (although this is always the case after an initial ITI-41 transaction, documents might become `deprecated` after another ITI-41 transaction with a [replacement association]((https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.2.2))).
 * Replaced document must not have `deletionStatus = deletionRequested` (this is relevant since although it is not the case at the moment with the current implementation, there might be files in the repository flagged for deletion but not deleted yet).
 
@@ -239,9 +239,9 @@ The following rules must be observed when replacing a document:
 This section details the rules applicable to metadata when publishing [APPC documents](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_APPC.pdf).
 
 ### Rules for APPC
-* Only  [Patients](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-PAT) and their [representatives](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-REP) or policy administrators can publish a new APPC document.
+* Only  [Patients](http://fhir.ch/ig/ch-term/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-PAT) and their [representatives](http://fhir.ch/ig/ch-term/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-REP) or policy administrators can publish a new APPC document.
 	* representatives are not supported by the service yet.
-*  Only [Patients](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-PAT) and their [representatives](http://fhir.ch/ig/ch-epr-term/2.0.9/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-REP) can replace their own APPC documents (if it exists).
+*  Only [Patients](http://fhir.ch/ig/ch-term/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-PAT) and their [representatives](http://fhir.ch/ig/ch-term/CodeSystem-2.16.756.5.30.1.127.3.10.6.html#2.16.756.5.30.1.127.3.10.6-REP) can replace their own APPC documents (if it exists).
 	* representatives are not supported by the service yet.
 * Policy administrators of the reference community of the patient can replace any existing APPC document.
 * No APPC for the specified patient exists in the system (unless the published document is a replacement), otherwise the document is refused.
@@ -264,11 +264,11 @@ of the EPR](https://www.e-health-suisse.ch/fileadmin/user_upload/Dokumente/E/Imp
 			* `* Environments` (same as above)
 
 ### APPC metadata
-| DocumentEntry    | APPC                                           |
-| ---------------- | ---------------------------------------------- |
-| classCode        | `371537001` _Consent report (record artifact)_ |
-| formatCode       | `urn:ihe:iti:appc:2016:consent`                |
-| mimeType         | `text/xml`                                     |
-| serviceStartTime | None                                           | <!-- TODO: now? -->
-| serviceStopTime  | None                                           |
-| typeCode         | `419891008` _Record artifact_                  |
+| DocumentEntry    | APPC                                            | Code System             |
+| ---------------- | ----------------------------------------------- | ----------------------- |
+| classCode        | `371537001` _Consent report (record artifact)_  | 2.16.840.1.113883.6.96  |
+| formatCode       | `urn:ihe:iti:appc:2016:consent`                 | 1.3.6.1.4.1.19376.1.2.3 |
+| mimeType         | `text/xml`                                      |                         |
+| serviceStartTime | None                                            |                         | <!-- TODO: now? -->
+| serviceStopTime  | None                                            |                         |
+| typeCode         | `419891008` _Record artifact (record artifact)_ | 2.16.840.1.113883.6.96  |

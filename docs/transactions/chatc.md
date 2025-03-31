@@ -18,3 +18,6 @@ This transaction is implemented by the eMedication service as specified by the r
     - The [FHIR standard parameters that apply to all resources](http://hl7.org/fhir/R4/search.html#all) (`_content`, `_id`, `_lastUpdated`) are not supported.
     - [FHIR search parameters](http://hl7.org/fhir/R4/search.html#return) are not supported.
     
+## Security Considerations
+
+Note that beside the security considerations expressed (directly or indirectly) by the CH EPR FHIR profile, the eMedication service implementation supports only, for now, the [SAML Token option](https://profiles.ihe.net/ITI/IUA/#342-iua-actor-options), which means that the authorization token conveyed with the HTTP request must be an XUA token.

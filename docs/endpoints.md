@@ -2,10 +2,10 @@
 This page lists the different endpoints available to use the e-medication service.
 
 ## Base URL
-| Environnement | Base URL |
-| --- | --- |
-| Integration | https://ws-pmp-int.cara.ch |
-| Development | https://ws-pmp-dev.cara.ch |
+| Environnement | Base URL | [EPRIK](https://ahdis.github.io/epr-integration-cara/) Base URL |
+| --- | --- | --- |
+| Integration | https://ws-pmp-int.cara.ch | http(s?)://test.ahdis.ch/eprik-cara/camel/pmp-int |
+| Development | https://ws-pmp-dev.cara.ch | http(s?)://test.ahdis.ch/eprik-cara/camel/pmp-dev |
 
 ## PIX EndPoints
 | Transaction | Path | Documentation |
@@ -25,18 +25,25 @@ This page lists the different endpoints available to use the e-medication servic
 |Query Pharmacy Documents (CH:PHARM-1)|`/pmp/services/xds/chpharm1`| [CH:PHARM-1](transactions/chpharm1.md)|
 
 ## MHD EndPoints
-[MHD transactions](https://profiles.ihe.net/ITI/MHD/index.html) are still a work in progress. They will be available through the `/fhir` and `/mhd` endPoints:
+[MHD transactions](https://profiles.ihe.net/ITI/MHD/index.html) are now supported, as profiled by [CH EPR FHIR](https://fhir.ch/ig/ch-epr-fhir/index.htmls). They will be available through the `/pmp/fhir` and `/pmp/mhd` endPoints:
 
 | Transaction | Path | Comment |
 | --- | --- | --- |
-| Provide Document Bundle (ITI-65)|`/pmp/fhir/`|REST equivalent to [ITI-41](transactions/iti41.md). See also [official documentation](https://profiles.ihe.net/ITI/MHD/ITI-65.html).|
-| Retrieve Document (ITI-68)|`/pmp/mhd/iti68`|MHD equivalent to [ITI-43](transactions/iti43.md). See also [official documentation](https://profiles.ihe.net/ITI/MHD/ITI-68.html).|
-| Find Document Lists (ITI-66)|`/pmp/mhd/list`|MHD equivalent to [ITI-18](transactions/iti18.md). See also [official documentation](https://profiles.ihe.net/ITI/MHD/ITI-66.html).|
-| Find Document References (ITI-67)|`/pmp/mhd/DocumentReference`|MHD equivalent to [ITI-18](transactions/iti18.md). See also [official documentation](https://profiles.ihe.net/ITI/MHD/ITI-67.html).|
-| CH:PHARM-5|`/pmp/mhd/chpharm5`|MHD equivalent to [CH:PHARM-1](transactions/chpharm1.md). See also [official documentation](https://www.ihe.net/uploadedFiles/Documents/Pharmacy/IHE_Pharmacy_Suppl_CMPD.pdf), § 3.2.|
+| [Provide Document Bundle (ITI-65)](transactions/iti65.md)|`/pmp/fhir`|MHD equivalent to [ITI-41](transactions/iti41.md).|
+| [Find Document References (ITI-67)](transactions/iti67.md)|`/pmp/fhir/DocumentReference`|MHD equivalent to [ITI-18](transactions/iti18.md).|
+| [Retrieve Document (ITI-68)](transactions/iti68.md)|`/pmp/mhd/iti68`|MHD equivalent to [ITI-43](transactions/iti43.md).|
+| [Update Document Metadata (CH:MHD-1)](transactions/chmhd1.md) | `pmp/fhir/DocumentReference` |MHD equivalent to [ITI-57](transactions/iti57.md).|
+| [CH:PHARM-5](transactions/chpharm5.md)|`/pmp/fhir/DocumentReference/`|MHD equivalent to [CH:PHARM-1](transactions/chpharm1.md).|
+
+## PIXm EndPoints
+|Transaction|Path|Comment|
+|---|---|---|
+| [Mobile Patient Identifier Cross-reference Query (ITI-83)](transactions/iti83.md) | `/pmp/fhir/Patient` | REST equivalent to [ITI-45](transactions/iti45.md) |
+| [Patient Identity Feed (ITI-104)](transactions/iti104.md) | `/pmp/fhir/Patient` | REST equivalent to [ITI-44](transactions/iti44.md) |
 
 ## Audit Events
 | Transaction | Path | Documentation |
 | --- | --- | --- |
 | Record Audit Event (syslog) | `:6514` | [ITI-20](transactions/iti20.md) |
-| Audit Trail Consumption (CH ATC) | `/alpage/fhir/AuditEvent` | [CH ATC](transactions/chatc.md) |
+| Record Audit Event (RESTful) | `/alpage/fhir` | [ITI-20](transactions/iti20.md) | 
+| Audit Trail Consumption (CH:ATC) | `/alpage/fhir/AuditEvent` | [CH:ATC](transactions/chatc.md) |

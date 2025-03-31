@@ -6,31 +6,31 @@ The transactions supported by these exposed endpoints can be classified as eithe
 
 ## XDS and XDS-like transactions
 
-Implemented transactions are [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) [ITI-18](https://profiles.ihe.net/ITI/TF/Volume2/ITI-18.html), [ITI-41](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html), [ITI-43](https://profiles.ihe.net/ITI/TF/Volume2/ITI-43.html), [ITI-57](https://profiles.ihe.net/ITI/TF/Volume2/ITI-57.html) and [CH:PHARM-1](chpharm1.md). [MHD](https://profiles.ihe.net/ITI/MHD/index.html) equivalents are given here for information but are not supported yet by the eMedication service.
+Implemented transactions:
 
-* publish documents: [XDS ITI-41](iti41.md), _MHD ITI-65_
-* retrieve documents [XDS ITI-43](iti43.md), _MHD ITI-68_
-* update (to request deletion only) documents [XDS ITI-57](iti57.md)
-* search documents [XDS ITI-18](iti18.md), _MHD ITI-66 and ITI-67_
-* search pharmacy documents [XDS CH:PHARM-1](chpharm1.md), _MHD CH:PHARM-5_
+* publish documents: [XDS ITI-41](iti41.md), [MHD ITI-65](iti65.md)
+* retrieve documents [XDS ITI-43](iti43.md), [MHD ITI-68](iti68.md)
+* update (to request deletion only) document metadata: [XDS ITI-57](iti57.md), [MHD CH:MHD-1](chmhd1.md)
+* search documents [XDS ITI-18](iti18.md), [MHD ITI-67](iti67.md)
+* search pharmacy documents [XDS CH:PHARM-1](chpharm1.md), [MHD CH:PHARM-5](chpharm5.md)
 
 For details about documents (content and metadata), see the [Documents page](documents.md).
 
 ### Generic rules about transactions
-* In every transaction, the referenced patient has to match the same patient as the one in the XUA assertion.
+* In every transaction where a security token is required, the referenced patient has to match the same patient as the one in the XUA assertion.
 * Patients are allowed to perform all types of transactions
 * Healthcare Professionals are allowed to:
-    * [Search documents (registry stored query XDS ITI-18)](iti18.md), 
-    * [Retrieve document set (XDS ITI-43)](iti43.md), 
-    * [Provide and register document set (XDS ITI-41)](iti41.md), 
-    * [Update document set (XDS ITI-57)](iti57.md)
+    * [Search documents (registry stored query XDS ITI-18)](iti18.md) and MHD/PHARM equivalents, 
+    * [Retrieve document set (XDS ITI-43)](iti43.md) and MHD equivalent, 
+    * [Provide and register document set (XDS ITI-41)](iti41.md) and MHD equivalent, 
+    * [Update document set (XDS ITI-57)](iti57.md) and MHD equivalent
 * Healthcare Professionals cannot do anything related to [APPC documents (Advanced Patient Privacy Consent)](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_APPC.pdf).
-* Technical User (TCU)  can only [provide and register document set (XDS ITI-41)](iti41.md).
+* Technical User (TCU)  can only [provide and register document set (XDS ITI-41)](iti41.md) (and MHD equivalent).
 * Anything else denied.
 
 !!! tip
 
-    MHD-equivalent transactions will be implemented in the future.
+    MHD transactions, as profiled by [CH EPR FHIR](https://fhir.ch/ig/ch-epr-fhir/index.html), are provided as an early-stage-support. Bugs and profile changes/improvements are to be expected and all feedback is welcome.
 
 ### XDS vs. MHD
 IHE provides different [profiles](https://profiles.ihe.net/ITI/TF/Volume1/index.html), among which XDS and MHD make it possible to exchange documents:
@@ -40,7 +40,7 @@ IHE provides different [profiles](https://profiles.ihe.net/ITI/TF/Volume1/index.
 
 XDS is the profile prescribed by the [Swiss EPR ordinance](https://www.fedlex.admin.ch/eli/cc/2017/205/fr), but MHD is simpler to implement, as it doesn't require the complex XDS stack (SOAP, WSSE, MIME-Multipart, MTOM/XOP, ebRIM, and multi-depth XML), and relies on a lighter REST interface.
 
-Even though the eMedication service doesn't support it yet, it is possible to use the MHD profile though a third party component named [mobile access gateway](https://www.mobileaccessgateway.ch/). This component is not affiliated with this service, but referenced here for information purpose.
+Even though the eMedication service now supports MHD transactions, it is also possible to use the MHD profile through a third party component named [mobile access gateway](https://www.mobileaccessgateway.ch/). This component is not affiliated with this service, but referenced here for informational purposes.
 
 
 ### Generic error codes
@@ -54,10 +54,13 @@ Even though the eMedication service doesn't support it yet, it is possible to us
 
 Besides the document-based transactions, other transactions are supported as part of the eMedication service.
 
-- [ITI-20: Record Audit Event](iti20.md)
-- [ITI-44: Patient Identity Feed HL7 V3](iti44.md)
-- [ITI-45: PIXV3 Query](iti45.md)
+- [ITI-20: Record Audit Event](iti20.md) (both syslog and FHIR feed options supported)
+- [ITI-44: Patient Identity Feed HL7 V3](iti44.md) and the PIXm equivalent [ITI-83](iti83.md)
+- [ITI-45: PIXV3 Query](iti45.md) and the PIXm equivalent [ITI-104](iti104.md)
 - [CH ATC: Audit Trail Consumption](chatc.md)
+
+* ATNA logs: [ITI-20](iti20.md), [CH:ATC][chatc.md]
+* PIX: [PIXv3 ITI-45](iti45.md), [PIXv3 ITI-44](iti44.md), [PIXm ITI-83](iti83.md), [PIXm ITI-104](iti104.md)
 
 ## Other links of interest
 In addition to the [XDS](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) transactions implemented by the service, implementers may find it useful to check out the following profiles and transactions:
