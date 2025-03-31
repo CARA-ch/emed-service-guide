@@ -8,7 +8,7 @@ See also [EPD by example's Retrieve Document Set](https://github.com/ehealthsuis
 
 ## On-demand documents
 
-Generation rules for CH-EMED-EPR [PML (Medication List)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pml.html) and [PMLC (Medication Card)](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/document_pmlc.html) documents are described in the [CH-EMED-EPR IG](https://build.fhir.org/ig/CARA-ch/ch-emed-epr/).
+Generation rules for CH EMED EPR [PML (Medication List)](https://fhir.ch/ig/ch-emed-epr/document_pml.html) and [PMLC (Medication Card)](https://fhir.ch/ig/ch-emed-epr/document_pmlc.html) documents are described in the [CH EMED EPR IG](https://fhir.ch/ig/ch-emed-epr/).
 
 ## Error codes
 

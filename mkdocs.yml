@@ -29,7 +29,7 @@ nav:
     - 'Treatment lifecycle': workflows/index.md
     - 'Situational workflows': workflows/situationalworkflows.md
     - 'Aggregation': workflows/aggregation.md
-  - CH-EMED-EPR: emed/index.md
+  - CH EMED EPR: emed/index.md
   - PMP-APPC:
     - appc/index.md
   - EndPoints:
