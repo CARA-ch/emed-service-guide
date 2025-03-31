@@ -13,9 +13,16 @@ nav:
     - 'XDS: search documents (ITI-18)': transactions/iti18.md
     - 'XDS: delete documents (ITI-57)': transactions/iti57.md
     - 'XDS: search pharmacy documents (CH:PHARM-1)': transactions/chpharm1.md
+    - 'MHD: publish documents (ITI-65)': transactions/iti65.md
+    - 'MHD: retrieve documents (ITI-68)': transactions/iti68.md
+    - 'MHD: search documents (ITI-67)': transactions/iti67.md
+    - 'MHD: delete documents (CH:MHD-1)': transactions/chmhd1.md
+    - 'MHD: search pharmacy documents (CH:PHARM-5)': transactions/chpharm5.md
     - 'Patient Identity Feed HL7 V3 (ITI-44)': transactions/iti44.md
+    - 'PIXm Patient Itentity Feed (ITI-104)': transactions/iti104.md
     - 'PIXV3 Query (ITI-45)': transactions/iti45.md
-    - Record Audit Event (ITI-20): transactions/iti20.md
+    - 'PIXm Patient Identity Query (ITI-83)': transactions/iti83.md
+    - 'Record Audit Event (ITI-20)': transactions/iti20.md
     - 'Audit Trail Consumption (CH:ATC)': transactions/chatc.md
     - 'Date processing': transactions/date_processing.md
   - Workflows:
