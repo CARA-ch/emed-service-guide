@@ -33,7 +33,6 @@
 	- Misc:
 		- Added a new warning invariant to all composition profiles that will check whether the composition title is correct according to the specified composition's language.
 		- Added a constraint to all base dosages ([CHEMEDEPRDosage](https://fhir.ch/ig/ch-emed-epr/2.0.0/StructureDefinition-ch-emed-epr-dosage.html) and [CHEMEDEPRDosageMedicationRequest](https://fhir.ch/ig/ch-emed-epr/2.0.0/StructureDefinition-ch-emed-epr-dosage-medicationrequest.html)) that will result in a warning if the `.text` element is missing or blank.
-		- `route.text`
 		- Examples have been added and some updated.
 		- Added a new guidance page on [comments/notes](https://fhir.ch/ig/ch-emed-epr/2.0.0/guidance_comments.html).
 		- Fixed the `time-quantity-only-integer` constraint on the [CHEMEDEPRTimeQuantity](https://fhir.ch/ig/ch-emed-epr/2.0.0/StructureDefinition-ch-emed-epr-time-quantity.html) profile that was effectively preventing a structured max dose (`maxDosePerPeriod`) from being used.
