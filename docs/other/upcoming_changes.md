@@ -15,11 +15,13 @@
 ## Next Release Dates
 
 - Next CH EMED EPR version release: *TBD*
-- Next aggregator release: as soon as possible in April 2025.
-- Next aggregator deployment: as soon as possible in April 2025.
+- Next aggregator release: *TBD*.
+- Next aggregator deployment: 0.5.0 to be deployed in both dev and int environments:
+	- int: 2025-05-21
+	- dev: 2025-05-26
 
 ## Relevant Changes
-### PMP v0.5.0 (to be released)
+### PMP v0.5.0 (released 2025-05-21)
 - Works with the newly released [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0), see the CH EMED EPR 2.0.0 [changelog](https://fhir.ch/ig/ch-emed-epr/2.0.0/changelog.html) for detailed changes:
 	- Units: 
 		- Added `Bq`, `kBq`, `MBq`, `GBq`, `nmol`, `413568008` (_Application_) and `246205007` (_Quantity_).
