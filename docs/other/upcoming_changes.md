@@ -55,6 +55,7 @@
 		- Improved display of dosage when quantity is provided but not the when.
 		- Added display of active ingredients (if provided) under the medication name.
 - Updated codes from the Swiss EPR to use the values from the 202406.2-stable release. See [ITI-41](../transactions/iti41.md) to verify some of the values.
+- Added antivirus scan capabilities. PDFs attached to files uploaded to the eMedication service might now be scanned for threats before being accepted. This will work as follows depending on the different environments. For both ws-pmp-int and ws-pmp-dev, a local ClamAV service will be used for scanning. If the binary does not pass the scan or if the scan fails for whatever reason, the submission will be rejected.
 - Misc. improvements, fixes and better audit log generation.
 
 ### PMP v0.4.13
