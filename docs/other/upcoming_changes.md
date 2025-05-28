@@ -5,8 +5,8 @@
 ## Currently Deployed
 
   - dev:
-    - PMP (aggregator) v0.4.13 (deployed 2024-07-26, DB recreated with v0.4.0 deployed 2024-04-23), works with [CH EMED EPR 1.0.0](https://fhir.ch/ig/ch-emed-epr/1.0.0/index.html).
-    - ALPAGE v0.0.6 (deployed 2024-07-26)
+    - PMP (aggregator) v0.5.1 (deployed 2025-05-27, DB recreated), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
+    - ALPAGE v0.1.0 (deployed 22025-05-27)
   - int:
     - PMP (aggregator) v0.5.0 (deployed 2025-05-21, DB recreated), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
     - ALPAGE v0.1.0 (deployed 2025-05-21, DB recreated)
@@ -16,12 +16,9 @@
 
 - Next CH EMED EPR version release: *TBD*
 - Next aggregator release: *TBD*.
-- Next aggregator deployment: 0.5.0 to be deployed in both dev and int environments:
-	- int: 2025-05-21
-	- dev: 2025-05-26
 
 ## Relevant Changes
-### PMP v0.5.0 (released 2025-05-21)
+### PMP v0.5.0
 - Works with the newly released [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0), see the CH EMED EPR 2.0.0 [changelog](https://fhir.ch/ig/ch-emed-epr/2.0.0/changelog.html) for detailed changes:
 	- Units: 
 		- Added `Bq`, `kBq`, `MBq`, `GBq`, `nmol`, `413568008` (_Application_) and `246205007` (_Quantity_).
