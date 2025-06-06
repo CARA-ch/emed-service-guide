@@ -18,6 +18,11 @@
 - Next aggregator release: *TBD*.
 
 ## Relevant Changes
+### PMP v0.5.2
+- Relevant fixes:
+	- Fixed bug preventing ITI-68 transactions from succeeding.
+	- Fixed bug preventing ITI-104 transactions for patients with no PMP-PID in the MPI from succeeding.
+
 ### PMP v0.5.0
 - Works with the newly released [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0), see the CH EMED EPR 2.0.0 [changelog](https://fhir.ch/ig/ch-emed-epr/2.0.0/changelog.html) for detailed changes:
 	- Units: 
