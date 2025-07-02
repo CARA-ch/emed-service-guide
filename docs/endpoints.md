@@ -29,11 +29,11 @@ This page lists the different endpoints available to use the e-medication servic
 
 | Transaction | Path | Comment |
 | --- | --- | --- |
-| [Provide Document Bundle (ITI-65)](transactions/iti65.md)|`/pmp/fhir`|MHD equivalent to [ITI-41](transactions/iti41.md).|
+| [Provide Document Bundle (ITI-65)](transactions/iti65.md)|`/pmp/fhir/Bundle`|MHD equivalent to [ITI-41](transactions/iti41.md).|
 | [Find Document References (ITI-67)](transactions/iti67.md)|`/pmp/fhir/DocumentReference`|MHD equivalent to [ITI-18](transactions/iti18.md).|
 | [Retrieve Document (ITI-68)](transactions/iti68.md)|`/pmp/mhd/iti68`|MHD equivalent to [ITI-43](transactions/iti43.md).|
 | [Update Document Metadata (CH:MHD-1)](transactions/chmhd1.md) | `/pmp/fhir/DocumentReference` |MHD equivalent to [ITI-57](transactions/iti57.md).|
-| [CH:PHARM-5](transactions/chpharm5.md)|`/pmp/fhir/DocumentReference/`|MHD equivalent to [CH:PHARM-1](transactions/chpharm1.md).|
+| [CH:PHARM-5](transactions/chpharm5.md)|`/pmp/fhir/DocumentReference/<operation>`|MHD equivalent to [CH:PHARM-1](transactions/chpharm1.md). The endpoint changes depending on the CH:PHARM-5 operation, see the [transaction page](transactions/chpharm5.md) for details.|
 
 ## PIXm EndPoints
 |Transaction|Path|Comment|
@@ -45,5 +45,5 @@ This page lists the different endpoints available to use the e-medication servic
 | Transaction | Path | Documentation |
 | --- | --- | --- |
 | Record Audit Event (syslog) | `:6514` | [ITI-20](transactions/iti20.md) |
-| Record Audit Event (RESTful) | `/alpage/fhir` | [ITI-20](transactions/iti20.md) | 
+| Record Audit Event (RESTful) | `/alpage/fhir/AuditEvent` | [ITI-20](transactions/iti20.md) | 
 | Audit Trail Consumption (CH:ATC) | `/alpage/fhir/AuditEvent` | [CH:ATC](transactions/chatc.md) |

@@ -6,7 +6,7 @@ The eMedication service doesn't support CMA (Community Medication Administration
 
 ## Stored queries
 
-In relatio to IHE's PHARM-1, CH:PHARM-1 defines three additional queries: `FindMedicationCard`, `FindPrescriptionsForValidation` and `FindPrescriptionsForDispense`.
+In relation to IHE's PHARM-1, CH:PHARM-1 defines three additional queries: `FindMedicationCard`, `FindPrescriptionsForValidation` and `FindPrescriptionsForDispense`.
 
 ## Common query parameters
 
