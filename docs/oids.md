@@ -22,6 +22,6 @@ This page lists some OIDs relevant to the eMedication service.
 ## Other OIDs
 | OID | Description | Environment |
 | --- | --- | --- |
-| 2.16.756.5.30.1.127.3.10.3 | Central Compensation Office (EPR-SPID) assigning authority. | integration, development |
+| 2.16.756.5.30.1.127.3.10.3 | Central Compensation Office (EPR-SPID) assigning authority. | production, integration, development |
 | 2.16.756.5.30.1.191 | CARA's community root OID | N/A |
 | 2.16.756.5.30.1.191.1.0.2.1 | CARA's MPI assigning authority (patient identification). | integration, development |
