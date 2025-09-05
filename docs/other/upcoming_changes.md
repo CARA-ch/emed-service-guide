@@ -8,20 +8,28 @@
     - PMP (aggregator) v0.5.1 (deployed 2025-05-27, DB recreated), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
     - ALPAGE v0.1.0 (deployed 22025-05-27)
   - int:
-    - PMP (aggregator) v0.5.0 (deployed 2025-05-21, DB recreated), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
+    - PMP (aggregator) v0.5.2 (deployed 2025-09-05), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
     - ALPAGE v0.1.0 (deployed 2025-05-21, DB recreated)
 
+## Known Issues
+- Aggregator:
+	- The aggregator might accept bad ids within a treatmentplan extension. This might have implications for client traversing a PML document and relying on these ids to be good.
 
 ## Next Release Dates
 
 - Next CH EMED EPR version release: *TBD*
-- Next aggregator release: *TBD*.
+- Next aggregator release: *TBD*
 
 ## Relevant Changes
 ### PMP v0.5.2
 - Relevant fixes:
 	- Fixed bug preventing ITI-68 transactions from succeeding.
 	- Fixed bug preventing ITI-104 transactions for patients with no PMP-PID in the MPI from succeeding.
+	- Fixed Husky-based validation of submitted documents to the aggregator being done against CH EMED instead of CH EMED EPR, hence allowing invalid content (since CH EMED EPR is more constrained) to be submitted to the PMP. This would imply that upon generation of a PML or PMLC document, the aggregator would fail to produce a valid document, since these were correctly being validated against the CH EMED EPR specs.
+	- The document validator will properly check the first __human__ author instead of simply the first author of the composition for its checks.
+- Made XUA signature validation stricter, when enabled.
+- Misc. internal improvements and tracing and preparation for production deployment.
+
 
 ### PMP v0.5.0
 - Works with the newly released [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0), see the CH EMED EPR 2.0.0 [changelog](https://fhir.ch/ig/ch-emed-epr/2.0.0/changelog.html) for detailed changes:
