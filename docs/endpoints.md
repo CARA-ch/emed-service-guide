@@ -22,7 +22,7 @@ This page lists the different endpoints available to use the e-medication servic
 |Provide and Register Document Set-b (ITI-41)|`/pmp/services/xds/iti41`| [ITI-41](transactions/iti41.md)|
 |Retrieve Document Set (ITI-43)|`/pmp/services/xds/iti43`| [ITI-43](transactions/iti43.md)|
 |Update Document Set (ITI-57)|`/pmp/services/xds/iti57`| [ITI-57](transactions/iti57.md)|
-|Query Pharmacy Documents (CH:PHARM-1)|`/pmp/services/xds/chpharm1`| [CH:PHARM-1](transactions/chpharm1.md)|
+|Query Pharmacy Documents (CH:PHARM-1)|`/pmp/services/cmpd/chpharm1`| [CH:PHARM-1](transactions/chpharm1.md)|
 
 ## MHD EndPoints
 [MHD transactions](https://profiles.ihe.net/ITI/MHD/index.html) are now supported, as profiled by [CH EPR FHIR](https://fhir.ch/ig/ch-epr-fhir/index.htmls), and available through the `/pmp/fhir` and `/pmp/mhd` endPoints:
