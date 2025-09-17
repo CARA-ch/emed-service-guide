@@ -5,7 +5,7 @@
 ## Currently Deployed
 
   - dev:
-    - PMP (aggregator) v0.5.1 (deployed 2025-05-27, DB recreated), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
+    - PMP (aggregator) v0.5.5 (deployed 2025-09-17), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
     - ALPAGE v0.1.0 (deployed 22025-05-27)
   - int:
     - PMP (aggregator) v0.5.2 (deployed 2025-09-05), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
@@ -21,6 +21,9 @@
 - Next aggregator release: *TBD*
 
 ## Relevant Changes
+### PMP v0.5.5
+This version uses a snapshot of Husky 3.2.0 which has not been yet released, and that fixes several bugs preventing PMLC PDF generation for medications for which an ingredient is specified without a known SNOMED code and for certain cases of dosages with a specified max dosage per period.
+
 ### PMP v0.5.2
 - Relevant fixes:
 	- Fixed bug preventing ITI-68 transactions from succeeding.
