@@ -61,6 +61,7 @@ theme:
     - navigation.indexes
     - toc.integrate
     - content.code.annotate
+    - search.suggest
   palette:
     - scheme: default
       primary: blue
@@ -83,4 +84,5 @@ plugins:
       minify_css: true
       htmlmin_opts:
           remove_comments: true
+  - search
 #  - privacy
