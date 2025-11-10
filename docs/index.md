@@ -2,6 +2,8 @@
 
 Welcome to the Integration Guide for the eMedication service of CARA's community.
 
+## Topics
+
 * [Transactions](transactions/index.md): information about the implemented transactions.
 * [Workflows](workflows/index.md): description of the different workflows clients of this service can follow.
 * [CH EMED EPR](emed/index.md): description of the eMedication [exchange format](https://fhir.ch/ig/ch-emed-epr/index.html).
