@@ -9,7 +9,6 @@ Welcome to the Integration Guide for the eMedication service of CARA's community
 * [OIDs](oids.md): relevant OIDs to be used within the scope of the eMedication service.
 * [Endpoints](endpoints.md): the eMedication service endpoints available to clients.
 
-
 ## Reporting Issues or Suggestions
 
 - Issues or suggestions about this guide can be reported on the [guide's GitHub](https://github.com/CARA-ch/emed-service-guide/issues).
@@ -32,7 +31,6 @@ Welcome to the Integration Guide for the eMedication service of CARA's community
 ## Upcoming Changes
 
 See the [upcoming changes](other/upcoming_changes.md) section on this site.
-
 
 !!! info
 
