@@ -108,7 +108,7 @@ The PMP is abandoning the use of CARA's MPI-PID as XAD-PID and with the v0.4.0 s
 	    2. Fetch the PMP-PID with an ITI-45 query to the PMP.
 	    3. Perform an ITI-41 with the APPC document to activate the registration. Until this is done, no other transaction for providing, fetching or searching documents will be accepted.
   - All requests (other than PIX) expect now the use of PMP-PID ids (SubmissionSet.patientId and DocumentEntry.patientId). Systems can continue to use CARA's MPI-PIDs for this and the aggregator will perform a translation but include a warning with the response. The grace period for transitioning towards PMP-PIDs has not been defined.
-Note that PMP-PIDs will not be the same for the same patients in different environments, see [OIDs](oids.html) for the each deployed platform's patient identification domain id.
+Note that PMP-PIDs will not be the same for the same patients in different environments, see [OIDs](../oids.md) for the each deployed platform's patient identification domain id.
 
 ### PMP v0.3.0
 Relevant changes from (upcoming) CH EMED EPR 1.0.0 based on CH EMED 4.0.0 (the latter should be published before the end of the current year):
@@ -161,7 +161,7 @@ Other aggregator changes:
 	    - If neither `ServiceEndFrom` nor `ServiceEndTo` are specified, all treatments ending at any date will meet the service end criterium.
 	    - Note that if a treatment does not have an explicit end date provided by a published document, it is assumed by the aggregator to be *the end of time*, i.e. will have no end date.
 - Implementation of XDS `ServiceStartFrom`, `ServiceStartTo`, `ServiceEndFrom`, `ServiceEndTo` criteria for all ITI-18 and PHARM-1 queries.
-    - `ITI-18` queries will match the criteria ranges against the stored metadata `XDSDocumentEntry.serviceStartTime` and `XDSDocumentEntry.serviceStopTime` as provided at ITI-41 time. See [date processing](transactions/date_processing.md).
+    - `ITI-18` queries will match the criteria ranges against the stored metadata `XDSDocumentEntry.serviceStartTime` and `XDSDocumentEntry.serviceStopTime` as provided at ITI-41 time. See [date processing](../transactions/date_processing.md).
     - `PHARM-1` subqueries:
         - `FindMedicationTreatmentPlans`, `FindMedicationList` and `FindMedicationCard` follow the same logic explained on the previous point.
 	    - `FindPrescriptions`, `FindPrescriptionsForValidation` and `FindPrescriptionsForDispense` will apply the criteria against the consolidated prescription's validity period. 

@@ -2,7 +2,7 @@
 
 The [ITI-65 (Provide Document Bundle)](https://fhir.ch/ig/ch-epr-fhir/iti-65.html) transaction allows a Document Source (e.g. a primary system) to send a document with its associated metadata to the Document Recipient (i.e. the eMedication service backend).
 
-This transaction provides an [MHD](https://profiles.ihe.net/ITI/MHD/index.html)-based alternative, as profiled by [CH EPR FHIR](https://fhir.ch/ig/ch-epr-fhir/index.html), to the [ITI-41](iti41.html) transaction, and the same metadata and business logic constraints defined for that transaction on our service guide apply.
+This transaction provides an [MHD](https://profiles.ihe.net/ITI/MHD/index.html)-based alternative, as profiled by [CH EPR FHIR](https://fhir.ch/ig/ch-epr-fhir/index.html), to the [ITI-41](iti41.md) transaction, and the same metadata and business logic constraints defined for that transaction on our service guide apply.
 
 ## Security Considerations
 

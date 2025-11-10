@@ -2,7 +2,7 @@
 
 The [ITI-68 (Retrieve Document)](https://fhir.ch/ig/ch-epr-fhir/iti-68.html) transaction allows a Document Consumer (e.g. a primary system) to retrieve a document from the Document Responder (i.e. the eMedication service) as specified by the [CH EPR FHIR](https://fhir.ch/ig/ch-epr-fhir/index.html) implementation guide.
 
-This transaction provides an [MHD](https://profiles.ihe.net/ITI/MHD/index.html)-based alternative, as profiled by [CH EPR FHIR](https://fhir.ch/ig/ch-epr-fhir/index.html) to the [ITI-43](iti43.html) transaction. Note that the same restrictions and business logic as for said XDS transaction apply to this MHD equivalent.
+This transaction provides an [MHD](https://profiles.ihe.net/ITI/MHD/index.html)-based alternative, as profiled by [CH EPR FHIR](https://fhir.ch/ig/ch-epr-fhir/index.html) to the [ITI-43](iti43.md) transaction. Note that the same restrictions and business logic as for said XDS transaction apply to this MHD equivalent.
 
 ## Security Considerations
 

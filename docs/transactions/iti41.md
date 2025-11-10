@@ -58,7 +58,7 @@ See also the [DocumentEntry Metadata Attributes diagram](https://profiles.ihe.ne
 |`author.authorRole`|R|Possible values are defined in [CH Term IG](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.authorRole.html). For APPC, only `PAT` (patient) and `REP` (Representative) are allowed. Must be aligned with document content author ([see below](#metadata-values-check)).|
 |`author.authorSpecialty`|O|Possible values are defined in [CH Term IG](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.authorSpeciality.html). Must be aligned with document content author ([see below](#metadata-values-check)).|
 |`availabilityStatus`|O|The value set in the metadata is always ignored, and replaced by `approved`.|
-|`classCode`|R|See [CH EMED EPR](#classcode-metadata-to-use-for-each-document-type) and [APPC](#publishing-a-pmp-appc-document) sections below.|
+|`classCode`|R|See [CH EMED EPR](#metadata-codes-per-document-type) and [APPC](#publishing-a-pmp-appc-document) sections below.|
 |`comments`|O|-|
 |`confidentialityCode`|R|[Confidentiality level](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2.5) in the DocumentEntry metadata is forced to [`Normal`](http://fhir.ch/ig/ch-term/2.0.9/ValueSet-DocumentEntry.confidentialityCode.html).|
 |`creationTime`|R|[HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) value in UTC. Must match document content creation time ([see below](#metadata-values-check)).|
@@ -66,7 +66,7 @@ See also the [DocumentEntry Metadata Attributes diagram](https://profiles.ihe.ne
 |`documentAvailability`|O|If present should be `Online`.|
 |`entryUUID`|R|Must be globally unique.|
 |`eventCodeList`|O|See the [list of available codes](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.eventCodeList.html).|
-|`formatCode`|R|See [CH EMED EPR](#classcode-metadata-to-use-for-each-document-type) and [APPC](#publishing-a-pmp-appc-document) sections below.|
+|`formatCode`|R|See [CH EMED EPR](#metadata-codes-per-document-type) and [APPC](#publishing-a-pmp-appc-document) sections below.|
 |`hash`|O|Hash of the document content.|
 |`healthcareFacilityTypeCode`|R|See the [list of available codes](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.healthcareFacilityTypeCode.html).|
 |`homeCommunityId`|O|-|
@@ -79,14 +79,14 @@ See also the [DocumentEntry Metadata Attributes diagram](https://profiles.ihe.ne
 |`patientId`|R|Must match `SubmissionSet.patientId` and be a XAD-PID ([see above](#submissionset-metadata)).|
 |`practiceSettingCode`|R|See the [list of available codes](http://fhir.ch/ig/ch-term/ValueSet-DocumentEntry.practiceSettingCode.html).|
 |`referenceIdList`|O|Must be omitted or empty as referencing external documents is not permitted (see [Referencing external documents](#referencing-external-documents) section).|
-|`repositoryUniqueId`|O|If the attribute `repositoryUniqueId` is present and does not correspond to the `repositoryUniqueId` the relevant [document repository OID](oids.md), the request is rejected.|
+|`repositoryUniqueId`|O|If the attribute `repositoryUniqueId` is present and does not correspond to the `repositoryUniqueId` the relevant [document repository OID](../oids.md), the request is rejected.|
 |`serviceStartTime`|O|Given as an [HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) in UTC. Shall be empty for APPC|
 |`serviceStopTime`|O|Given as an [HL7 DTM](http://www.hl7.eu/refactored/dtDTM.html) in UTC. Shall be empty for APPC|
 |`size`|O|-|
 |`sourcePatientId`|R|Any id known or unknown to the local MPI. EPR-SPID and SSN are forbidden.|
 |`sourcePatientInfo`|O|Ignored by the service.|
 |`title`|R|-|
-|`typeCode`|R|See [section](#classcode-metadata-to-use-for-each-document-type) below.|
+|`typeCode`|R|See [section](#metadata-codes-per-document-type) below.|
 |`uniqueId`|R|Must be globally unique and be a UUID. Must match the document id in the case of CH EMED EPR documents.|
 |`URI`|O|-|
 |`version`|O|If present shall be empty, the value is ignored and set by the document registry.|
@@ -196,12 +196,12 @@ Some values from the DocumentEntry are checked against the document (values in m
 | DocumentEntry | CH EMED EPR                                                  |
 | ------------- | ------------------------------------------------------------ |
 | author        | `Composition.author`                                         |
-| classCode     | `Composition.type`.  Must be consistent with the document type (see [below](#classcode-metadata-to-use-for-each-document-type))|
+| classCode     | `Composition.type`.  Must be consistent with the document type (see [below](#metadata-codes-per-document-type))|
 | creationTime  | `Composition.date`                                           |
-| formatCode    | Must be consistent with the document type (see [below](#classcode-metadata-to-use-for-each-document-type))|
+| formatCode    | Must be consistent with the document type (see [below](#metadata-codes-per-document-type))|
 | languageCode  | `Composition.language`                                       |
 | mimeType      | `application/fhir+xml` or `application/fhir+json`            |
-| typeCode      |  Must be consistent with the document type (see [below](#classcode-metadata-to-use-for-each-document-type))|
+| typeCode      |  Must be consistent with the document type (see [below](#metadata-codes-per-document-type))|
 | uniqueId      | `Bundle.identifier.value` and `Composition.identifier.value` |
 
 ### Metadata codes per document type
@@ -232,7 +232,7 @@ The following rules must be observed when replacing a document:
 * Replaced document must exist in the repository.
 * A replacement document must can be linked only to elements of the same medication chain. In case a PRE document is replaced, it may be linked only to elements of the medication chain of the referenced MTP. 
 * [Document administrator](https://fhir.ch/ig/ch-term/CodeSystem-2.16.756.5.30.1.127.3.10.6.html) can replace any document regardless of who published it.
-* Replaced document must be approved (although this is always the case after an initial ITI-41 transaction, documents might become `deprecated` after another ITI-41 transaction with a [replacement association]((https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.2.2))).
+* Replaced document must be approved (although this is always the case after an initial ITI-41 transaction, documents might become `deprecated` after another ITI-41 transaction with a [replacement association](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.2.2)).
 * Replaced document must not have `deletionStatus = deletionRequested` (this is relevant since although it is not the case at the moment with the current implementation, there might be files in the repository flagged for deletion but not deleted yet).
 
 ## Publishing a PMP-APPC document
