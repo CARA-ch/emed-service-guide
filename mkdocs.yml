@@ -61,11 +61,15 @@ theme:
     repo: fontawesome/brands/github
   font: false
   features:
-    - navigation.tabs
-    - navigation.indexes
-    - toc.integrate
     - content.code.annotate
+    - content.code.copy
+    - navigation.indexes
+    - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
     - search.suggest
+    - toc.integrate
   palette:
     - scheme: default
       primary: blue
