@@ -7,7 +7,8 @@ nav:
   - Transactions:
     - transactions/index.md
     - Documents: transactions/documents.md
-    - 'Auth': transactions/auth.md
+    - Auth: transactions/auth.md
+    - Date processing: transactions/date_processing.md
     - XDS:
       - 'Publish documents (ITI-41)': transactions/iti41.md
       - 'Retrieve documents (ITI-43)': transactions/iti43.md
@@ -26,19 +27,18 @@ nav:
     - ATNA:
       - 'Record Audit Event (ITI-20)': transactions/iti20.md
       - 'Audit Trail Consumption (CH:ATC)': transactions/chatc.md
-    - 'Patient Identity Feed HL7 V3 (ITI-44)': transactions/iti44.md
-    - 'PIXV3 Query (ITI-45)': transactions/iti45.md
-    - 'Date processing': transactions/date_processing.md
+    - PIXv3:
+      - 'Patient Identity Feed HL7 V3 (ITI-44)': transactions/iti44.md
+      - 'PIXV3 Query (ITI-45)': transactions/iti45.md
   - Workflows:
-    - 'Treatment lifecycle': workflows/index.md
+    - workflows/index.md
     - 'Situational workflows': workflows/situationalworkflows.md
     - 'Aggregation': workflows/aggregation.md
   - CH EMED EPR: emed/index.md
-  - PMP-APPC:
-    - appc/index.md
-  - EndPoints:
-    - endpoints.md
+  - PMP-APPC: appc/index.md
+  - Endpoints: endpoints.md
   - OIDs: oids.md
+  - Authorship & Timestamps: other/authorship_and_timestamps.md
   - Upcoming Changes: other/upcoming_changes.md
 markdown_extensions:
   - smarty
