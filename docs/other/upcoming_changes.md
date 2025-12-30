@@ -63,23 +63,23 @@ This version uses a snapshot of Husky 3.2.0 which has not been yet released, and
 		- Fixed the `time-quantity-only-integer` constraint on the [CHEMEDEPRTimeQuantity](https://fhir.ch/ig/ch-emed-epr/2.0.0/StructureDefinition-ch-emed-epr-time-quantity.html) profile that was effectively preventing a structured max dose (`maxDosePerPeriod`) from being used.
 - Added support for the following transactions:
 	- CH EPR FHIR (MHD) (XUA token only, for now):
-		- [ITI-65 (Provide Document Bundle)](../transactions/iti65.md)
-		- [ITI-67 (Find Document References)](../transactions/iti67.md)
-		- [ITI-68 (Retrieve Document)](../transactions/iti68.md)
-		- [CH:MHD-1 (Update Document Metadata)](../transactions/chmhd1.md)
-		- [CH:ATC (Audit Trail Consumption)](../transactions/chatc.md)
-	- [CH:PHARM-5](../transactions/chpharm5.md) (XUA token only, for now)
+		- [ITI-65 (Provide Document Bundle)](../resources/transactions/iti65.md)
+		- [ITI-67 (Find Document References)](../resources/transactions/iti67.md)
+		- [ITI-68 (Retrieve Document)](../resources/transactions/iti68.md)
+		- [CH:MHD-1 (Update Document Metadata)](../resources/transactions/chmhd1.md)
+		- [CH:ATC (Audit Trail Consumption)](../resources/transactions/chatc.md)
+	- [CH:PHARM-5](../resources/transactions/chpharm5.md) (XUA token only, for now)
 	- PIXm (no token):
-		- [ITI-83 (Mobile Patient Identifier Cross-reference Query)](../transactions/iti83.md)
-		- [ITI-104 (Patient Identity Feed)](../transactions/iti104.md)
-	- [RESTful ATNA Feed](../transactions/iti20.md)
+		- [ITI-83 (Mobile Patient Identifier Cross-reference Query)](../resources/transactions/iti83.md)
+		- [ITI-104 (Patient Identity Feed)](../resources/transactions/iti104.md)
+	- [RESTful ATNA Feed](../resources/transactions/iti20.md)
 - PML documents are now properly generated for treatments containing changed medication requests or changed medication statements.
 - PMLC PDF:
-	- The aggregator allows clients to request the PMLC PDF to be in eMediplan format. See the [CH:PHARM-1](../transactions/chpharm1.md) page for more information on this.
+	- The aggregator allows clients to request the PMLC PDF to be in eMediplan format. See the [CH:PHARM-1](../resources/transactions/chpharm1.md) page for more information on this.
 	- CARA's PDF format:
 		- Improved display of dosage when quantity is provided but not the when.
 		- Added display of active ingredients (if provided) under the medication name.
-- Updated codes from the Swiss EPR to use the values from the 202406.2-stable release. See [ITI-41](../transactions/iti41.md) to verify some of the values.
+- Updated codes from the Swiss EPR to use the values from the 202406.2-stable release. See [ITI-41](../resources/transactions/iti41.md) to verify some of the values.
 - Added antivirus scan capabilities. PDFs attached to files uploaded to the eMedication service might now be scanned for threats before being accepted. This will work as follows depending on the different environments. For both ws-pmp-int and ws-pmp-dev, a local ClamAV service will be used for scanning. If the binary does not pass the scan or if the scan fails for whatever reason, the submission will be rejected.
 - Misc. improvements, fixes and better audit log generation.
 
@@ -118,7 +118,7 @@ The PMP is abandoning the use of CARA's MPI-PID as XAD-PID and with the v0.4.0 s
 	    2. Fetch the PMP-PID with an ITI-45 query to the PMP.
 	    3. Perform an ITI-41 with the APPC document to activate the registration. Until this is done, no other transaction for providing, fetching or searching documents will be accepted.
   - All requests (other than PIX) expect now the use of PMP-PID ids (SubmissionSet.patientId and DocumentEntry.patientId). Systems can continue to use CARA's MPI-PIDs for this and the aggregator will perform a translation but include a warning with the response. The grace period for transitioning towards PMP-PIDs has not been defined.
-Note that PMP-PIDs will not be the same for the same patients in different environments, see [OIDs](../oids.md) for the each deployed platform's patient identification domain id.
+Note that PMP-PIDs will not be the same for the same patients in different environments, see [OIDs](../references/oids/index.md) for the each deployed platform's patient identification domain id.
 
 ### PMP v0.3.0
 Relevant changes from (upcoming) CH EMED EPR 1.0.0 based on CH EMED 4.0.0 (the latter should be published before the end of the current year):
@@ -171,7 +171,7 @@ Other aggregator changes:
 	    - If neither `ServiceEndFrom` nor `ServiceEndTo` are specified, all treatments ending at any date will meet the service end criterium.
 	    - Note that if a treatment does not have an explicit end date provided by a published document, it is assumed by the aggregator to be *the end of time*, i.e. will have no end date.
 - Implementation of XDS `ServiceStartFrom`, `ServiceStartTo`, `ServiceEndFrom`, `ServiceEndTo` criteria for all ITI-18 and PHARM-1 queries.
-    - `ITI-18` queries will match the criteria ranges against the stored metadata `XDSDocumentEntry.serviceStartTime` and `XDSDocumentEntry.serviceStopTime` as provided at ITI-41 time. See [date processing](../transactions/date_processing.md).
+    - `ITI-18` queries will match the criteria ranges against the stored metadata `XDSDocumentEntry.serviceStartTime` and `XDSDocumentEntry.serviceStopTime` as provided at ITI-41 time. See [date processing](../resources/transactions/date_processing/index.md).
     - `PHARM-1` subqueries:
         - `FindMedicationTreatmentPlans`, `FindMedicationList` and `FindMedicationCard` follow the same logic explained on the previous point.
 	    - `FindPrescriptions`, `FindPrescriptionsForValidation` and `FindPrescriptionsForDispense` will apply the criteria against the consolidated prescription's validity period. 

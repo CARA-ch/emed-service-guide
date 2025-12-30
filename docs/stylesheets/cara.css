@@ -89,7 +89,7 @@ ol {
     list-style: none;
     position: relative;
 }
-.md-typeset ul li::before {
+.md-typeset td ul li::before {
     position: absolute;
     margin-left: -1.4em;
     color: #99989a;

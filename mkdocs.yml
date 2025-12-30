@@ -3,42 +3,47 @@ site_url: https://qligier.github.io/cara-emed-ig/
 repo_url: https://github.com/qligier/cara-emed-ig
 site_author: Quentin Ligier
 nav:
-  - Home: index.md
-  - Transactions:
-    - transactions/index.md
-    - Documents: transactions/documents.md
-    - Auth: transactions/auth.md
-    - Date processing: transactions/date_processing.md
-    - XDS:
-      - 'Publish documents (ITI-41)': transactions/iti41.md
-      - 'Retrieve documents (ITI-43)': transactions/iti43.md
-      - 'Search documents (ITI-18)': transactions/iti18.md
-      - 'Delete documents (ITI-57)': transactions/iti57.md
-      - 'Search pharmacy documents (CH:PHARM-1)': transactions/chpharm1.md
-    - MHD:
-      - 'Publish documents (ITI-65)': transactions/iti65.md
-      - 'Retrieve documents (ITI-68)': transactions/iti68.md
-      - 'Search documents (ITI-67)': transactions/iti67.md
-      - 'Delete documents (CH:MHD-1)': transactions/chmhd1.md
-      - 'Search pharmacy documents (CH:PHARM-5)': transactions/chpharm5.md
-    - PIXm:
-      - 'PIXm Patient Identity Query (ITI-83)': transactions/iti83.md
-      - 'PIXm Patient Itentity Feed (ITI-104)': transactions/iti104.md
-    - ATNA:
-      - 'Record Audit Event (ITI-20)': transactions/iti20.md
-      - 'Audit Trail Consumption (CH:ATC)': transactions/chatc.md
-    - PIXv3:
-      - 'Patient Identity Feed HL7 V3 (ITI-44)': transactions/iti44.md
-      - 'PIXV3 Query (ITI-45)': transactions/iti45.md
-  - Workflows:
-    - workflows/index.md
-    - 'Situational workflows': workflows/situationalworkflows.md
-    - 'Aggregation': workflows/aggregation.md
-  - CH EMED EPR: emed/index.md
-  - PMP-APPC: appc/index.md
-  - Endpoints: endpoints.md
-  - OIDs: oids.md
-  - Authorship & Timestamps: other/authorship_and_timestamps.md
+  - Getting Started: index.md
+  - Resources:
+    - resources/index.md
+    - Documents: resources/transactions/documents/index.md
+    - Auth: resources/transactions/auth/index.md
+    - Date processing: resources/transactions/date_processing/index.md
+    - Transactions:
+      - resources/transactions/index.md
+      - 'XDS':
+        - 'Publish documents (ITI-41)': resources/transactions/iti41.md
+        - 'Retrieve documents (ITI-43)': resources/transactions/iti43.md
+        - 'Search documents (ITI-18)': resources/transactions/iti18.md
+        - 'Delete documents (ITI-57)': resources/transactions/iti57.md
+        - 'Search pharmacy documents (CH:PHARM-1)': resources/transactions/chpharm1.md
+      - 'MHD':
+        - 'Publish documents (ITI-65)': resources/transactions/iti65.md
+        - 'Retrieve documents (ITI-68)': resources/transactions/iti68.md
+        - 'Search documents (ITI-67)': resources/transactions/iti67.md
+        - 'Delete documents (CH:MHD-1)': resources/transactions/chmhd1.md
+        - 'Search pharmacy documents (CH:PHARM-5)': resources/transactions/chpharm5.md
+      - 'PIXm':
+        - 'PIXm Patient Identity Query (ITI-83)': resources/transactions/iti83.md
+        - 'PIXm Patient Itentity Feed (ITI-104)': resources/transactions/iti104.md
+      - 'ATNA':
+        - 'Record Audit Event (ITI-20)': resources/transactions/iti20.md
+        - 'Audit Trail Consumption (CH:ATC)': resources/transactions/chatc.md
+      - 'PIXv3':
+        - 'Patient Identity Feed HL7 V3 (ITI-44)': resources/transactions/iti44.md
+        - 'PIXV3 Query (ITI-45)': resources/transactions/iti45.md
+    - Workflows:
+      - resources/workflows/index.md
+      - 'Situational workflows': resources/workflows/situationalworkflows.md
+      - 'Aggregation': resources/workflows/aggregation.md
+    - APPC: resources/appc/index.md
+  - References:
+    - references/index.md
+    - 'CH EMED EPR': references/emed/index.md
+    - Endpoints: references/endpoints/index.md
+    - OIDs: references/oids/index.md
+    - Authorship & Timestamps: references/authorship_and_timestamps/index.md
+  - Useful links: other/useful_links.md
   - Upcoming Changes: other/upcoming_changes.md
 markdown_extensions:
   - smarty
@@ -67,6 +72,7 @@ theme:
     - navigation.prune
     - navigation.sections
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.top
     - search.suggest
     - toc.integrate

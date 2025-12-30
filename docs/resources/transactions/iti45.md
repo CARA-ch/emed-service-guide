@@ -1,10 +1,10 @@
 # PIXV3 Query [ITI-45]
 
-The eMedication service exposes an [ITI-45](https://profiles.ihe.net/ITI/TF/Volume2/ITI-45.html) endpoint (see [endpoints](../endpoints.md)) that allows clients to query the service for patient ids of registered patients, that is, patients currently enrolled in the eMedication service.
+The eMedication service exposes an [ITI-45](https://profiles.ihe.net/ITI/TF/Volume2/ITI-45.html) endpoint (see [endpoints](../../references/endpoints/index.md)) that allows clients to query the service for patient ids of registered patients, that is, patients currently enrolled in the eMedication service.
 
 This transaction follows IHE's specifications with the following particularities:
 
-- The eMedication service recognizes 3 possible data sources for patient ids (see [OIDs](../oids.md) for actual values):
+- The eMedication service recognizes 3 possible data sources for patient ids (see [OIDs](../../references/oids/index.md) for actual values):
     - CARA's assigning authority.
     - The Swiss Central Compensation Office's assignign authority.
     - The eMedication service's own assigning authority.

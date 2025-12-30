@@ -31,12 +31,12 @@ All the [parameters defined in the IHE profile](https://profiles.ihe.net/ITI/TF/
 | `$XDSDocumentEntryClassCode`                  | no       | See the [Annex 3 of the EPR Act](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf), section 2.5, for possible values |
 | `$XDSDocumentEntryTypeCode`                   | no       | See the [Annex 3 of the EPR Act](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf), section 2.6, for possible values|
 | `$XDSDocumentEntryPracticeSettingCode`        | no       | See the [Annex 3 of the EPR Act](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf), section 2.4, for possible values |
-| `$XDSDocumentEntryCreationTimeFrom`           | no       | see [dates processing](date_processing.md) |
-| `$XDSDocumentEntryCreationTimeTo`             | no       | see [dates processing](date_processing.md) |
-| `$XDSDocumentEntryServiceStartTimeFrom`       | no       | Ignored for APPC documents. see [dates processing](date_processing.md) |
-| `$XDSDocumentEntryServiceStartTimeTo`         | no       | Ignored for APPC documents. see [dates processing](date_processing.md) |
-| `$XDSDocumentEntryServiceStopTimeFrom`        | no       | Ignored for APPC documents. see [dates processing](date_processing.md) |
-| `$XDSDocumentEntryServiceStopTimeTo`          | no       | Ignored for APPC documents. see [dates processing](date_processing.md) |
+| `$XDSDocumentEntryCreationTimeFrom`           | no       | see [dates processing](./date_processing/index.md) |
+| `$XDSDocumentEntryCreationTimeTo`             | no       | see [dates processing](./date_processing/index.md) |
+| `$XDSDocumentEntryServiceStartTimeFrom`       | no       | Ignored for APPC documents. see [dates processing](./date_processing/index.md) |
+| `$XDSDocumentEntryServiceStartTimeTo`         | no       | Ignored for APPC documents. see [dates processing](./date_processing/index.md) |
+| `$XDSDocumentEntryServiceStopTimeFrom`        | no       | Ignored for APPC documents. see [dates processing](./date_processing/index.md) |
+| `$XDSDocumentEntryServiceStopTimeTo`          | no       | Ignored for APPC documents. see [dates processing](./date_processing/index.md) |
 | `$XDSDocumentEntryHealthcareFacilityTypeCode` | no       | See the [Annex 3 of the EPR Act](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf), section 2.3, for possible values |
 | `$XDSDocumentEntryEventCodeList`              | no       | See the [Annex 3 of the EPR Act](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf), section 2.8, for possible values |
 | `$XDSDocumentEntryConfidentialityCode`        | no       | All documents in the eMedication service are set to `Normal`. See the [Annex 3 of the EPR Act](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf), section 2.8 |
@@ -54,8 +54,8 @@ This stored query allows to search for submission sets in the eMedication servic
 | ------------------------------------- | -------- | --------------------- |
 | `$XDSSubmissionSetPatientId`          | yes      | The patient's PMP-PID |
 | `$XDSSubmissionSetSourceId`           | no       | -                     |
-| `$XDSSubmissionSetSubmissionTimeFrom` | no       | see [dates processing](date_processing.md) |
-| `$XDSSubmissionSetSubmissionTimeTo`   | no       | see [dates processing](date_processing.md) |
+| `$XDSSubmissionSetSubmissionTimeFrom` | no       | see [dates processing](./date_processing/index.md) |
+| `$XDSSubmissionSetSubmissionTimeTo`   | no       | see [dates processing](./date_processing/index.md) |
 | `$XDSSubmissionSetAuthorPerson`       | no       | -                     |
 | `$XDSSubmissionSetContentType`        | no       | All submission sets in the eMedication service are of `Procedure` content type. See the [Annex 3 of the EPR Act](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf), section 2.15 |
 | `$XDSSubmissionSetStatus`             | yes      | All submission sets in the eMedication service are `Approved` |

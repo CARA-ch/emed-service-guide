@@ -230,7 +230,7 @@ Representatives cannot be granted access yet because the eMedication service can
 The eMedication service does a bit of magic with the APPC document when it comes to evaluate its rules.
 Some specific rules are added.
 These roles cannot be targeted by custom rules, their access rights are granted by the eMedication service.
-The access rules processing is described in [Authentication and authorization](../transactions/auth.md).
+The access rules processing is described in [Authentication and authorization](../transactions/auth/index.md).
 
 ## Example
 

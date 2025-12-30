@@ -2,7 +2,7 @@
 
 ## Content
 
-The eMedication service only support [PMP-APPC](../appc/index.md) and [CH EMED EPR](../emed/index.md) documents.
+The eMedication service only support [PMP-APPC](../../appc/index.md) and [CH EMED EPR](../../../references/emed/index.md) documents.
 
 ## Metadata
 
@@ -51,7 +51,7 @@ When two cardinalities are given, the first one is for Content Sender actor and 
 | `URI`                            |    0 / 1    | It contains the MHD download link                 |
 | `version`                        |  0..1 / 1   | Only "1"                                          | <!-- Reviewed -->
 
-Mapping per document type are given in [the ITI-41 page](iti41.md).
+Mapping per document type are given in [the ITI-41 page](../iti41.md).
 
 **Value sets**:
 

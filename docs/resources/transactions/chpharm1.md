@@ -25,7 +25,7 @@ A subset of the supported PHARM-1 queries allow to recover stable documents. The
 * `$XDSDocumentEntryConfidentialityCode`: All documents in the eMedication service are set to `Normal`. See the [Annex 3 of the EPR Act](https://www.bag.admin.ch/dam/bag/de/dokumente/nat-gesundheitsstrategien/strategie-ehealth/gesetzgebung-elektronisches-patientendossier/gesetze/anhang_3_epdv_edi_ausgabe_3.pdf.download.pdf/EPDV-EDI_Anhang_3_DE_Ausgabe_3.pdf), section 2.8
 * `$XDSDocumentEntryUniqueId`.
 * `$XDSDocumentEntryEntryUUID`.
-* `$XDSCreationTime(From|To)`: see [date processing](date_processing.md). These are matched agains the available `DocumentEntry` metadata in the registry.
+* `$XDSCreationTime(From|To)`: see [date processing](./date_processing/index.md). These are matched agains the available `DocumentEntry` metadata in the registry.
 * `$XDSAuthorPerson`.
 
 Either `$XDSDocumentEntryEntryUUID` or `$XDSDocumentEntryUniqueId` shall be specified.
