@@ -19,7 +19,7 @@ CARA's eMedication service Integration Guide uses different concepts, tools and 
 
 ## Other Resources
 
-* [EPD by example](https://github.com/ehealthsuisse/EPD-by-example): a repository of sample transactions, including documents and patients management, authentication etc.
+* [EPR by example](https://github.com/ehealthsuisse/EPR-by-example): a repository of sample transactions, including documents and patients management, authentication etc.
 * IPF: Open eHealth Integration Platform - interfaces for health-care related integration solutions.
 	* [IPF code](https://github.com/oehf/ipf): IPF provides an Apache Camel implementation of pretty much all transactions
   used in the Swiss EPR.
