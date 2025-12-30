@@ -2,122 +2,134 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://qligier.github.io/cara-emed-ig/</loc>
-         <lastmod>2025-11-27</lastmod>
-    </url>
-    <url>
-         <loc>https://qligier.github.io/cara-emed-ig/endpoints/</loc>
-         <lastmod>2025-11-27</lastmod>
-    </url>
-    <url>
-         <loc>https://qligier.github.io/cara-emed-ig/oids/</loc>
-         <lastmod>2025-11-27</lastmod>
-    </url>
-    <url>
-         <loc>https://qligier.github.io/cara-emed-ig/appc/</loc>
-         <lastmod>2025-11-27</lastmod>
-    </url>
-    <url>
-         <loc>https://qligier.github.io/cara-emed-ig/emed/</loc>
-         <lastmod>2025-11-27</lastmod>
-    </url>
-    <url>
-         <loc>https://qligier.github.io/cara-emed-ig/other/authorship_and_timestamps/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
          <loc>https://qligier.github.io/cara-emed-ig/other/upcoming_changes/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/other/useful_links/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/auth/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/references/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/chatc/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/references/authorship_and_timestamps/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/chmhd1/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/references/emed/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/chpharm1/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/references/endpoints/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/chpharm5/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/references/oids/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/date_processing/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/documents/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/appc/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/iti104/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/iti18/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/chatc/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/iti20/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/chmhd1/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/iti41/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/chpharm1/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/iti43/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/chpharm5/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/iti44/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/iti104/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/iti45/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/iti18/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/iti57/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/iti20/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/iti65/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/iti41/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/iti67/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/iti43/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/iti68/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/iti44/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/transactions/iti83/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/iti45/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/workflows/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/iti57/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/workflows/aggregation/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/iti65/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
     <url>
-         <loc>https://qligier.github.io/cara-emed-ig/workflows/situationalworkflows/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/iti67/</loc>
+         <lastmod>2025-12-30</lastmod>
+    </url>
+    <url>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/iti68/</loc>
+         <lastmod>2025-12-30</lastmod>
+    </url>
+    <url>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/iti83/</loc>
+         <lastmod>2025-12-30</lastmod>
+    </url>
+    <url>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/auth/</loc>
+         <lastmod>2025-12-30</lastmod>
+    </url>
+    <url>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/date_processing/</loc>
+         <lastmod>2025-12-30</lastmod>
+    </url>
+    <url>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/transactions/documents/</loc>
+         <lastmod>2025-12-30</lastmod>
+    </url>
+    <url>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/workflows/</loc>
+         <lastmod>2025-12-30</lastmod>
+    </url>
+    <url>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/workflows/aggregation/</loc>
+         <lastmod>2025-12-30</lastmod>
+    </url>
+    <url>
+         <loc>https://qligier.github.io/cara-emed-ig/resources/workflows/situationalworkflows/</loc>
+         <lastmod>2025-12-30</lastmod>
     </url>
 </urlset>
