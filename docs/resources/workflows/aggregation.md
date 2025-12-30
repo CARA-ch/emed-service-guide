@@ -11,9 +11,9 @@
 ## Triggers
 Aggregation occurs when:
 
-* A new [emed document](../emed/index.md) is provided via the [ITI-41 transaction](../transactions/iti41.md).
-* An [emed document](../emed/index.md) is removed via the [ITI-57 transaction](../transactions/iti57.md).
-* An [emed document](../emed/index.md) is replaced via the [ITI-41 transaction](../transactions/iti41.md) and the [replace](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.2.2) association.
+* A new [emed document](../../references/emed/index.md) is provided via the [ITI-41 transaction](../transactions/iti41.md).
+* An [emed document](../../references/emed/index.md) is removed via the [ITI-57 transaction](../transactions/iti57.md).
+* An [emed document](../../references/emed/index.md) is replaced via the [ITI-41 transaction](../transactions/iti41.md) and the [replace](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.1.html#4.1.2.2) association.
 
 ## Scope
 When triggered, aggregation occurs for the medication treatment referenced by the triggering document.
@@ -672,4 +672,4 @@ The table below shows an overview of the elements updated or created during the 
 </html>
 
 ### Medication card
-![Medication card](../assets/medicationcard.jpg)
+![Medication card](../../assets/medicationcard.jpg)

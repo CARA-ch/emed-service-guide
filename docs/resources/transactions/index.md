@@ -1,6 +1,6 @@
 # Transactions
 
-The eMedication service exposes its own [endpoints](../endpoints.md).
+The eMedication service exposes its own [endpoints](../../references/endpoints/index.md).
 
 The transactions supported by these exposed endpoints can be classified as either belonging to the eMedication service content, that is, document-based (XDS or XDS-like transactions), or of a more infrastructure-like nature (e.g. PIX queries).
 
@@ -14,7 +14,7 @@ Implemented transactions:
 * search documents [XDS ITI-18](iti18.md), [MHD ITI-67](iti67.md)
 * search pharmacy documents [XDS CH:PHARM-1](chpharm1.md), [MHD CH:PHARM-5](chpharm5.md)
 
-For details about documents (content and metadata), see the [Documents page](documents.md).
+For details about documents (content and metadata), see the [Documents page](./documents/index.md).
 
 ### Generic rules about transactions
 * In every transaction where a security token is required, the referenced patient has to match the same patient as the one in the XUA assertion.
