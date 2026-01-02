@@ -5,16 +5,16 @@
 ## Currently Deployed
 
   - dev:
-    - PMP (aggregator) v0.6.1 (deployed 2025-11-27), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
-		- Platform migration to BINT.
-    - ALPAGE v0.1.2 (deployed 22025-11-27, DB truncated)
+    - PMP (aggregator) v0.6.2 (deployed 2026-01-02), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
+    - ALPAGE v0.1.2 (deployed 22025-11-27)
   - int:
-    - PMP (aggregator) v0.5.2 (deployed 2025-09-05), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
-    - ALPAGE v0.1.0 (deployed 2025-05-21, DB recreated)
-
+    - PMP (aggregator) v0.6.2 (deployed 2026-01-02), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
+    - ALPAGE v0.1.2
+  - HUG (pilot):
+    - aggregator: v0.6.2 (deployed 2026-01-02), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
+	- ALPAGE v0.1.1
 ## Known Issues
-- Aggregator:
-	- The aggregator might accept bad ids within a treatmentplan extension. This might have implications for client traversing a PML document and relying on these ids to be good.
+None. Please report any issues you may encounter.
 
 ## Next Release Dates
 
@@ -22,6 +22,12 @@
 - Next aggregator release: *TBD*
 
 ## Relevant Changes
+### PMP v0.6.2
+
+- The aggregator will no longer assign ids to dosage elements (bug) within on-demand documents.
+- The aggregator will link the original representation binary in its section narrative.
+- Other internal improvements and bugfixes.
+
 ### PMP v0.6.1
 Bugfixes for unexepected issues encountered due to dependencies bump on 0.6.0.
 
