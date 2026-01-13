@@ -8,7 +8,7 @@
     - PMP (aggregator) v0.6.2 (deployed 2026-01-02), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
     - ALPAGE v0.1.2 (deployed 22025-11-27)
   - int:
-    - PMP (aggregator) v0.6.2 (deployed 2026-01-02), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
+    - PMP (aggregator) v0.6.3 (deployed 2026-01-13), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
     - ALPAGE v0.1.2
   - HUG (pilot):
     - aggregator: v0.6.2 (deployed 2026-01-02), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
@@ -22,6 +22,9 @@ None. Please report any issues you may encounter.
 - Next aggregator release: *TBD*
 
 ## Relevant Changes
+### PMP v0.6.3
+Updated dependencies and minor fixes.
+
 ### PMP v0.6.2
 
 - The aggregator will no longer assign ids to dosage elements (bug) within on-demand documents.
