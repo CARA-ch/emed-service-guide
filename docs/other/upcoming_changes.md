@@ -5,7 +5,7 @@
 ## Currently Deployed
 
   - dev:
-    - PMP (aggregator) v0.6.2 (deployed 2026-01-02), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
+    - PMP (aggregator) v0.6.4 (deployed 2026-01-19), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
     - ALPAGE v0.1.2 (deployed 22025-11-27)
   - int:
     - PMP (aggregator) v0.6.3 (deployed 2026-01-13), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
