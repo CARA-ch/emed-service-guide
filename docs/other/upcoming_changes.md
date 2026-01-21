@@ -5,13 +5,13 @@
 ## Currently Deployed
 
   - dev:
-    - PMP (aggregator) v0.6.4 (deployed 2026-01-19), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
+    - PMP (aggregator) v0.6.6 (deployed 2026-01-21), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
     - ALPAGE v0.1.2 (deployed 22025-11-27)
   - int:
-    - PMP (aggregator) v0.6.3 (deployed 2026-01-13), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
+    - PMP (aggregator) v0.6.6 (deployed 2026-01-21), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
     - ALPAGE v0.1.2
   - HUG (pilot):
-    - aggregator: v0.6.4 (deployed 2026-01-19), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
+    - aggregator: v0.6.6 (deployed 2026-01-21), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
 	- ALPAGE v0.1.1
 ## Known Issues
 None. Please report any issues you may encounter.
@@ -22,6 +22,14 @@ None. Please report any issues you may encounter.
 - Next aggregator release: *TBD*
 
 ## Relevant Changes
+### PMP v0.6.6
+If a document submission to the eMedication service fails because the document entry `uniqueId` already existed in the system, now the aggregator will correctly report the `uniqueId` value instead of the `entryUuid` value in the error message.
+
+### PMP v0.6.5
+Fixed two bug potentially impacting clients:
+- Fixed a bug preventing the deletion of documents.
+- Fixed a bug concerning the retrieval of document metadata when the client uses CARA's XAD-PID for the transaction instead of a PMP-PID.
+
 ### PMP v0.6.4
 Minor performance and traceability improvements.
 
