@@ -22,6 +22,9 @@ None. Please report any issues you may encounter.
 - Next aggregator release: *TBD*
 
 ## Relevant Changes
+### TBD
+Fixed a bug preventing the submission of documents that would contain milliseconds in their composition timestamp via ITI-41.
+
 ### PMP v0.6.6
 If a document submission to the eMedication service fails because the document entry `uniqueId` already existed in the system, now the aggregator will correctly report the `uniqueId` value instead of the `entryUuid` value in the error message.
 
