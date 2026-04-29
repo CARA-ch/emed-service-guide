@@ -18,8 +18,11 @@ None. Please report any issues you may encounter.
 
 ## Next Release Dates
 
-- Next CH EMED EPR version release: 3.0.0 to be published in February 2026, precise date to be fixed.
-- Next aggregator release: 0.7.0 to be released shortly shortly. Deployment dates to be announced, shortly after release.
+- Next CH EMED EPR version release: TBD
+- Next aggregator release: 0.7.0 to be released on 2026-05-4 together with ALPAGE 0.2.0. Deployment dates:
+  - ws-pmp-dev: 2026-05-04 (Monday) right after release.
+  - ws-pmp-int: 2026-05-06 (Wednesday).
+  - HUG: TBD.
 
 ## Relevant Changes
 ### PMP v0.7.0
