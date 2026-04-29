@@ -143,7 +143,12 @@ On top of the common PHARM-1 parameters, the following parameters are supported:
 - `$XDSDocumentEntryFormatCode`: this parameter is used to specify whether the query should return only a PDF (`urn:che:epr:EPR_Unstructured_Document`) or a PMLC document as specified in CH EMED EPR (`urn:che:epr:ch-emed:medication-card:2023`), containing the PDF as well as original representation of the FHIR document. If not specified, PMLC document is assumed.
 - `$XDSDocumentEntryLanguageCode`: the language that will be used to generate the medication card. If not specified, the eMedication service uses the default language (French). At present, the eMedicationService supports only French language (`fr-CH`).
 - `$PMLCIncludeNonActive`: either `true` or `false`. If ommitted, `false` will be assumed. When `false`, the query will return only active treatments (plus the last treatment to be added or modified to the patient's eMedication even if it is no-longer active). When true, all treatments matching the query's criteria will be returned, whether active or not at the moment.
-- `$PMLCPaperFormat`: all values from the [CHEMEDEPRPaperFormatCS](http://fhir.ch/ig/ch-emed-epr/CodeSystem/ch-emed-epr-paper-format-code-system) are supported. This parameter, by default `cara-pmp` allows a client to request that PMLC PDF be generated following a specific format. For now only CARA's own format and eMediplan format are supported.
+- `$PMLCPaperFormat`: values from the [CHEMEDEPRPaperFormatCS](http://fhir.ch/ig/ch-emed-epr/CodeSystem/ch-emed-epr-paper-format-code-system). This parameter, by default `cara-pmp` allows a client to request that PMLC PDF be generated following a specific format:
+  - `cara-pmp`
+  - `emediplan`: this code will indicate that the eMedication service should generate the PDF in an eMediplan format, without specifying which version of it. At present, the eMedication service will generate a response as if the code would have been `chmed23a`, but this might change in the future.
+    - `chmed16a`: this code is not supported by this transaction for now.
+    - `chmed23a`: the PDF will be generated following the CHMED23A paper format specs, including a QR code following the CHMED23A format specs.
+  - `ePrescription`: this code is not allowed by this transaction.
 
 The `$XDSDocumentEntryService(Start|Stop)Time(From|To)` parameters, if present, will be matched against the treatments' __consolidated__ start and end times:
 

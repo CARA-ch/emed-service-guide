@@ -18,12 +18,27 @@ None. Please report any issues you may encounter.
 
 ## Next Release Dates
 
-- Next CH EMED EPR version release: *TBD*
-- Next aggregator release: *TBD*
+- Next CH EMED EPR version release: 3.0.0 to be published in February 2026, precise date to be fixed.
+- Next aggregator release: 0.7.0 to be released shortly shortly. Deployment dates to be announced, shortly after release.
 
 ## Relevant Changes
-### TBD
-Fixed a bug preventing the submission of documents that would contain milliseconds in their composition timestamp via ITI-41.
+### PMP v0.7.0
+
+- Changes:
+  - Updated the exchange format to [CH EMED EPR 3.0.0](https://fhir.ch/ig/ch-emed-epr/3.0.0/index.html) (published 2026-02-11, see the [changelog](https://fhir.ch/ig/ch-emed-epr/changelog.html)), we expect no changes impacting integrators, other than the newly added `prescription-id-reference-matches-request-changed-reference` constraint on PADV observation resources. This constraint ensures that, if there if the observation has a medication request changed extension, then the identifier has to match that of the prescription extension of the observation. Same goes for `treatment-plan-id-reference-matches-statement-changed-reference` from medication statement changed references.
+  - Other relevant FHIR IG packages have been updated as well, including but not excluded to:
+    - CH Core from 5.0.0 to 6.0.0
+	- CH EMED from 5.0.0 to 6.0.0
+	- CH EPR FHIR from 4.0.1 to 5.0.0.
+	- CH Term from 3.1.0 to 3.3.0.
+  - Added support for the new PMLC paper formats added with CH EMED EPR 3.0.0. CARA's own format will continue to be the default.
+  - Validation messages regarding unknown code systems reported by the HAPI FHIR validator create too much noise. These messages are now degraded by the eMedication service from error level to information before sending the results back to the client.
+- Fixes:
+  - XUA validation will no longer fail if the SAML token `Lifetime` is not specified (it is strongly recommended, but not mandatory, the Post platform was filling it but BINT's does not.) and the token is older than the default value of the OpenSAML library (5min). If not specified, lifetime will be computed from the assertion's issue instants (`NotBefore` and `NotOnOrAfter`).
+  - Fixed a bug preventing the submission of documents that would contain milliseconds in their composition timestamp via ITI-41.
+  - Fixed the `.extension[data].valueString` of the text link extension of generated PMLCs original representation section of the composition to have the URN prefix as it should.
+  - [HUSKY](https://github.com/project-husky/husky/issues/336) Improved conversion of `attachment.url` from `DocumentReference` to an XDS `DocumentEntry`. Now the `attachment.url` will be used to set the `DocumentEntry.URI` only if is an HTTP(s) address (the check will simply try to match the beginning of the string). This effectively fixes the case of an ITI-65, for which the `attachment.url` will point to the `Binary` resource with the actual document content and that it should effectively ignored when converting it to XDS metadata.
+- Varia: dependencies updates, minor internal maintenance changes and/or improvements.
 
 ### PMP v0.6.6
 If a document submission to the eMedication service fails because the document entry `uniqueId` already existed in the system, now the aggregator will correctly report the `uniqueId` value instead of the `entryUuid` value in the error message.
