@@ -5,8 +5,8 @@
 ## Currently Deployed
 
   - dev:
-    - PMP (aggregator) v0.6.6 (deployed 2026-01-21), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
-    - ALPAGE v0.1.2 (deployed 22025-11-27)
+    - PMP (aggregator) v0.7.0 (deployed 2026-05-05), works with [CH EMED EPR 3.0.0](https://fhir.ch/ig/ch-emed-epr/3.0.0/index.html).
+    - ALPAGE v0.2.0 (deployed 2026-05-05)
   - int:
     - PMP (aggregator) v0.6.6 (deployed 2026-01-21), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
     - ALPAGE v0.1.2
@@ -19,13 +19,11 @@ None. Please report any issues you may encounter.
 ## Next Release Dates
 
 - Next CH EMED EPR version release: TBD
-- Next aggregator release: 0.7.0 to be released on 2026-05-4 together with ALPAGE 0.2.0. Deployment dates:
-  - ws-pmp-dev: 2026-05-04 (Monday) right after release.
-  - ws-pmp-int: 2026-05-06 (Wednesday).
-  - HUG: TBD.
+- Next aggregator release: TBD
+- Next ALPAGE release: TBD
 
 ## Relevant Changes
-### PMP v0.7.0
+### PMP v0.7.0 (2026-05-05)
 
 - Changes:
   - Updated the exchange format to [CH EMED EPR 3.0.0](https://fhir.ch/ig/ch-emed-epr/3.0.0/index.html) (published 2026-02-11, see the [changelog](https://fhir.ch/ig/ch-emed-epr/changelog.html)), we expect no changes impacting integrators, other than the newly added `prescription-id-reference-matches-request-changed-reference` constraint on PADV observation resources. This constraint ensures that, if there if the observation has a medication request changed extension, then the identifier has to match that of the prescription extension of the observation. Same goes for `treatment-plan-id-reference-matches-statement-changed-reference` from medication statement changed references.
