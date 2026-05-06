@@ -8,8 +8,8 @@
     - PMP (aggregator) v0.7.0 (deployed 2026-05-05), works with [CH EMED EPR 3.0.0](https://fhir.ch/ig/ch-emed-epr/3.0.0/index.html).
     - ALPAGE v0.2.0 (deployed 2026-05-05)
   - int:
-    - PMP (aggregator) v0.6.6 (deployed 2026-01-21), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
-    - ALPAGE v0.1.2
+    - PMP (aggregator) v0.7.0 (deployed 2026-05-06), works with [CH EMED EPR 3.0.0](https://fhir.ch/ig/ch-emed-epr/3.0.0/index.html).
+    - ALPAGE v0.2.0
   - HUG (pilot):
     - aggregator: v0.6.6 (deployed 2026-01-21), works with [CH EMED EPR 2.0.0](https://fhir.ch/ig/ch-emed-epr/2.0.0/index.html).
 	- ALPAGE v0.1.1
